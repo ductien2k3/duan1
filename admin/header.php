@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../giaodien/admin/style.css">
   <title>Trang admin</title>
 </head>
 <body>
@@ -13,13 +13,13 @@
   <div class="main">
     <div class="sidebar">
       <ul class="menu">
-        <li><a href="admin.html">Trang Chủ</a></li>
-        <li><a href="danhsach.html">Danh Sách</a></li>
-        <li><a href="sanpham.html">Sản Phẩm</a></li>
-        <li><a href="taikhoan.html">Tài Khoản</a></li>
+        <li><a href="index.php">Trang Chủ</a></li>
+        <li><a href="index.php?act=danhmuc">Danh Mục</a></li>
+        <li><a href="index.php?act=sanpham">Sản Phẩm</a></li>
+        <li><a href="index.php?act=dstk">Tài Khoản</a></li>
         <li><a href="donhang.html">Đơn Hàng</a></li>
-        <li><a href="binhluan.html">Bình Luận</a></li>
-        <li><a href="thongke.html">Thống Kê</a></li>
+        <li><a href="index.php?act=dsbl">Bình Luận</a></li>
+        <li><a href="index.php?act=thongke">Thống Kê</a></li>
       </ul>
     </div>
   
