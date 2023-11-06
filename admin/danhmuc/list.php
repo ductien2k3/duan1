@@ -3,13 +3,11 @@
       <table>
         <tr>
           <th>Tên sản phẩm</th>
-          <th>Giá</th>
-          <th>Số lượng tồn kho</th>
+          <th>Chức Năng</th>
         </tr>
         <tr>
           <td>Áo phông nam</td>
-          <td>200.000 đồng</td>
-          <td>50</td>
+          <td><a href="index.php?act=adddm">Thêm</td>
         </tr>
         <tr>
           <td>Áo phông nữ</td>

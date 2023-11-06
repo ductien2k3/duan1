@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Giao diện Quản lý Sản phẩm</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+		}
+
+		h1 {
+			text-align: center;
+		}
+
+		.container {
+			width: 600px;
+			margin: 0 auto;
+		}
+
+		form {
+			margin-bottom: 20px;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 5px;
+		}
+
+		input[type="text"],
+		input[type="number"],
+		textarea {
+			width: 100%;
+			padding: 8px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+			margin-bottom: 10px;
+		}
+
+		button {
+			background-color: #4CAF50;
+			border: none;
+			color: white;
+			padding: 10px 20px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			cursor: pointer;
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+		}
+
+		table th,
+		table td {
+			padding: 8px;
+			border-bottom: 1px solid #ddd;
+		}
+
+		table th {
+			background-color: #f2f2f2;
+			text-align: left;
+		}
+
+		table td:last-child {
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Giao diện Quản lý Sản phẩm</h1>
+
+		<!-- Form thêm/sửa sản phẩm -->
+		<form>
+			<label for="name">Tên sản phẩm:</label>
+			<input type="text" id="name" name="name">
+
+			<label for="price">Giá:</label>
+			<input type="number" id="price" name="price">
+
+			<label for="description">Mô tả:</label>
+			<textarea id="description" name="description"></textarea>
+
+			<button type="submit">Lưu</button>
+		</form>
+
+		<!-- Bảng danh sách sản phẩm -->
+		<table>
+			<thead>
+				<tr>
+					<th>Tên sản phẩm</th>
+					<th>Giá</th>
+					<th>Mô tả</th>
+					<th>Thao tác</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Sản phẩm A</td>
+					<td>100,000 đ</td>
+					<td>Mô tả sản phẩm A</td>
+					<td>
+						<button class="edit-button">Sửa</button>
+						<button class="delete-button">Xoá</button>
+					</td>
+				</tr>
+				<!-- Thêm các dòng khác tương tự -->
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
