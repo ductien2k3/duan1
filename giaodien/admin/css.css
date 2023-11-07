@@ -1,11 +1,12 @@
 /* from danhmuc */
 .form {
-    width: 50%;
-    margin: 0 auto;
+    width: 70%;
+    margin-top: 10px ;
     background-color: #f2f2f2;
     padding: 20px;
     border-radius: 5px;
     height: auto;
+
   }
   
   .form-label {
@@ -63,21 +64,59 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: #f2f2f2;
   }
-  
+.btn-updm{
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+} 
 .updatedm{
   font-size: 16px;
   text-decoration: none;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #f2f2f2;
+}
+.btn-deletedm{
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
 }
 .deletedm{
   font-size: 16px;
   text-decoration: none;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #f2f2f2;
   }
+.btn-adddm{
+  margin-top: 10px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 .adddm{
+  margin-top: 30px;
   font-size: 16px;
   text-decoration: none;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #f2f2f2;
 }
   
+.tieude{
   
+    flex-grow: 1;
+    padding: 20px;
+  }
+
+  h2 {
+    color: #333;
+  }

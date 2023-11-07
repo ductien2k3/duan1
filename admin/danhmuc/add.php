@@ -1,4 +1,6 @@
-<form class="form" enctype="multipart/form-data" method="post"> 
+<div class="tieude">
+    <h2>Thêm danh mục</h2>
+<form class="form" enctype="multipart/form-data" method="post" action="index.php?act=adddm"> 
 	<label class="form-label">Tên Danh Mục</label>
     <input type="text" class="tendanhmuc" name="tendanhmuc" required placeholder="nhập vào tên">
     <input type="submit" class="dongy" value="Thêm Danh Mục" name="themmoi">
@@ -10,3 +12,4 @@
         }
     ?>
 </form>
+</div>

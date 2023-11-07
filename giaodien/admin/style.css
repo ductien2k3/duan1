@@ -66,7 +66,6 @@ body {
   table {
     border-collapse: collapse;
     width: 100%;
-    border: 0.5px solid black;
   }
 
   th, td {
@@ -78,19 +77,3 @@ body {
   tr:hover {
     background-color:#f5f5f5;
   }
-  .updatedm{
-    font-size: 16px;
-    text-decoration: none;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  }
-  .deletedm{
-    font-size: 16px;
-    text-decoration: none;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    }
-  .adddm{
-    font-size: 16px;
-    text-decoration: none;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  }
-    
