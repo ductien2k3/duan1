@@ -7,7 +7,7 @@
         </tr>
         <tr>
           <td>Áo phông nam</td>
-          <td><a href="index.php?act=adddm">Thêm</td>
+          <td><button ><a href="index.php?act=updatedm"class="updatedm"> Cập Nhật</button> <button ><a href="index.php?act=deletedm"class="deletedm"> Xoá</button> </td>
         </tr>
         <tr>
           <td>Áo phông nữ</td>
@@ -25,5 +25,6 @@
           <td>15</td>
         </tr>
       </table>
+      <button ><a href="index.php?act=adddm" class="adddm">Thêm</button>
     </div>
   </div>
