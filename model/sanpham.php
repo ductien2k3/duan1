@@ -7,8 +7,15 @@
         $sql = "DELETE FROM `san_pham` WHERE id =$_GET[id]";
         pdo_execute($sql);
     }
-    function load_all_sanpham(){
-        $sql = "SELECT * FROM `san_pham` ORDER BY `name` DESC";;
+    function load_all_sanpham($kyw,$iddanhmuc){
+        $sql = "SELECT * FROM san_pham WHERE 1";
+        if ($kyw != "") {
+            $sql .= " AND name LIKE '%$kyw%'";
+        }
+        if ($iddanhmuc > 0) {
+            $sql .= " AND id_danhmuc = $iddanhmuc";
+        }
+        $sql .= " ORDER BY name";
         $listsanpham = pdo_query($sql);
         return $listsanpham;
     }

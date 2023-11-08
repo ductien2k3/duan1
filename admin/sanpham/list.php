@@ -1,5 +1,20 @@
 <div class="content">
-      <h2>Danh sách sản phẩm</h2>   
+      <h2>Danh sách sản phẩm</h2>
+      <div class="khungtimkiemsp">
+      <form action="index.php?act=listsp" method="POST">
+        <input type="text" name="kyw">
+        <select name = "iddanhmuc" class="">
+          <option value="0" selected>Tất cả</option>
+          <?php
+              foreach($listdanhmuc as $danhmuc){
+                extract($danhmuc);
+                echo "<option value='$id'>$name</option>";
+              }
+          ?>
+        </select>
+        <input type="submit" value="Tìm Kiếm" name ="listspok">
+      </form>
+    </div>
       <table>
         <tr>
           <th>Tên Danh Mục</th>
@@ -23,7 +38,7 @@
           $suasp = "index.php?act=updatesp&id=$id";
           $hinhpath = "../upload/".$image;
           if(is_file($hinhpath)){
-            $anhsanpham = "<img src='$hinhpath' width='100px'>";
+            $anhsanpham = "<img src='$hinhpath' width='50px'>";
           } else {
             $anhsanpham = "no image";
           }
@@ -33,7 +48,7 @@
           <td>'.$name.'</td>
           <td>'.$price.'</td>
           <td>'.$giam_gia.'%</td>
-          <td>'.$image.'</td>
+          <td>'.$anhsanpham.'</td>
           <td>'.$mo_ta.'</td>
           <td>'.$bao_hanh.'</td>
           <td>'.$ma_sp.'</td>
@@ -47,6 +62,7 @@
 
       </table>
       <button class="btn-adddm"><a href="index.php?act=addsp" class="adddm">Thêm</button>
-    </div>
+    
+  </div>
   </div>
 

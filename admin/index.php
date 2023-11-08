@@ -54,9 +54,21 @@
 
             // sản phẩm
             case 'listsp':
+                if(isset($_POST['listspok']) && ($_POST['listspok'])){
+                    $kyw = $_POST['kyw'];
+                    $iddanhmuc = $_POST['iddanhmuc'];
+                } else {
+                    $kyw = "";
+                    $iddanhmuc = 0;
+                }
                 $listdanhmuc = load_all_danhmuc();
-                $listsanpham = load_all_sanpham();
+                $listsanpham = load_all_sanpham($kyw,$iddanhmuc);
                 include "sanpham/list.php";
+                if (count($listsanpham) > 0) {
+                    // include "sanpham/list.php";
+                } else {
+                    echo "Không tìm thấy sản phẩm nào";
+                } 
                 break;
             
             case 'addsp':
