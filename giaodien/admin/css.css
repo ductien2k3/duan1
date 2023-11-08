@@ -120,3 +120,17 @@
   h2 {
     color: #333;
   }
+.chondanhmuc select{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 20px;
+  color: rgb(11, 12, 12);
+  margin-left: 400px;
+}
+.chondanhmuc select option{
+  text-decoration: none;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #790c0c;
+}

@@ -3,6 +3,7 @@
     include "header.php";
     include "../model/pdo.php";
     include "../model/danhmuc.php";
+    include "../model/sanpham.php";
     // controler
 
     if (isset($_GET['act'])) {
@@ -57,6 +58,27 @@
                 break;
             
             case 'addsp':
+                if(isset($_POST['themmoi']) && $_POST['themmoi']){
+                    $iddanhmuc = $_POST['iddanhmuc'];
+                    $tensanpham = $_POST['tensanpham'];
+                    $giasanpham = $_POST['giasanpham'];
+                    $giamgia = $_POST['giamgia'];
+                    $anhsanpham = $_FILES['anhsanpham']['name'];
+                    $target_dir = "../upload/";
+                    $target_file = $target_dir . basename($_FILES['anhsanpham']['name']);
+                    if (move_uploaded_file($_FILES['anhsanpham']["tmp_name"], $target_file)) {
+                        // echo "The file ". htmlspecialchars( basename( $_FILES["anhsanpham"]["name"])). " has been uploaded.";
+                      } else {
+                        // echo "Sorry, there was an error uploading your file.";
+                      }
+                    $motasanpham = $_POST['motasanpham'];
+                    $baohanhsanpham = $_POST['baohanhsanpham'];
+                    $masanpham = $_POST['masanpham'];
+                    $ngaydangsanpham = $_POST['ngaydangsanpham'];
+                    $soluongsanpham = $_POST['soluongsanpham'];
+                    insert_sanpham($tensanpham,$giasanpham,$giamgia,$anhsanpham,$motasanpham,$baohanhsanpham,$masanpham,$ngaydangsanpham,$soluongsanpham,$iddanhmuc);  
+                }
+                $listdanhmuc = load_all_danhmuc();
                 include "sanpham/add.php";
                 break;
 
