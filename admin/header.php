@@ -16,7 +16,7 @@
       <ul class="menu">
         <li><a href="index.php">Trang Chủ</a></li>
         <li><a href="index.php?act=danhmuc">Danh Mục</a></li>
-        <li><a href="index.php?act=sanpham">Sản Phẩm</a></li>
+        <li><a href="index.php?act=listsp">Sản Phẩm</a></li>
         <li><a href="index.php?act=dstk">Tài Khoản</a></li>
         <li><a href="donhang.html">Đơn Hàng</a></li>
         <li><a href="index.php?act=dsbl">Bình Luận</a></li>

@@ -53,7 +53,9 @@
                 break;
 
             // sản phẩm
-            case 'sanpham':
+            case 'listsp':
+                $listdanhmuc = load_all_danhmuc();
+                $listsanpham = load_all_sanpham();
                 include "sanpham/list.php";
                 break;
             
@@ -81,7 +83,8 @@
                 $listdanhmuc = load_all_danhmuc();
                 include "sanpham/add.php";
                 break;
-
+            
+            
             
 
             default:

@@ -2,7 +2,8 @@
       <h2>Danh sách sản phẩm</h2>   
       <table>
         <tr>
-          <th>ID Danh Mục</th>
+          <th>Tên Danh Mục</th>
+          <th>Id sản phẩm</th>
           <th>Tên sản phẩm</th>
           <th>Giá</th>
           <th>Đang Giảm Giá</th>
@@ -15,16 +16,23 @@
           <th>Chức Năng</th>
         </tr>
         
-        <!-- <?php
+        <?php
           foreach ($listsanpham as $sp) {
           extract($sp);
           $xoasp = "index.php?act=deletesp&id=$id";
           $suasp = "index.php?act=updatesp&id=$id";
+          $hinhpath = "../upload/".$image;
+          if(is_file($hinhpath)){
+            $anhsanpham = "<img src='$hinhpath' width='100px'>";
+          } else {
+            $anhsanpham = "no image";
+          }
           echo '<tr>
+          <td>'.$id.'</td>
           <td>'.$id.'</td>
           <td>'.$name.'</td>
           <td>'.$price.'</td>
-          <td>'.$giam_gia.'</td>
+          <td>'.$giam_gia.'%</td>
           <td>'.$image.'</td>
           <td>'.$mo_ta.'</td>
           <td>'.$bao_hanh.'</td>
@@ -34,7 +42,7 @@
           <td> <button class="btn-updm"><a href="'.$suasp.'"class="updatedm"> Cập Nhật</button> <button class="btn-deletedm" ><a href="'.$xoasp.'"class="deletedm"> Xoá</button> </td>
           </tr>';
         }
-        ?> -->
+        ?>
       
 
       </table>
