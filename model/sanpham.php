@@ -4,7 +4,7 @@
         pdo_execute($sql);
      }
     function delete_sanpham($id){
-        $sql = "DELETE FROM `san_pham` WHERE id =$_GET[id]";
+        $sql = " delete from san_pham where id = " .$id ;
         pdo_execute($sql);
     }
     function load_all_sanpham($kyw,$iddanhmuc){
@@ -20,12 +20,16 @@
         return $listsanpham;
     }
     function load_one_sanpham($id){
-        $sql = "SELECT * FROM `san_pham` WHERE id = $_GET[id]";
-        $dm = pdo_query_one($sql);
-        return $dm;
+        $sql = "SELECT * FROM `san_pham` WHERE id = $id";
+        $sp = pdo_query_one($sql);
+        return $sp;
     }
-    function update_sanpham($idsanpham, $tensanpham){
-        $sql = "UPDATE `san_pham` SET `name`='$tensanpham' WHERE `id` = $idsanpham";
+    function update_sanpham($idsanpham,$tensanpham,$giasanpham,$giamgia,$anhsanpham,$motasanpham,$baohanhsanpham,$masanpham,$ngaydangsanpham,$soluongsanpham,$iddanhmuc){
+        if($anhsanpham!=""){
+            $sql = "UPDATE `san_pham` SET `name`='$tensanpham',`price`='$giasanpham',`giam_gia`='$giamgia',`image`='$anhsanpham',`mo_ta`='$motasanpham',`bao_hanh`='$baohanhsanpham',`ma_sp`='$masanpham',`ngay_dang`='$ngaydangsanpham',`so_luong`='$soluongsanpham',`id_danhmuc`='$iddanhmuc' WHERE id = '$idsanpham'";
+        } else {
+            $sql = "UPDATE `san_pham` SET `name`='$tensanpham',`price`='$giasanpham',`giam_gia`='$giamgia',`mo_ta`='$motasanpham',`bao_hanh`='$baohanhsanpham',`ma_sp`='$masanpham',`ngay_dang`='$ngaydangsanpham',`so_luong`='$soluongsanpham',`id_danhmuc`='$iddanhmuc' WHERE id = '$idsanpham'";
+        }
         pdo_execute($sql);
     }
 ?>
