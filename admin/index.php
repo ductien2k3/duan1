@@ -4,6 +4,7 @@
     include "../model/pdo.php";
     include "../model/danhmuc.php";
     include "../model/sanpham.php";
+    include "../model/taikhoan.php";
     // controler
 
     if (isset($_GET['act'])) {
@@ -139,6 +140,35 @@
                 $listdanhmuc = load_all_danhmuc();
                 $listsanpham = load_all_sanpham("",0);
                 include "sanpham/list.php";
+                break;
+
+                case 'dstk':
+                    if(isset($_POST['listtkok']) && ($_POST['listtkok'])){
+                        $kyw = $_POST['kyw'];        
+                    } else {
+                        $kyw = "";
+                    }
+                    $listtaikhoan = load_all_taikhoan($kyw);
+                    include "taikhoan/list.php";
+                    if (count($listtaikhoan) > 0) {
+                       // include "taikhoan/list.php";
+                    } else {
+                        echo "Không tìm thấy tài khoản nào";
+                    } 
+                    break;
+                
+            
+            
+            case 'addtk':
+                if(isset($_POST['themmoi']) && $_POST['themmoi']){                 
+                    $tendangnhap = $_POST['tendangnhap'];
+                    $matkhau = $_POST['matkhau'];
+                    $email = $_POST['email'];
+                    $sodienthoai = $_POST['sodienthoai'];
+                    insert_taikhoan($tendangnhap,$matkhau,$email,$sodienthoai);
+                    $thongbao = "đã đăng kí thành công";
+                }
+                include "taikhoan/add.php";
                 break;
 
             default:
