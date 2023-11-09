@@ -158,18 +158,61 @@
                     break;
                 
             
-            
             case 'addtk':
                 if(isset($_POST['themmoi']) && $_POST['themmoi']){                 
                     $tendangnhap = $_POST['tendangnhap'];
                     $matkhau = $_POST['matkhau'];
                     $email = $_POST['email'];
                     $sodienthoai = $_POST['sodienthoai'];
+                    if(check_tendangki($tendangnhap) || check_sodienthoai($sodienthoai) || check_email($email)){
+                        $thongbao = "tài khoản đã tồn tại ";
+                    } else {
                     insert_taikhoan($tendangnhap,$matkhau,$email,$sodienthoai);
                     $thongbao = "đã đăng kí thành công";
+                    }
                 }
                 include "taikhoan/add.php";
                 break;
+
+            case 'deletetk':
+                if(isset($_GET['id']) && ($_GET['id']>0)){
+                    delete_taikhoan($_GET['id']);
+                }
+                $listtaikhoan = load_all_taikhoan(0);
+                include "taikhoan/list.php";
+                break;
+            
+            case "updatetk":
+                    if(isset($_GET['id']) && ($_GET['id']>0)){
+                    $tk = load_one_taikhoan($_GET['id']); 
+                }
+                    include "taikhoan/update.php";
+                    break;
+            case 'capnhattk':
+                if(isset($_POST['capnhat']) && ($_POST['capnhat'])){
+                    $idtaikhoan = $_POST['idtaikhoan'];
+                    $tendangnhap = $_POST['tendangnhap'];
+                    $matkhau = $_POST['matkhau'];
+                    $email = $_POST['email'];
+                    $sodienthoai = $_POST['sodienthoai'];
+                    $diachi = $_POST['diachi'];
+                    $vaitro = $_POST['vaitro'];
+                    $avatar = $_FILES['avatar']['name'];
+                    $target_dir = "../upload/";
+                    $target_file = $target_dir . basename($_FILES['avatar']['name']);
+                    if (move_uploaded_file($_FILES['avatar']["tmp_name"], $target_file)) {
+                        // echo "The file ". htmlspecialchars( basename( $_FILES["anhsanpham"]["name"])). " has been uploaded.";
+                      } else {
+                        // echo "Sorry, there was an error uploading your file.";
+                      }
+                    update_taikhoan($idtaikhoan,$tendangnhap,$matkhau,$email,$sodienthoai,$diachi,$avatar,$vaitro);
+                    $thongbao = 'đã cập nhật thành công';
+                }
+                $listtaikhoan = load_all_taikhoan(0);
+                include "taikhoan/update.php";
+                break;
+            
+
 
             default:
                 include "home.php";

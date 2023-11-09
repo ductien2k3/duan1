@@ -5,9 +5,9 @@
     $hinhpath = "../upload/".$image;
         if(is_file($hinhpath)){
             $image = "<img src='$hinhpath' width='50px'>";
-        } else {
-            $image = "no image";
-          }
+    } else {
+        $image = "no image";
+    }
 ?>
 <div class="tieude">
     <h2>Cập nhật sản phẩm</h2>

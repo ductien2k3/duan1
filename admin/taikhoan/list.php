@@ -24,6 +24,12 @@
           extract($tk);
           $xoatk = "index.php?act=deletetk&id=$id";
           $suatk = "index.php?act=updatetk&id=$id";
+          $hinhpath = "../upload/".$avatar;
+          if(is_file($hinhpath)){
+            $avatar = "<img src='$hinhpath' width='50px'>";
+          } else {
+            $avatar = "no image";
+          }
           echo '<tr>
           <td>'.$id.'</td>
           <td>'.$user_name.'</td>

@@ -9,9 +9,9 @@
     <input type="email" class="tendanhmuc" name="email" required placeholder="nhập vào email">
     <label class="form-label">số điện thoại</label>
     <input type="tel" class="tendanhmuc" name="sodienthoai" required placeholder="nhập vào số điện thoại">
-    <input type="submit" class="dongy" value="Thêm Danh Mục" name="themmoi">
+    <input type="submit" class="dongy" value="Thêm tài khoản" name="themmoi">
     <input type="reset" class="nhaplai" value="Nhập Lại">
-    <button class="ratranglist"><a href="index.php?act=listtk">Danh Sách</button>
+    <button class="ratranglist"><a href="index.php?act=dstk">Danh Sách</button>
     <?php
         if(isset($thongbao) && ($thongbao!="")) {
             echo $thongbao;
