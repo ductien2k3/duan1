@@ -5,6 +5,7 @@
     include "../model/danhmuc.php";
     include "../model/sanpham.php";
     include "../model/taikhoan.php";
+    include "../model/chitietsanpham.php";
     // controler
 
     if (isset($_GET['act'])) {
@@ -102,7 +103,9 @@
                 if(isset($_GET['id']) && ($_GET['id']>0)){
                     delete_sanpham($_GET['id']);
                 }
+                
                 $listsanpham = load_all_sanpham("",0);
+                $listdanhmuc = load_all_danhmuc();
                 include "sanpham/list.php";
                 break;
             
@@ -142,6 +145,28 @@
                 include "sanpham/list.php";
                 break;
 
+                case 'chitietsp':
+                    include "sanpham/chitietsanpham/list.php";
+                    break;
+
+                case 'addctsp':
+                    if(isset($_POST['themmoi']) && $_POST['themmoi']){
+                        $idsanpham = $_POST['idsanhpham'];
+                        $color = $_POST['color'];
+                        $size = $_POST['size'];
+                        $soluong = $_POST['soluong'];
+                        insert_chitietsanpham($idsanpham,$color,$size,$soluong);
+                        $thongbao = " Thêm Thành Công ";
+                    }
+                    include "sanpham/chitietsanpham/add.php";
+                    break;
+                
+
+
+
+
+
+                // tài khoản
                 case 'dstk':
                     if(isset($_POST['listtkok']) && ($_POST['listtkok'])){
                         $kyw = $_POST['kyw'];        
@@ -211,8 +236,6 @@
                 $listtaikhoan = load_all_taikhoan(0);
                 include "taikhoan/update.php";
                 break;
-            
-
 
             default:
                 include "home.php";
