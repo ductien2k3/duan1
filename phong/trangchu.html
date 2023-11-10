@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/css.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="image/logo1.jpg" alt="">
+            </div>
+            <form action="" class="form">
+                <!-- <div class="icon3">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <font-awesome-icon :icon="['fas', 'magnifying-glass']" />
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+                </div> -->
+                <input type="text" placeholder="Tìm kiếm sản phẩm "class="input1">
+                <input type="submit" value="Tìm kiếm">
+            </form>
+            <div class="taikhoan">
+                <div class="dangky">
+                    <i class="fa-solid fa-user"></i>
+                    <font-awesome-icon :icon="['fas', 'user']" />
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+                    <a href="">Đăng ký </a>  |
+                </div>
+                <div class="dangnhap">
+                    <i class="fa-solid fa-user"></i>
+                    <font-awesome-icon :icon="['fas', 'user']" />
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+                    <a href="">Đăng nhập</a>
+                </div>
+            </div>
+             <div class="giohang">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <font-awesome-icon :icon="['fas', 'cart-shopping']" />
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>
+                <a href="#">Giỏ hàng</a>
+             </div>
+        </header>
+        <!--Kết thúc thẻ header-->
+
+        <nav >
+            <div class="nav-tr">
+                <h2>Danh Sách Sản Phẩm</h2>
+                <ul>
+                    <li><a href="">Phòng khách</a></li>
+                    <li><a href="">Phòng ăn</a></li>
+                    <li><a href="">Phòng ngủ</a></li>
+                    <li><a href="">Phòng học/ làm việc</a></li>
+                    <li><a href="">Nội Thất phổ biến</a></li>
+                </ul>
+            </div>
+            <div class="nav-ph">
+                        <!-- Slideshow container -->
+                    <div class="slideshow-container">
+
+                    <!-- Full-width images with number and caption text -->
+                    <div class="mySlides fade">
+                    <div class="numbertext">1 / 3</div>
+                    <img src="image/banner1.jpg" style="width:100%; height: 300px;">
+                    <div class="text">Caption Text</div>
+                    </div>
+                
+                    <div class="mySlides fade">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="image/banner2.jpg" style="width: 100%;height: 300px;">
+                    <div class="text">Caption Two</div>
+                    </div>
+                
+                    <div class="mySlides fade">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="image/banner3.jpg" style="width:100%;height: 300px;">
+                    <div class="text">Caption Three</div>
+                    </div>
+                
+                    <!-- Next and previous buttons -->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br>
+                
+                <!-- The dots/circles -->
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
+        </nav>
+        <!--kết thúc thẻ NAV-->
+
+        <div class="main">
+            <h1>Sản Phẩm Hot </h1>
+            <div class="comment">
+                <div class="sanpham">
+                    <div class="sp">
+                        <div class="anh">
+                            <img src="image/sp1.png" alt="">
+                        </div>
+                        <div class="tensp">
+                            <p>Kệ sách cho bé </p>
+                        </div>
+                        <div class="gia">
+                            <p>1.290.000 đ</p>
+                        </div>
+                    </div>
+                    <div class="sp">
+                        <div class="anh">
+                            <img src="image/sp2.jpg" alt="">
+                        </div>
+                        <div class="tensp">
+                            <p>Giá đựng đồ </p>
+                        </div>
+                        <div class="gia">
+                            <p>468.000 đ</p>
+                        </div>
+                    </div>
+                    <div class="sp">
+                        <div class="anh">
+                            <img src="image/sp3.png" alt="">
+                        </div>
+                        <div class="tensp">
+                            <p>Bộ Bình ly uống nước </p>
+                        </div>
+                        <div class="gia">
+                            <p>950.000 đ</p>
+                        </div>
+                    </div>
+                    <div class="sp">
+                        <div class="anh">
+                            <img src="image/sp4.png" alt="">
+                        </div>
+                        <div class="tensp">
+                            <p>Bình thủy tinh </p>
+                        </div>
+                        <div class="gia">
+                            <p>183.000 đ</p>
+                        </div>
+                    </div>
+                    <div class="sp">
+                        <div class="anh">
+                            <img src="image/sp5.png" alt="">
+                        </div>
+                        <div class="tensp">
+                            <p>Khay đựng hoa quả </p>
+                        </div>
+                        <div class="gia">
+                            <p>599.000đ - 609.000đ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h1>Tất cả sản phẩm </h1>
+            <div class="comment">
+                <div class="sanpham">
+                    <div class="sp">
+                        <div class="anh">
+                            <img src="image/sp1.png" alt="">
+                        </div>
+                        <div class="tensp">
+                            <p>Kệ sách cho bé </p>
+                        </div>
+                        <div class="gia">
+                            <p>1.290.000 đ</p>
+                        </div>
+                    </div>
+                    <div class="sp">
+                        <div class="anh">
+                            <img src="image/sp2.jpg" alt="">
+                        </div>
+                        <div class="tensp">
+                            <p>Giá đựng đồ </p>
+                        </div>
+                        <div class="gia">
+                            <p>468.000 đ</p>
+                        </div>
+                    </div>
+                    <div class="sp">
+                        <div class="anh">
+                            <img src="image/sp3.png" alt="">
+                        </div>
+                        <div class="tensp">
+                            <p>Bộ Bình ly uống nước </p>
+                        </div>
+                        <div class="gia">
+                            <p>950.000 đ</p>
+                        </div>
+                    </div>
+                    <div class="sp">
+                        <div class="anh">
+                            <img src="image/sp4.png" alt="">
+                        </div>
+                        <div class="tensp">
+                            <p>Bình thủy tinh </p>
+                        </div>
+                        <div class="gia">
+                            <p>183.000 đ</p>
+                        </div>
+                    </div>
+                    <div class="sp">
+                        <div class="anh">
+                            <img src="image/sp5.png" alt="">
+                        </div>
+                        <div class="tensp">
+                            <p>Khay đựng hoa quả </p>
+                        </div>
+                        <div class="gia">
+                            <p>599.000đ - 609.000đ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h1>Top  sản phẩm </h1>
+            <div class="comment">
+                <div class="sanpham">
+                    <div class="sp">
+                        <div class="anh">
+                            <img src="image/sp1.png" alt="">
+                        </div>
+                        <div class="tensp">
+                            <p>Kệ sách cho bé </p>
+                        </div>
+                        <div class="gia">
+                            <p>1.290.000 đ</p>
+                        </div>
+                    </div>
+                    <div class="sp">
+                        <div class="anh">
+                            <img src="image/sp2.jpg" alt="">
+                        </div>
+                        <div class="tensp">
+                            <p>Giá đựng đồ </p>
+                        </div>
+                        <div class="gia">
+                            <p>468.000 đ</p>
+                        </div>
+                    </div>
+                    <div class="sp">
+                        <div class="anh">
+                            <img src="image/sp3.png" alt="">
+                        </div>
+                        <div class="tensp">
+                            <p>Bộ Bình ly uống nước </p>
+                        </div>
+                        <div class="gia">
+                            <p>950.000 đ</p>
+                        </div>
+                    </div>
+                    <div class="sp">
+                        <div class="anh">
+                            <img src="image/sp4.png" alt="">
+                        </div>
+                        <div class="tensp">
+                            <p>Bình thủy tinh </p>
+                        </div>
+                        <div class="gia">
+                            <p>183.000 đ</p>
+                        </div>
+                    </div>
+                    <div class="sp">
+                        <div class="anh">
+                            <img src="image/sp5.png" alt="">
+                        </div>
+                        <div class="tensp">
+                            <p>Khay đựng hoa quả </p>
+                        </div>
+                        <div class="gia">
+                            <p>599.000đ - 609.000đ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Kết thúc thẻ main-->
+
+        <footer>
+            <div class="footer-tr">
+                <h3>Nhóm 2 Môn Dự Án 1</h3>
+                <h3>Trường Cao Đẳng FPT PolyTechnic</h3>
+            </div>
+            <!-- <div class="footer-ph">
+
+            </div> -->
+        </footer>
+    </div>
+
+
+</body>
+</html>
+<script>
+    let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>

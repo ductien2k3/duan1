@@ -1,0 +1,103 @@
+/* Css cho trang đặt hàng*/
+.main{
+    width: 100%;
+    height: 1000px;
+    /* background-color: aqua; */
+}
+
+.main-tr{
+    width: 30%;
+    float: left;
+    margin-left: 10px;
+}
+.main-tr h3{
+    font-size: 25px;
+}
+.main-tr form{
+    padding: 5px 10px 5px 10px;
+}
+.main-tr form input{
+    margin: 20px 10px;
+    width: 350px;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+.main-tr form textarea{
+    margin: 20px 10px;
+    width: 350px;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+.main-giua{
+    width: 30%;
+    float: left;
+    margin-left: 20px;
+}
+.main-giua h3{
+    font-size: 25px;
+}
+.main-giua form{
+    margin-left: 20px;
+    font-size: 20px;
+}
+.main-giua form input{
+    margin: 10px 0px;
+    
+}
+
+
+.main-ph{
+    width: 34%;
+    float: left;
+    margin-left: 20px;
+    background-color: rgb(244, 244, 244);
+    padding-left: 30px;
+}
+.main-ph h3{
+    font-size: 25px;
+}
+.main-ph h2{
+    font-size: 20px;
+}
+.main-ph .sp {
+    width: 100%;
+    height: 120px;
+    /* background-color: aqua; */
+}
+.main-ph .sp img{
+    width: 120px;
+    height: 120px;
+    float: left;
+}
+.main-ph .sp p{
+    float: left;
+    margin-left: 40px;
+    font-size: 20px;
+}
+.main-ph .tamtinh h3{
+    /* float: left; */
+    font-size: 20px;
+}
+.main-ph .tamtinh h2{
+    /* float: left; */
+    font-size: 22px;
+}
+
+.main-ph .tong h2 h3{
+    float: left;
+}
+.main-ph .tong form {
+    margin-left: 200px;
+}
+.main-ph .tong form input{
+    font-size: 20px;
+    background-color: red;
+    width: 250px;
+    height: 50px;
+    border-radius: 5px;
+    
+}
