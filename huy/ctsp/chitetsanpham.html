@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chi tiet san pham</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"> -->
+</head>
+<body>
+        <header>
+            <div class="logo">
+                <img src="img/logo1.jpg" alt="">
+            </div>
+            <form action="" class="form">
+                <!-- <div class="icon3">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <font-awesome-icon :icon="['fas', 'magnifying-glass']" />
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+                </div> -->
+                <input type="text" placeholder="Tìm kiếm sản phẩm "class="input1">
+                <input type="submit" value="Tìm kiếm">
+            </form>
+            <div class="taikhoan">
+                <div class="dangky">
+                    <i class="fa-solid fa-user"></i>
+                    <font-awesome-icon :icon="['fas', 'user']" />
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+                    <a href="">Đăng ký </a>  |
+                </div>
+                <div class="dangnhap">
+                    <i class="fa-solid fa-user"></i>
+                    <font-awesome-icon :icon="['fas', 'user']" />
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+                    <a href="">Đăng nhập</a>
+                </div>
+            </div>
+             <div class="giohang">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <font-awesome-icon :icon="['fas', 'cart-shopping']" />
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>
+                <a href="#">Giỏ hàng</a>
+             </div>
+        </header>
+       
+    <!--Sản phẩm chi tiết-->
+    <div class="small-container single-product">
+        <div class=" banner-2">
+            <a class="cate-items-detail" href="/">Trang chủ</a> 
+                <i class="fas fa-angle-right text-grey fs-12"></i>
+            <a class="cate-items-detail" href="">Sản phẩm</a>
+                <i class="fas fa-angle-right text-grey fs-12"></i>
+            <a class="cate-items-detail" href="">Phòng khách</a>
+                <i class="fas fa-angle-right text-grey fs-12"></i>
+            <a class="cate-items-detail" href="">Sofa </a>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <img src="img/avt.jpg" width="100%" id="productImg">
+                <div class="small-img-row">
+                    <div class="small-img-col">
+                        <img src="img/img1.jpg" width="100%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="img/img2.jpg" width="100%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="img/img3.jpg" width="100%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="img/img4.jpg" width="100%" class="small-img">
+                    </div>
+                </div>
+            </div>
+            <!--bn2-->
+            
+            <div class="col-2">
+                <h1>Bộ ghế sofa góc chữ L gỗ cao su tự nhiên kèm đôn MOHO VLINE 601</h1>
+                <!--Giá tiền-->
+                <div class="price">
+                    <p>Giá tiền:</p>
+                    <h4>200.000</h4>
+                </div>
+                <!--Màu sắc-->
+                <div id="product-color">
+                    <p style="margin-top: 12px; font-weight: bold; font-size: 20px;">Màu sắc:</p>
+                    <div class="color-box first"></div>
+                    <div class="color-box second"></div>
+                    <div class="color-box third"></div>
+                    <div class="color-box fourth"></div>                
+                </div>
+                <!--Kích thước-->
+                <div id="size">
+                    <a style="margin-top: 12px; font-weight: bold; font-size: 20px;">Kích thước: </a>
+                    <p>Chi tiết như mô tả</p>
+                </div>
+                <!--Số lượng-->
+                <div class="quantity-control">
+                    <a style="margin-top: 3px; font-weight: bold; font-size: 20px; padding-right:10px ;">Số lượng: </a>
+                    <button class="decrease">-</button>
+                    <span class="quantity">1</span>
+                    <button class="increase">+</button>
+                </div>
+                <!--Thêm vào giỏ hàng và Mua hàng-->
+                <span href="" class="btn" >Thêm vào giỏ hàng </span>
+                <span href="" class="btn">Mua ngay </span>
+            </div>
+            <!--Thông tin sản phẩm-->
+            <div class="product-details">
+                <h2 class="title" style="font-size: 30px;">Thông tin sản phẩm</h2>
+                <table class="custom-table">
+                    <tr>
+                        <th >Mã sản phẩm</th>
+                        <td>
+                            <span>MOHO VLINE 601</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Bảo hành</th>
+                        <td>24 tháng</td>
+                    </tr>
+                    <tr>
+                        <th>Kích thước</th>
+                        <td>Chi tiết như mô tả</td>
+                    </tr>
+                    <tr>
+                        <th>Màu sắc</th>
+                        <td style="display: flex;" >
+                            <div class="color-box firts"></div>
+                            <div class="color-box second"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Chất liệu</th>
+                        <td>Gỗ</td>
+                    </tr>
+                </table>
+            </div>
+            <!--Mô tả sản phẩm-->
+            <div>
+                <h2 class="title" style="font-size: 30px;">Mô tả sản phẩm</h2>
+            </div>
+            <div class="product-description_detail">
+                
+                <ul>
+                    <h1 style="text-align: justify; font-size: 31px;">Bộ ghế sofa góc chữ L gỗ cao su tự nhiên kèm đôn MOHO VLINE 601</h1>
+                    <h3 style="text-align: justify;">Thông tin chi tiết Bộ ghế sofa góc chữ L gỗ cao su tự nhiên kèm đôn MOHO VLINE 601</h3>
+                    <p style="text-align: justify;">-&nbsp;&nbsp;Bộ ghế sofa góc chữ L gỗ cao su tự nhiên kèm đôn MOHO VLINE 601 gồm có các chi tiết với kích thước như sau:
+                    </p>
+                </ul>
+                <ul >
+                    <li>Ghế sofa dài: Dài 180cm x Rộng 85cm x Cao 82cm</li>
+                    <li>Ghế sofa góc: Dài 140cm x Rộng 60cm x Cao 82cm</li>
+                    <li>Đôn sofa: Dài 60cm x Rộng 60cm x Cao 37cm</li>
+                </ul>
+                <figure class="expNoEdit">
+                    <img  src="img/mota1.jpg"  width="378" height="365" style="margin: 0 auto;
+                    display: block;">  
+                        <figcaption >
+                            <p>Chi tiết kích thước của bộ ghế sofa góc chữ L gỗ cao su tự nhiên kèm đôn MOHO VLINE 601</p>  
+                        </figcaption>  
+                </figure>
+                <p style="text-align: justify;">- Chất liệu:&nbsp;</p>
+                <ul>  
+                    <li>Chân&nbsp;ghế: Gỗ cao su tự nhiên</li>  
+                    <li><span style="text-align: justify;">Thân ghế: Gỗ tràm tự nhiên (đối với mẫu màu nâu</span>
+                        <span style="text-align: justify;">) hoặc </span>
+                        <span style="text-align: justify;">Gỗ cao su tự nhiên (đối với mẫu màu gỗ</span>
+                        <span style="text-align: justify;">)</span>
+                    </li>  
+                    <li>Nệm sofa: Phần nệm sofa và ghế đôn được bọc bằng vải polyester có khả năng kháng khuẩn và chống nhăn tốt</li>  
+                    <li>Tấm phản: Gỗ công nghiệp Plywood với độ bền cao</li>  
+                </ul>
+                <p style="text-align: justify;">- Màu sắc: Màu nâu hoặc màu gỗ tự nhiên (màu be)</p>
+                <h2 style="text-align: justify;">
+                    <strong>
+                        <span style="font-size: 14pt;">Tại sao nên mua bộ ghế sofa góc chữ L gỗ cao su tự nhiên kèm đôn MOHO VLINE 601</span>
+                    </strong>
+                </h2>
+                <h3 style="text-align: justify;">Bộ ghế sofa góc chữ L gỗ cao su tự nhiên kèm đôn MOHO VLINE 601 có thiết kế tinh tế, đẹp mắt</h3>
+                <p style="text-align: justify;">Sản phẩm&nbsp;Bộ ghế sofa góc chữ L gỗ cao su tự nhiên kèm đôn MOHO VLINE 601 có thiết kế thanh thoát, với chiều cao được thiết kế phù hợp với người tiêu dùng Việt Nam. Góc nghiêng của bộ sofa có độ cong vừa phải giúp cho người dùng có thể thoải mái trải nghiệm mà không lo lắng bị đau lưng hay đốt sống.</p>
+                <figure class="expNoEdit">
+                    <img  src="img/mota2.jpg"  width="1030" height="495">  
+                    <figcaption>  
+                        <p>Bộ ghế sofa góc chữ L gỗ cao su tự nhiên kèm đôn MOHO VLINE 601 với thiết kế tinh tế giúp tôn lên vẻ đẹp sang trọng cho không gian ngôi nhà bạn</p>  
+                    </figcaption>  
+                </figure>
+                <p>Ngoài ra, mẫu bộ sofa góc chữ L này có 02 màu cho khách hàng lựa chọn là màu gỗ tự nhiên và màu nâu. Đây là hai gam màu trung tính rất dễ dàng để kết hợp với nhiều phong cách nội thất khác nhau, giúp tôn lên vẻ đẹp sang trọng cho không gian sử dụng.</p>
+            </div>
+            <!--cmt-->
+            <div class="comment-form">
+                <h2 class="title" style="font-size: medium;">Bình luận về sản phẩm</h2>
+              <!-- Hiển thị phần bình luận -->
+              <div class="comments" style="width: 1030px;">
+                <div class="comment">
+                  <strong>Người dùng 1:</strong>
+                  <p>GHẾ SOFA RẤT ÊM</p>
+                </div>
+                <div class="comment">
+                  <strong>Người dùng 2:</strong>
+                  <p>Bình luận</p>
+                </div>
+              </div >
+                <form action="#" method="post">
+                  <label for="comment">Bình luận:</label>
+                  <textarea id="comment" name="comment" rows="4" placeholder="Nhập bình luận của bạn" required></textarea>
+                  <input type="submit" class="custom-gbl" value="Gửi bình luận" style="font-size: 14px;">
+                </form>
+              </div>
+        </div>
+    </div>
+    <!--sản phẩm khác-->
+    <div class="small-container">
+        <div>
+            <h2 class="title" style="font-size: 30px; margin-top: 20px; margin-bottom: -1px;">Sản phẩm khác</h2>
+            <p style="font-size: 15px; text-align: right; margin-bottom: 10px;">Xem thêm</p>
+        </div>
+        <div class="row row-2">
+            <div class="row">
+                <div class="col-3">
+                    <img src="img/avt.jpg" alt="">
+                    <h4>Ghế sofa giá rẻ - Màu trắng</h4>
+                    <!-- <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div> -->
+                    <p>200.000đ</p>
+                </div>
+                <div class="col-3">
+                    <img src="img/avt.jpg" alt="">
+                    <h4>Ghế sofa giá rẻ - Màu trắng</h4>
+                    <p>200.000đ</p>
+                </div>
+                <div class="col-3">
+                    <img src="img/avt.jpg" alt="">
+                    <h4>Ghế sofa giá rẻ - Màu trắng</h4>
+                    <p>200.000đ</p>
+                </div>
+                <div class="col-3">
+                    <img src="img/avt.jpg" alt="">
+                    <h4>Ghế sofa giá rẻ - Màu trắng</h4>
+                    <p>200.000đ</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--foooter-->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="foooter-col-1">
+                    <h3></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--js click ảnh sản phẩm-->
+    <script>
+        var ProductImg = document.getElementById("productImg");
+        var SmallImg = document.getElementsByClassName("small-img");
+        SmallImg[0].onclick = function(){
+            ProductImg.src = SmallImg[0].src;
+        }
+        SmallImg[1].onclick = function(){
+            ProductImg.src = SmallImg[1].src;
+        }
+        SmallImg[2].onclick = function(){
+            ProductImg.src = SmallImg[2].src;
+        }
+        SmallImg[3].onclick = function(){
+            ProductImg.src = SmallImg[3].src;
+        }
+        // js tăng giảm số số lượng
+        const decreaseButton = document.querySelector('.decrease');
+        const increaseButton = document.querySelector('.increase');
+        const quantityElement = document.querySelector('.quantity');
+        let quantity = 1;
+        decreaseButton.addEventListener('click', () => {
+        if (quantity > 1) {
+            quantity--;
+            quantityElement.textContent = quantity;
+        }
+        });
+        increaseButton.addEventListener('click', () => {
+        quantity++;
+        quantityElement.textContent = quantity;
+        });
+    </script>
+</body>
+</html>
