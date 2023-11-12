@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-  width: 1400px;
+  width: 100%;
 }
 
 header{
@@ -35,7 +35,7 @@ header .logo img{
     /* size: 40px; */
     /* padding: 40px 60px 40px 10px; */
     margin-top: 45px;
-    margin-left: 70px;
+    margin-left: 50px;
     padding-left: 40px;
     
 }
@@ -46,23 +46,42 @@ header .logo img{
     /* width: 200px; */
     font-size: 20px;
     padding: 7px;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     float: left;
     color: blue;
+    
 }
 .input1{
     width: 300px;
+    border-right: none;
+    border: 2px solid  rgb(58, 143, 234);
+}
+.form .tkiem{
+  border-left: none;
+  background-color:rgb(58, 143, 234);
+  color: white;
+  border: 2px solid  rgb(58, 143, 234);
+}
+.form button{
+  padding: 8px;
+  border-left: none;
 }
 
 .taikhoan{
     float: left;
-    padding: 45px 60px 50px 100px;
+    /* padding: 45px 60px 50px 100px; */
+    padding-top: 45px;
+    padding-right: 30px;
+    padding-left: 80px;
     
+}
+.taikhoan svg{
+  color: rgb(58, 143, 234);
 }
 .dangky{
    float: left;
    font-size: 20px;
-   margin: 0px 0px 0px 120px;
+   margin: 0px 0px 0px 80px;
    color: black;
 }
 .dangnhap{
@@ -85,7 +104,7 @@ header .logo img{
     height: 50px;
     border: 2px solid rgb(46, 11, 171);
     padding: 10px 0px 0px 0px;
-    margin: 30px 20px 50px 30px;
+    margin: 30px 20px 50px 10px;
     border-radius: 8px;
 }
 .giohang a{
@@ -165,18 +184,20 @@ nav{
   width: 100%;
 }
 .sp{
-  width: 19%;
+  width: 18%;
   height: 100%;
-  padding: 20px 20px;
+  padding-top: 20px;
+  /* padding-left: 8px; */
+  text-align: center;
   border: 1px solid black;
   float: left;
   background-color: white;
-  margin-left: 10px;
+  margin-left: 19px;
 }
 .sp .anh img{
   width: 200px;
   height: 210px;
-  margin: 5px 14px;
+  margin: 5px 0px;
 }
 .sp .tensp p{
   font-size: 19px;
