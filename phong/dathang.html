@@ -14,10 +14,15 @@
         <div class="main-tr">
             <h3>Thông tin đặt hàng</h3>
             <form action="">
+                Email:
                 <input type="email" placeholder="Nhập Email"> <br>
+                Họ vầ Tên:
                 <input type="text" placeholder="Họ và tên"><br>
+                Số điện thoại:
                 <input type="text" placeholder="Nhập số điện thoại"><br>
+                Địa chỉ giao hàng:
                 <input type="text" placeholder="Địa chỉ giao hàng"><br>
+                Ghi chú:
                 <textarea name="" cols="30" rows="3" placeholder="Ghi chú"></textarea> <br>
             </form>
         </div>
@@ -26,19 +31,22 @@
         <div class="main-giua">
             <h3>Phương Thức Vận chuyển</h3>
             <form action="">
-                <input type="radio" name="" id="">Hỏa tốc <br>
-                <input type="radio" name="" id="">Vận chuyển nhanh <br>
-                <input type="radio" name="" id="">Vận chuyển thường <br>
+                <input type="checkbox" name="" id="">Hỏa tốc <br>
+                <input type="checkbox" name="" id="">Vận chuyển nhanh <br>
+                <input type="checkbox" name="" id="">Vận chuyển thường <br>
             </form>
 
             <h3>Hình thức Thanh Toán</h3>
             <form action="">
-                <input type="radio" name="" id="">Thanh Toán Khi nhận hàng <br>
-                <input type="radio" name="" id="">Thẻ tín dụng <br>
+                <input type="checkbox" name="" id="">Thanh Toán Khi nhận hàng <br>
+                <input type="checkbox" name="" id="">Thẻ tín dụng <br>
             </form>
             
             <h3>Voucher</h3>
-            
+            <form action="" class="magg">
+                <input type="text" placeholder="Nhập mã giảm giá" class="f1">
+                <input type="button" value="Áp Dụng" class="f2">
+            </form>
         </div>
         <!--KẾt thúc main-giua -->
 
@@ -56,6 +64,9 @@
             <hr>
             <div class="tong">
                 <h2>Tổng cộng:</h2>  <h3>1.290.000 đ</h3>
+                <a href="">
+                   -- Quay về giỏ hàng
+                </a>
                 <form action="">
                     <input type="submit" value="Đặt Hàng">
                 </form>

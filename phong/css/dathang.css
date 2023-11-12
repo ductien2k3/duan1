@@ -48,8 +48,17 @@
     margin: 10px 0px;
     
 }
-
-
+.main-giua .magg  input{
+    margin: 0px;
+    padding: 10px;
+}
+.main-giua .magg .f1{
+    width: 200px;
+}
+.main-giua .magg .f2{
+    background-color: black;
+    color: white;
+}
 .main-ph{
     width: 34%;
     float: left;
@@ -100,4 +109,8 @@
     height: 50px;
     border-radius: 5px;
     
+}
+.main-ph .tong a{
+    text-decoration: none;
+    font-size: 20px;
 }
