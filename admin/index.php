@@ -161,11 +161,6 @@
                     include "sanpham/chitietsanpham/add.php";
                     break;
                 
-
-
-
-
-
                 // tài khoản
                 case 'dstk':
                     if(isset($_POST['listtkok']) && ($_POST['listtkok'])){
@@ -235,6 +230,11 @@
                 }
                 $listtaikhoan = load_all_taikhoan(0);
                 include "taikhoan/update.php";
+                break;
+
+            //bình luận
+            case 'dsbl':
+                include 'binhluan/list.php';
                 break;
 
             default:
