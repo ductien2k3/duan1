@@ -3,7 +3,8 @@
     padding: 0;
 }
 body{
-    width: 1200px;
+    /* width: 1200px; */
+    width: 100%;
 }
 
 .main-tr{
@@ -22,6 +23,7 @@ body{
     text-decoration: none;
     font-size: 15px;
     line-height: 40px;
+    color: black;
 }
 .main-tr .sanpham{
     width: 100%;
@@ -72,11 +74,31 @@ body{
     font-size: 18px;
     float: left;
 }
-.thongtin a{
+/* .thongtin a{
     text-decoration: none;
     padding-top: 40px;
+    margin-top: 40px;
     font-size: 17px;
+} */
+.chucnang{
+    margin-top: 40px;
+    padding-top: 40px;
 }
+.chucnang a{
+    text-decoration: none;
+    /* margin-bottom: 40px; */
+    /* float: left; */
+    margin-left: 40px;
+    color: blue;
+}
+.chucnang .xoa{
+    margin-bottom: 40px;
+    margin-left: 0px;
+}
+.muasau{
+    margin-left: 40px;
+}
+
 .giatien{
     float: left;
     margin-left: 25px;
@@ -124,7 +146,7 @@ body{
 .tt h4{
     /* float: left; */
     margin-left: 40px;
-    color: red;
+    /* color: red; */
     font-size: 20px;
 }
 .vc{
@@ -137,7 +159,7 @@ body{
 .vc h4{
     /* float: left; */
     margin-left: 40px;
-    color: red;
+    /* color: red; */
     font-size: 17px;
 }
 
@@ -151,29 +173,34 @@ body{
 .thanhtien h4{
     /* float: left; */
     margin-left: 40px;
-    color: red;
+    /* color: red; */
     font-size: 17px;
 }
 
 .magg{
     margin-top: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
+/* .magg form{
+    margin-left: 10px;
+} */
 .magg form input{
     margin: 0px;
     padding: 10px;
 }
 .magg form .f1{
-    width: 200px;
+    width: 230px;
 }
 .magg form .f2{
     background-color: black;
     color: white;
 }
 .thdt form input{
+    width: 330px;
     padding: 10px;
     background-color: red;
     color: white;
-    margin-left: 80px;
+    font-size: 17px;
+    margin-left: 3px;
     margin-bottom: 30px;
 }
