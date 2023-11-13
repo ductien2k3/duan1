@@ -13,6 +13,7 @@
     <input type="reset" class="nhaplai" value="Nhập Lại">
     <button class="ratranglist"><a href="index.php?act=danhmuc">Danh Sách</button>
     <?php
+    
         if(isset($thongbao) && ($thongbao!="")) {
             echo $thongbao;
         }

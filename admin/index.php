@@ -18,15 +18,25 @@
                 include "danhmuc/list.php";
                 break;
 
-            case "adddm":
-                //kiểm tra xem người dùng có click vào hay không
-                if(isset($_POST['themmoi']) && $_POST['themmoi']){
-                    $tendanhmuc = $_POST['tendanhmuc'];
-                    insert_danhmuc($tendanhmuc);
-                    $thongbao = " Thêm Thành Công ";
+                case "adddm":
+                    //kiểm tra xem người dùng có click vào hay không
+                    if(isset($_POST['themmoi']) && $_POST['themmoi']){
+                        $tendanhmuc = $_POST['tendanhmuc'];
+                        if (kiemtra_danhmuc($tendanhmuc)) {
+                            $thongbao = " Danh Mục Đã Tồn Tại ";
+                        } else if (!preg_match('/^[a-zA-Z0-9_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúý\s]+$/u', $tendanhmuc)) {
+                            $thongbao = "Tên danh mục không được chứa ký tự đặc biệt";
+                        } else if (strlen($tendanhmuc) < 2 || strlen($tendanhmuc) > 100) {
+                            $thongbao = "Tên danh mục phải có độ dài từ 2 đến 100 ký tự";
+                        }
+                        else {
+                        insert_danhmuc($tendanhmuc);
+                        $thongbao = " Thêm Thành Công ";
+                    }
                 }
-                include "danhmuc/add.php";
-                break;
+                
+                    include "danhmuc/add.php";
+                    break;
             
             case "deletedm":
                 if(isset($_GET['id']) && ($_GET['id']>0)){
@@ -37,9 +47,10 @@
                 break;
 
             case "updatedm":
-                if(isset($_GET['id']) && ($_GET['id']>0)){
+                if(isset($_GET['id']) && ($_GET['id']>0)){       
                 $dm = load_one_danhmuc($_GET['id']); 
             }
+        
                 include "danhmuc/update.php";
                 break;
 
@@ -47,8 +58,20 @@
                 if(isset($_POST['capnhat']) && $_POST['capnhat']){
                     $iddanhmuc = $_POST['iddanhmuc'];
                     $tendanhmuc = $_POST['tendanhmuc'];
+                  
+                    if (!preg_match('/^[a-zA-Z0-9_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúý\s]+$/u', $tendanhmuc)) {
+                        $thongbao = "Tên danh mục không được chứa ký tự đặc biệt";
+                    }
+                    else if (kiemtra_danhmuc($tendanhmuc)) {
+                            $thongbao = " Danh Mục Đã Tồn Tại ";
+                    } else if (strlen($tendanhmuc) < 2 || strlen($tendanhmuc) > 100) {
+                        $thongbao = "Tên danh mục phải có độ dài từ 2 đến 100 ký tự";
+                    }
+                    else {
                     update_danhmuc($iddanhmuc, $tendanhmuc);
                     $thongbao = " Cập Nhật Thành Công ";
+                    }
+
                 }
                 $listdanhmuc = load_all_danhmuc();
                 include "danhmuc/update.php";
@@ -92,9 +115,26 @@
                     $masanpham = $_POST['masanpham'];
                     $ngaydangsanpham = $_POST['ngaydangsanpham'];
                     $soluongsanpham = $_POST['soluongsanpham'];
+
+                    if ( $tensanpham == $tensanpham && $iddanhmuc == $iddanhmuc) {
+                        $thongbao = " sản phẩm Đã Tồn Tại ";
+                    }
+                    
+                     else if (!preg_match('/^[a-zA-Z0-9_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúý\s]+$/u', $tensanpham)) {
+                        $thongbao = "Tên sản phẩm không được chứa ký tự đặc biệt";
+                    } else if (strlen($tensanpham) < 2 || strlen($tensanpham) > 100) {
+                        $thongbao = "Tên sản phẩm phải có độ dài từ 2 đến 100 ký tự";
+                    }
+                    else if (kiemtra_sanpham($tensanpham,$iddanhmuc)) {
+                        insert_sanpham($tensanpham,$giasanpham,$giamgia,$anhsanpham,$motasanpham,$baohanhsanpham,$masanpham,$ngaydangsanpham,$soluongsanpham,$iddanhmuc);  
+                        $thongbao = " Thêm Thành Công ";
+                    }
+                    else {
                     insert_sanpham($tensanpham,$giasanpham,$giamgia,$anhsanpham,$motasanpham,$baohanhsanpham,$masanpham,$ngaydangsanpham,$soluongsanpham,$iddanhmuc);  
                     $thongbao = " Thêm Thành Công ";
-                }
+                    }
+            }
+            
                 $listdanhmuc = load_all_danhmuc();
                 include "sanpham/add.php";
                 break;
@@ -178,21 +218,60 @@
                     break;
                 
             
-            case 'addtk':
-                if(isset($_POST['themmoi']) && $_POST['themmoi']){                 
-                    $tendangnhap = $_POST['tendangnhap'];
-                    $matkhau = $_POST['matkhau'];
-                    $email = $_POST['email'];
-                    $sodienthoai = $_POST['sodienthoai'];
-                    if(check_tendangki($tendangnhap) || check_sodienthoai($sodienthoai) || check_email($email)){
-                        $thongbao = "tài khoản đã tồn tại ";
-                    } else {
-                    insert_taikhoan($tendangnhap,$matkhau,$email,$sodienthoai);
-                    $thongbao = "đã đăng kí thành công";
-                    }
-                }
-                include "taikhoan/add.php";
-                break;
+                    case 'addtk':
+                        if(isset($_POST['themmoi']) && $_POST['themmoi']){                 
+                            $tendangnhap = $_POST['tendangnhap'];
+                            $matkhau = $_POST['matkhau'];
+                            $email = $_POST['email'];
+                            $sodienthoai = $_POST['sodienthoai'];
+        
+                            // Kiểm tra tên đăng nhập đã tồn tại hay chưa
+                            if(check_tendangki($tendangnhap)){
+                                $thongbao = "Tên đăng nhập đã tồn tại";
+                            }
+        
+                            // Kiểm tra số điện thoại đã tồn tại hay chưa
+                            else if(check_sodienthoai($sodienthoai)){
+                                $thongbao = "Số điện thoại đã tồn tại";
+                            }
+        
+                            // Kiểm tra email đã tồn tại hay chưa
+                            else if(check_email($email)){
+                                $thongbao = "Email đã tồn tại";
+                            }
+        
+                            // Kiểm tra tên đăng nhập chỉ chứa chữ cái, số, dấu gạch dưới, dấu cách và các ký tự tiếng Việt
+                            else if (!preg_match('/^[a-zA-Z0-9-]+$/', $tendangnhap)) {
+                                $thongbao = "Tên đăng nhập chứa ký tự đặc biệt";
+                            }
+        
+                            // Kiểm tra tên đăng nhập có độ dài từ 2 đến 100 ký tự
+                            else if (strlen($tendangnhap) < 2 || strlen($tendangnhap) > 100) {
+                                $thongbao = "Tên đăng nhập phải có độ dài từ 2 đến 100 ký tự";
+                            }
+        
+                            // Kiểm tra mật khẩu có độ dài từ 6 đến 128 ký tự
+                            else if (strlen($matkhau) < 6 || strlen($matkhau) > 128) {
+                                $thongbao = "Mật khẩu phải có độ dài từ 6 đến 128 ký tự";
+                            }
+        
+                            // Kiểm tra email có định dạng hợp lệ
+                            else if (!preg_match("/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/", $email)) {
+                                $thongbao = "Email không hợp lệ";
+                            }
+                            // Kiểm tra số điện thoại có đúng định dạng hay không
+                            else if (!preg_match("/^0[0-9]{9,11}$/", $sodienthoai)) {
+                            $thongbao = "Số điện thoại không hợp lệ";
+                            }
+                                                        // Nếu tất cả các kiểm tra đều thành công thì thêm tài khoản vào cơ sở dữ liệu
+                            else {
+                                insert_taikhoan($tendangnhap,$matkhau,$email,$sodienthoai);
+                                $thongbao = "Đăng kí thành công";
+                            }
+                        }
+                        include "taikhoan/add.php";
+                        break;
+        
 
             case 'deletetk':
                 if(isset($_GET['id']) && ($_GET['id']>0)){
@@ -225,8 +304,30 @@
                       } else {
                         // echo "Sorry, there was an error uploading your file.";
                       }
-                    update_taikhoan($idtaikhoan,$tendangnhap,$matkhau,$email,$sodienthoai,$diachi,$avatar,$vaitro);
-                    $thongbao = 'đã cập nhật thành công';
+                    // Validate the form data
+        
+
+                    if (empty($_POST['tendangnhap'])) {
+                        $thongbao = 'Tên đăng nhập không được để trống';
+                    }
+
+                    else if (empty($_POST['matkhau'])) {
+                        $thongbao = 'Mật khẩu không được để trống';
+                    }
+
+                    else if (empty($_POST['email'])) {
+                        $thongbao = 'Email không được để trống';
+                    }
+
+                    else if (empty($_POST['sodienthoai'])) {
+                        $thongbao = 'Số điện thoại không được để trống';
+                    }
+
+                     else {
+                        // Update the database
+                        update_taikhoan($idtaikhoan,$tendangnhap,$matkhau,$email,$sodienthoai,$diachi,$avatar,$vaitro);
+                        $thongbao = 'Cập nhật thành công';
+                    }
                 }
                 $listtaikhoan = load_all_taikhoan(0);
                 include "taikhoan/update.php";

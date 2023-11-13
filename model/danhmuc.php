@@ -21,4 +21,10 @@
         $sql = "UPDATE `danh_muc` SET `name`='$tendanhmuc' WHERE `id` = $iddanhmuc";
         pdo_execute($sql);
     }
+    function kiemtra_danhmuc($tendanhmuc){
+        $sql = "SELECT * FROM `danh_muc` WHERE  name = '$tendanhmuc' ";
+        $tt = pdo_query_one($sql);
+        return $tt;
+    }
+    
 ?>

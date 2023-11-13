@@ -32,4 +32,10 @@
         }
         pdo_execute($sql);
     }
+    function kiemtra_sanpham($tensanpham,$iddanhmuc){
+        $sql = "SELECT * FROM `san_pham` WHERE `name` = '$tensanpham' AND id_danhmuc != '$iddanhmuc'";
+        $sp = pdo_query_one($sql);
+        return $sp;
+    }
+    
 ?>

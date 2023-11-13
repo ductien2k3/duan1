@@ -1,3 +1,4 @@
+
 <div class="tieude">
     <h2>Thêm danh mục</h2>
 <form class="form" enctype="multipart/form-data" method="post" action="index.php?act=adddm"> 
@@ -11,5 +12,6 @@
             echo $thongbao;
         }
     ?>
+
 </form>
 </div>
