@@ -29,7 +29,7 @@
     <input type="date" class="tendanhmuc" name="ngaydangsanpham" required placeholder="nhập vào ngày đăng ">
     <label class="form-label">Số lượng sản phẩm</label>
     <input type="number" min="0" class="tendanhmuc" name="soluongsanpham" required placeholder="nhập vào số lượng">
-    <input type="submit" class="dongy" value="Thêm Danh Mục" name="themmoi">
+    <input type="submit" class="dongy" value="Thêm Sản Phẩm" name="themmoi">
     <input type="reset" class="nhaplai" value="Nhập Lại">
     <button class="ratranglist"><a href="index.php?act=listsp">Danh Sách</button>
     <?php
