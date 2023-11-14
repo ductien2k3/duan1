@@ -20,6 +20,8 @@
         ?>
         </tr>
       </table>
-      <button class="btn-adddm"><a href="index.php?act=adddm" class="adddm">Thêm</button>
+      
+      <button class="btn-adddm"><a href="index.php?act=adddm" class="adddm">Thêm</button> 
     </div>
+    
   </div>

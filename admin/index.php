@@ -14,7 +14,8 @@
 
             // phần danh mục
             case 'danhmuc':
-                $listdanhmuc = load_all_danhmuc();
+
+            $listdanhmuc = load_all_danhmuc();
                 include "danhmuc/list.php";
                 break;
 
@@ -24,7 +25,7 @@
                         $tendanhmuc = $_POST['tendanhmuc'];
                         if (kiemtra_danhmuc($tendanhmuc)) {
                             $thongbao = " Danh Mục Đã Tồn Tại ";
-                        } else if (!preg_match('/^[a-zA-Z0-9_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúý\s]+$/u', $tendanhmuc)) {
+                        } else if (!preg_match('/^[a-zA-Z0-9_ÀÁÂÃĐÈÉÊÌÍÒÓÔÕÙÚỦÝàáâãđèéêìíòóôõùúủý\s]+$/u', $tendanhmuc)) {
                             $thongbao = "Tên danh mục không được chứa ký tự đặc biệt";
                         } else if (strlen($tendanhmuc) < 2 || strlen($tendanhmuc) > 100) {
                             $thongbao = "Tên danh mục phải có độ dài từ 2 đến 100 ký tự";
@@ -59,7 +60,7 @@
                     $iddanhmuc = $_POST['iddanhmuc'];
                     $tendanhmuc = $_POST['tendanhmuc'];
                   
-                    if (!preg_match('/^[a-zA-Z0-9_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúý\s]+$/u', $tendanhmuc)) {
+                    if (!preg_match('/^[a-zA-Z0-9_ÀÁÂÃĐÈÉÊÌÍÒÓÔÕÙÚỦÝàáâãđèéêìíòóôõùúủý\s]+$/u', $tendanhmuc)) {
                         $thongbao = "Tên danh mục không được chứa ký tự đặc biệt";
                     }
                     else if (kiemtra_danhmuc($tendanhmuc)) {
@@ -93,7 +94,7 @@
                     // include "sanpham/list.php";
                 } else {
                     echo "Không tìm thấy sản phẩm nào";
-                } 
+                }
                 break;
             
             case 'addsp':
@@ -116,24 +117,20 @@
                     $ngaydangsanpham = $_POST['ngaydangsanpham'];
                     $soluongsanpham = $_POST['soluongsanpham'];
 
-                    if ( $tensanpham == $tensanpham && $iddanhmuc == $iddanhmuc) {
-                        $thongbao = " sản phẩm Đã Tồn Tại ";
+               
+                    if (kiemtra_sanpham($tensanpham,$iddanhmuc)) {
+                        $thongbao = "Tên sản phẩm đã tồn tại";
                     }
-                    
-                     else if (!preg_match('/^[a-zA-Z0-9_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúý\s]+$/u', $tensanpham)) {
+                     else if (!preg_match('/^[a-zA-Z0-9_ÀÁÂÃĐÈÉÊÌÍÒÓÔÕÙÚỦÝàáâãđèéêìíòóôõùúủý\s]+$/u', $tensanpham)) {
                         $thongbao = "Tên sản phẩm không được chứa ký tự đặc biệt";
                     } else if (strlen($tensanpham) < 2 || strlen($tensanpham) > 100) {
                         $thongbao = "Tên sản phẩm phải có độ dài từ 2 đến 100 ký tự";
-                    }
-                    else if (kiemtra_sanpham($tensanpham,$iddanhmuc)) {
-                        insert_sanpham($tensanpham,$giasanpham,$giamgia,$anhsanpham,$motasanpham,$baohanhsanpham,$masanpham,$ngaydangsanpham,$soluongsanpham,$iddanhmuc);  
-                        $thongbao = " Thêm Thành Công ";
                     }
                     else {
                     insert_sanpham($tensanpham,$giasanpham,$giamgia,$anhsanpham,$motasanpham,$baohanhsanpham,$masanpham,$ngaydangsanpham,$soluongsanpham,$iddanhmuc);  
                     $thongbao = " Thêm Thành Công ";
                     }
-            }
+                }
             
                 $listdanhmuc = load_all_danhmuc();
                 include "sanpham/add.php";
@@ -177,9 +174,17 @@
                     $masanpham = $_POST['masanpham'];
                     $ngaydangsanpham = $_POST['ngaydangsanpham'];
                     $soluongsanpham = $_POST['soluongsanpham'];
+
+                    if (!preg_match('/^[a-zA-Z0-9_ÀÁÂÃĐÈÉÊÌÍÒÓÔÕÙÚỦÝàáâãđèéêìíòóôõùúủý\s]+$/u', $tensanpham)) {
+                        $thongbao = "Tên sản phẩm không được chứa ký tự đặc biệt";
+                    } else if (strlen($tensanpham) < 2 || strlen($tensanpham) > 100) {
+                        $thongbao = "Tên sản phẩm phải có độ dài từ 2 đến 100 ký tự";
+                    }
+                    else {
                     update_sanpham($idsanpham,$tensanpham,$giasanpham,$giamgia,$anhsanpham,$motasanpham,$baohanhsanpham,$masanpham,$ngaydangsanpham,$soluongsanpham,$iddanhmuc);  
                     $thongbao = " Cập Nhật Thành Công ";
                 }
+            }
                 $listdanhmuc = load_all_danhmuc();
                 $listsanpham = load_all_sanpham("",0);
                 include "sanpham/list.php";
@@ -321,6 +326,28 @@
 
                     else if (empty($_POST['sodienthoai'])) {
                         $thongbao = 'Số điện thoại không được để trống';
+                    }
+                    else if (!preg_match('/^[a-zA-Z0-9-]+$/', $tendangnhap)) {
+                        $thongbao = "Tên đăng nhập chứa ký tự đặc biệt";
+                    }
+
+                    // Kiểm tra tên đăng nhập có độ dài từ 2 đến 100 ký tự
+                    else if (strlen($tendangnhap) < 2 || strlen($tendangnhap) > 100) {
+                        $thongbao = "Tên đăng nhập phải có độ dài từ 2 đến 100 ký tự";
+                    }
+
+                    // Kiểm tra mật khẩu có độ dài từ 6 đến 128 ký tự
+                    else if (strlen($matkhau) < 6 || strlen($matkhau) > 128) {
+                        $thongbao = "Mật khẩu phải có độ dài từ 6 đến 128 ký tự";
+                    }
+
+                    // Kiểm tra email có định dạng hợp lệ
+                    else if (!preg_match("/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/", $email)) {
+                        $thongbao = "Email không hợp lệ";
+                    }
+                    // Kiểm tra số điện thoại có đúng định dạng hay không
+                    else if (!preg_match("/^0[0-9]{9,11}$/", $sodienthoai)) {
+                    $thongbao = "Số điện thoại không hợp lệ";
                     }
 
                      else {

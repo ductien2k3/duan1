@@ -7,7 +7,7 @@
         $sql = " delete from san_pham where id = " .$id ;
         pdo_execute($sql);
     }
-    function load_all_sanpham($kyw,$iddanhmuc){
+    function load_all_sanpham($kyw,$iddanhmuc){      
         $sql = "SELECT * FROM san_pham WHERE 1";
         if ($kyw != "") {
             $sql .= " AND name LIKE '%$kyw%'";
@@ -33,7 +33,7 @@
         pdo_execute($sql);
     }
     function kiemtra_sanpham($tensanpham,$iddanhmuc){
-        $sql = "SELECT * FROM `san_pham` WHERE `name` = '$tensanpham' AND id_danhmuc != '$iddanhmuc'";
+        $sql = "SELECT * FROM `san_pham` WHERE `name` = '$tensanpham'";
         $sp = pdo_query_one($sql);
         return $sp;
     }
