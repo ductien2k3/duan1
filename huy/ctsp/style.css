@@ -1247,13 +1247,15 @@ span.fs-15.text-64.sale_Item{
 .nice-number{
     display:inline-flex;
     justify-content:stretch;
+    padding: 4px 16px;
 }
-.nice-number input{
+.nice-number p{
     vertical-align:middle;
-    -moz-appearance:textfield;
     box-sizing:content-box;
     margin:0;
     text-align:center;
+    height: 22px;
+    width: 33.5px;
 }
 .nice-number button{
     width:25px;
@@ -1536,3 +1538,11 @@ img.lazyload{padding-bottom:15px;}
 .owl-carousel .owl-item img{display:block;width:100%;}
 .owl-carousel.owl-drag .owl-item{-ms-touch-action:pan-y;touch-action:pan-y;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
 
+.selected {
+    background-color: #dc3545;
+    color: #fff;
+}
+#selectable-box.selected {
+    background-color: #dc3545; 
+    color: #fff; 
+}
