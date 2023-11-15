@@ -12,8 +12,7 @@
         $listdanhmuc = pdo_query($sql);
         return $listdanhmuc;
     }
-    
-    
+
     function load_one_danhmuc($id){
         $sql = "SELECT * FROM `danh_muc` WHERE id = $_GET[id]";
         $dm = pdo_query_one($sql);

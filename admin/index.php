@@ -6,6 +6,7 @@
     include "../model/sanpham.php";
     include "../model/taikhoan.php";
     include "../model/chitietsanpham.php";
+    include "../model/binhluan.php";
     // controler
 
     if (isset($_GET['act'])) {
@@ -14,7 +15,7 @@
 
             // phần danh mục
             case 'danhmuc':
-
+                
             $listdanhmuc = load_all_danhmuc();
                 include "danhmuc/list.php";
                 break;
@@ -362,8 +363,36 @@
 
             //bình luận
             case 'dsbl':
+                $listbinhluan = load_all_binhluan();
                 include 'binhluan/list.php';
                 break;
+
+            case 'deletebl':
+                if(isset($_GET['id']) && ($_GET['id']>0)){
+                    delete_binhluan($_GET['id']);
+                }
+                $listbinhluan = load_all_binhluan();
+                include 'binhluan/list.php';
+                break;
+
+            case 'updatebl':
+                if(isset($_GET['id']) && ($_GET['id']>0)){       
+                    $bl = load_one_binhluan($_GET['id']); 
+                }
+                include 'binhluan/update.php';
+                break;
+
+            case 'suabl':
+                if(isset($_POST['capnhat']) && $_POST['capnhat']){
+                    $idbinhluan = $_POST['idbinhluan'];
+                    $noidung = $_POST['noidung'];
+                    update_binhluan($idbinhluan, $noidung);
+                    $thongbao = " Cập Nhật Thành Công ";
+                }
+                $listbinhluan = load_all_binhluan();
+                include 'binhluan/update.php';
+                break;
+
 
             default:
                 include "home.php";
