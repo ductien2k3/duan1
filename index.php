@@ -1,6 +1,7 @@
 <?php
+    session_start();
     include 'view/header.php';
-    include 'model/taikhoan.php';
+    include "model/taikhoan.php";
     include 'model/pdo.php';
 
     if (isset($_GET['act'])) {
@@ -16,7 +17,6 @@
             if(check_tendangki($tendangnhap)){
                 $thongbao = "Tên đăng nhập đã tồn tại";
             }
-
             // Kiểm tra số điện thoại đã tồn tại hay chưa
             else if(check_sodienthoai($sodienthoai)){
                 $thongbao = "Số điện thoại đã tồn tại";
@@ -53,13 +53,28 @@
             // Nếu tất cả các kiểm tra đều thành công thì thêm tài khoản vào cơ sở dữ liệu
             else {
                 insert_taikhoan($tendangnhap,$matkhau,$email,$sodienthoai);
-                $thongbao = "Đăng kí thành công";
+                $thongbao = "Đăng kí thành công vui lòng đăng nhập";
             }
         }
-
         include "view/taikhoan/dangky.php";
         break;
-        
+
+        case 'dangnhap':
+            if (isset($_POST['dangnhap']) && $_POST['dangnhap']) {
+                $tendangnhap = $_POST['tendangnhap'];
+                $matkhau = $_POST['matkhau'];
+                $checkuser = check_user($tendangnhap,$matkhau);
+                if(is_array($checkuser)){
+                    $_SESSION['user_name'] = $checkuser;
+                    // header('location:index.php');
+                    $thongbao = "bạn đã đăng nhập thành công";
+                }   else {
+                    $thongbao = " tài khoản không tồn tại vui lòng kiểm tra hoặc đăng kí"; 
+                }
+            }
+            include "view/taikhoan/dangky.php";
+            break;
+
         case 'lienhe':
             include "view/lienhe.php";
             break;
@@ -67,10 +82,9 @@
         default:
             include "view/home.php";
             break;
-
-    }
-}else {
-    include "view/home.php";
-}
-include "view/footer.php";
+        }
+        }else {
+        include "view/home.php";
+        }
+        include "view/footer.php";
 ?>

@@ -45,4 +45,9 @@ function update_taikhoan($idtaikhoan,$tendangnhap,$matkhau,$email,$sodienthoai,$
    }
    pdo_execute($sql);
 }
+function check_user($tendangnhap,$matkhau){
+    $sql = "SELECT * FROM `tai_khoan` WHERE user_name = '$tendangnhap' AND pass_word = '$matkhau' ";
+    $tk = pdo_query_one($sql);
+    return $tk;
+}
 ?>

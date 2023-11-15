@@ -149,11 +149,11 @@
                                             <a href="about-us.html">About Us</a>
                                         </li>
                                         <li>
-                                            <a href="contact-us.html">Liên Hệ</a>
+                                            <a href="index.php?act=lienhe">Liên Hệ</a>
                                         </li>
                                         <li>
                                             <ion-icon name="person-outline"></ion-icon>
-                                            <a href="index.php?act=dangky">Đăng Ký</a>
+                                            <a href="index.php?act=dangky">Đăng Ký/Đăng Nhập</a>
                                         </li>
                                     </ul>
                                 </nav>
