@@ -10,7 +10,7 @@
     function load_all_sanpham($kyw,$iddanhmuc){      
         $sql = "SELECT * FROM san_pham WHERE 1";
         if ($kyw != "") {
-            $sql .= " AND name LIKE '%$kyw%'";
+            $sql .= " AND `name` LIKE '%$kyw%'";
         }
         if ($iddanhmuc > 0) {
             $sql .= " AND id_danhmuc = $iddanhmuc";

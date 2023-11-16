@@ -132,7 +132,6 @@
                     $thongbao = " Thêm Thành Công ";
                     }
                 }
-            
                 $listdanhmuc = load_all_danhmuc();
                 include "sanpham/add.php";
                 break;
@@ -191,21 +190,39 @@
                 include "sanpham/list.php";
                 break;
 
-                case 'chitietsp':
-                    include "sanpham/chitietsanpham/list.php";
-                    break;
+            //chi tiết sản phẩm
 
-                case 'addctsp':
-                    if(isset($_POST['themmoi']) && $_POST['themmoi']){
-                        $idsanpham = $_POST['idsanhpham'];
+            case 'chitietsp':
+                $id_sp = $_GET['id']; // Retrieve the product ID from the URL
+                $listsanpham = load_all_sanpham("",0);
+                $listctsp = load_all_chitietsanpham($id_sp);
+                include "sanpham/chitietsanpham/list.php";
+                break;
+
+            case 'addctsp':
+                if (isset($_GET['id_sp'])) {
+                            $id_sp = $_GET['id_sp'];
+                            $ctsp1 = load_all_chitietsanpham($id_sp);
+                if (isset($_POST['themmoi']) && $_POST['themmoi']) {
+                    
+                            // tiếp tục xử lý
                         $color = $_POST['color'];
                         $size = $_POST['size'];
                         $soluong = $_POST['soluong'];
-                        insert_chitietsanpham($idsanpham,$color,$size,$soluong);
-                        $thongbao = " Thêm Thành Công ";
+                        insert_chitietsanpham($color, $size, $soluong, $id_sp);
+                        $thongbao = "Thêm Thành Công";
+                        } else {
+                            $thongbao = " sai";
+                            
+                        }
+                    
+                  
+                        
                     }
+
                     include "sanpham/chitietsanpham/add.php";
                     break;
+                
                 
                 // tài khoản
                 case 'dstk':
