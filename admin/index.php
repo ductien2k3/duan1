@@ -202,14 +202,13 @@
                 $listctsp = load_all_chitietsanpham($id_sp);
                 $listsanpham = load_all_sanpham("",0);
               
-              
                 include "sanpham/chitietsanpham/list.php";
                 break;
 
-                case 'addctsp':
-                if(isset($_GET['id_sp']) && ($_GET['id_sp']>0)){
-                        $id_sp = $_GET['id_sp'];
-                        $listsanphamct = load_tatca_sanphamct( $id_sp); 
+            case 'addctsp':
+                if(isset($_GET['id']) && ($_GET['id']>0)){
+                        $id_sp = $_GET['id'];
+                        $listsanphamct = load_tatca_sanphamct($id_sp);
                     }
                 if (isset($_POST['themmoi']) && $_POST['themmoi']) {        
                         $id_sp = $_POST['id_sp'];        
@@ -218,11 +217,46 @@
                         $soluong = $_POST['soluong'];
                         insert_chitietsanpham($color, $size, $soluong, $id_sp);
                         $thongbao = "Thêm Thành Công";
-                        header('location: index.php?act=chitietsp&id_sp='.$id_sp);
+                        //header('location: index.php?act=chitietsp&id_sp='.$id_sp);
                     }
                     include "sanpham/chitietsanpham/add.php";
                     break;
-                
+
+            case 'xoactsp':
+                if(isset($_GET['id']) && ($_GET['id']>0)){
+                    $id_sp = $_GET['id'];
+                    $listsanphamct = load_tatca_sanphamct($id_sp); 
+                }
+                if(isset($_GET['id']) && ($_GET['id']>0)){
+                    $id = $_GET['id'];
+                    delete_chitietsanpham($id);
+                    $listsanphamct = load_tatca_sanphamct($id_sp); 
+                    header("location: {$_SERVER['HTTP_REFERER']}");
+                    exit();
+                     // Đảm bảo dừng thực thi sau khi chuyển hướng
+                    }
+                    break;
+
+            case 'updatectsp':
+                if(isset($_GET['id']) && ($_GET['id']>0)){
+                    $id_sp = $_GET['id'];
+                    $listsanphamct = load_tatca_sanphamct($id_sp); 
+                }
+                if(isset($_GET['id']) && ($_GET['id']>0)){
+                    $id = $_GET['id'];
+                    $onectsp = load_one_chitietpham($id);
+                }
+                $listsanpham = load_all_sanpham("",0);
+                include "sanpham/chitietsanpham/update.php";
+                break;
+                    
+                    
+                        
+                    
+                    
+                    
+    
+                    
                 
                 // tài khoản
                 case 'dstk':

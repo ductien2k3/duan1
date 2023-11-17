@@ -15,5 +15,13 @@
         $listsanphamct = pdo_query($sql);
         return $listsanphamct;
     }
-    
+    function delete_chitietsanpham($id) {
+        $sql = "DELETE FROM chi_tiet_sp WHERE id = $id";
+        pdo_execute($sql);
+    }
+    function load_one_chitietpham($id) {
+        $sql = "SELECT * FROM chi_tiet_sp WHERE id = $id";
+        $onectsp = pdo_query($sql);
+        return $onectsp;
+    }
 ?>
