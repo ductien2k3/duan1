@@ -7,6 +7,8 @@
     include "../model/taikhoan.php";
     include "../model/chitietsanpham.php";
     include "../model/binhluan.php";
+
+
     // controler
 
     if (isset($_GET['act'])) {
@@ -193,33 +195,31 @@
             //chi tiết sản phẩm
 
             case 'chitietsp':
-                $id_sp = $_GET['id']; // Retrieve the product ID from the URL
-                $listsanpham = load_all_sanpham("",0);
+                if(isset($_GET['id_sp']) && ($_GET['id_sp']>0)){
+                    $id_sp = $_GET['id_sp'];
+                   
+                }
                 $listctsp = load_all_chitietsanpham($id_sp);
+                $listsanpham = load_all_sanpham("",0);
+              
+              
                 include "sanpham/chitietsanpham/list.php";
                 break;
 
-            case 'addctsp':
-                if (isset($_GET['id_sp'])) {
-                            $id_sp = $_GET['id_sp'];
-                            $ctsp1 = load_all_chitietsanpham($id_sp);
-                if (isset($_POST['themmoi']) && $_POST['themmoi']) {
-                    
-                            // tiếp tục xử lý
+                case 'addctsp':
+                if(isset($_GET['id_sp']) && ($_GET['id_sp']>0)){
+                        $id_sp = $_GET['id_sp'];
+                        $listsanphamct = load_tatca_sanphamct( $id_sp); 
+                    }
+                if (isset($_POST['themmoi']) && $_POST['themmoi']) {        
+                        $id_sp = $_POST['id_sp'];        
                         $color = $_POST['color'];
                         $size = $_POST['size'];
                         $soluong = $_POST['soluong'];
                         insert_chitietsanpham($color, $size, $soluong, $id_sp);
                         $thongbao = "Thêm Thành Công";
-                        } else {
-                            $thongbao = " sai";
-                            
-                        }
-                    
-                  
-                        
+                        header('location: index.php?act=chitietsp&id_sp='.$id_sp);
                     }
-
                     include "sanpham/chitietsanpham/add.php";
                     break;
                 

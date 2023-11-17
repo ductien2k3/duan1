@@ -39,7 +39,7 @@
           extract($sp);
           $xoasp = "index.php?act=deletesp&id=$id";
           $suasp = "index.php?act=updatesp&id=$id";
-          $ctsp = "index.php?act=chitietsp&id=$id";
+          $ctsp = "index.php?act=chitietsp&id_sp=$id";
           $hinhpath = "../upload/".$image;
           if(is_file($hinhpath)){
             $anhsanpham = "<img src='$hinhpath' width='50px'>";

@@ -13,8 +13,7 @@
           extract($ctsp);
           $xoactsp = "index.php?act=deletectsp&id=$id";
           $suactsp = "index.php?act=updatectsp&id=$id";
- 
-          
+        
           $tensanpham = "";
           foreach ($listsanpham as $sp) {
           if ($sp['id'] == $id_sp) {
@@ -34,7 +33,7 @@
         }
         ?>
       </table>
-      <button class="btn-adddm"><a href="index.php?act=addctsp&id=<?php echo $id_sp ?>" class="adddm">Thêm</button> <button class="btn-adddm"><a href="index.php?act=listsp" class="adddm"> Quay lại sản phẩm</button>
+      <button class="btn-adddm"><a href="index.php?act=addctsp&id_sp=<?=$id_sp?>" class="adddm">Thêm</button> <button class="btn-adddm"><a href="index.php?act=listsp" class="adddm"> Quay lại sản phẩm</button>
  
   </div>
   </div>
