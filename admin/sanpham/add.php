@@ -16,7 +16,7 @@
     <label class="form-label">Giá sản phẩm</label>
     <input type="number" min="0" class="tendanhmuc" name="giasanpham" required placeholder="nhập vào giá tiền">
     <label class="form-label">Đang Giảm Giá</label>
-    <input type="number" min="0" class="tendanhmuc" name="giamgia" required placeholder="nhập vào giảm giá">
+    <input type="number" min="0" max="100" class="tendanhmuc" name="giamgia" required placeholder="nhập vào giảm giá">
     <label class="form-label">Ảnh sản phẩm</label>
     <input type="file" class="tendanhmuc" name="anhsanpham" required placeholder="nhập vào ảnh">
     <label class="form-label">Mô tả sản phẩm</label>

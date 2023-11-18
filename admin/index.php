@@ -181,6 +181,8 @@
                         $thongbao = "Tên sản phẩm không được chứa ký tự đặc biệt";
                     } else if (strlen($tensanpham) < 2 || strlen($tensanpham) > 100) {
                         $thongbao = "Tên sản phẩm phải có độ dài từ 2 đến 100 ký tự";
+                    } else if (kiemtra_sanpham($tensanpham,$iddanhmuc)) {
+                        $thongbao = "Tên sản phẩm đã tồn tại";
                     }
                     else {
                     update_sanpham($idsanpham,$tensanpham,$giasanpham,$giamgia,$anhsanpham,$motasanpham,$baohanhsanpham,$masanpham,$ngaydangsanpham,$soluongsanpham,$iddanhmuc);  
@@ -205,6 +207,7 @@
                 include "sanpham/chitietsanpham/list.php";
                 break;
 
+            // chưa validate
             case 'addctsp':
                 if(isset($_GET['id']) && ($_GET['id']>0)){
                         $id_sp = $_GET['id'];
@@ -214,7 +217,7 @@
                         $id_sp = $_POST['id_sp'];        
                         $color = $_POST['color'];
                         $size = $_POST['size'];
-                        $soluong = $_POST['soluong'];
+                        $soluong = $_POST['soluong'];              
                         insert_chitietsanpham($color, $size, $soluong, $id_sp);
                         $thongbao = "Thêm Thành Công";
                         //header('location: index.php?act=chitietsp&id_sp='.$id_sp);
@@ -249,6 +252,26 @@
                 $listsanpham = load_all_sanpham("",0);
                 include "sanpham/chitietsanpham/update.php";
                 break;
+            
+                //chưa validate
+            case 'capnhatctsp':
+                if(isset($_GET['id']) && ($_GET['id']>0)){
+                    $id_sp = $_GET['id'];
+                    $listsanphamct = load_tatca_sanphamct($id_sp); 
+                }
+                if(isset($_POST['capnhat']) && ($_POST['capnhat'])){
+                    $id = $_POST['id'];
+                    $id_sp = $_POST['id_sp'];        
+                    $color = $_POST['color'];
+                    $size = $_POST['size'];
+                    $soluong = $_POST['soluong'];
+                    updatectsp($id,$color, $size, $soluong, $id_sp);
+                    header('location: index.php?act=chitietsp&id_sp='.$id_sp);
+                    $thongbao ='cập nhật thành công';
+                }
+                    include "sanpham/chitietsanpham/update.php";
+                    break;
+            
                     
                     
                         
@@ -414,6 +437,8 @@
 
             //bình luận
             case 'dsbl':
+                $listtaikhoan = load_all_taikhoan(0);
+                $listsanpham = load_all_sanpham("",0);
                 $listbinhluan = load_all_binhluan();
                 include 'binhluan/list.php';
                 break;
@@ -437,6 +462,11 @@
                 if(isset($_POST['capnhat']) && $_POST['capnhat']){
                     $idbinhluan = $_POST['idbinhluan'];
                     $noidung = $_POST['noidung'];
+                }
+                else if (empty($_POST['noidung'])) {
+                    $thongbao = 'nội dung không được để trống';
+                }
+                else {
                     update_binhluan($idbinhluan, $noidung);
                     $thongbao = " Cập Nhật Thành Công ";
                 }

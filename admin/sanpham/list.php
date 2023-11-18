@@ -25,6 +25,7 @@
           <th>Tên sản phẩm</th>
           <th>Giá</th>
           <th>Đang Giảm Giá</th>
+          <th>Giá Bán</th>
           <th>Ảnh</th>
           <th>Mô Tả</th>
           <th>Bảo Hành</th>
@@ -53,6 +54,7 @@
             $categoryName = $danhmuc['name'];
             break;
           }
+          $giaban = $price - ($price * $giam_gia) / 100;
           }
 
           echo '<tr>
@@ -61,6 +63,7 @@
           <td>'.$name.'</td>
           <td>'.$price.'</td>
           <td>'.$giam_gia.'%</td>
+          <td>'.$giaban.'</td>
           <td>'.$anhsanpham.'</td>
           <td>'.$mo_ta.'</td>
           <td>'.$bao_hanh.'</td>

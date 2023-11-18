@@ -1,4 +1,7 @@
 <!-- ...:::: Start Breadcrumb Section:::... -->
+<?php
+    include 'view/header.php';
+?>
 <div class="breadcrumb-section breadcrumb-bg-color--golden">
         <div class="breadcrumb-wrapper">
             <div class="container">

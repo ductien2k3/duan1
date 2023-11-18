@@ -27,5 +27,10 @@
         $tt = pdo_query_one($sql);
         return $tt;
     }
+    function load_all_home(){
+        $sql = "SELECT * FROM `danh_muc` ORDER BY `id` DESC";
+        $listdanhmuc = pdo_query($sql);
+        return $listdanhmuc;
+    }
     
 ?>

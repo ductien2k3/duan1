@@ -37,5 +37,16 @@
         $sp = pdo_query_one($sql);
         return $sp;
     }
+    function load_all_sanpham_home(){
+        $sql = "SELECT * FROM san_pham WHERE 1 ORDER BY id DESC ";
+        $listsanpham = pdo_query($sql);
+        return $listsanpham;
+    }
+
+    function load_all_sanphambanchay_home(){
+        $sql = "SELECT * FROM san_pham WHERE 1 ORDER BY view DESC ";
+        $listsanpham = pdo_query($sql);
+        return $listsanpham;
+    }
     
 ?>

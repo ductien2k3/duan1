@@ -24,4 +24,13 @@
         $onectsp = pdo_query($sql);
         return $onectsp;
     }
+    function updatectsp($id,$color, $size, $soluong, $id_sp) {
+        $sql = "UPDATE `chi_tiet_sp` SET `color`='$color',`size`='$size',`so_luong`='$soluong',`id_sp`='$id_sp' Where id = $id";
+        pdo_execute($sql);
+    }
+    function check_chitietsanpham($color, $size, $id_sp) {
+        $sql = "SELECT * FROM chi_tiet_sp WHERE color = '$color' AND `size` = '$size' AND id_sp = '$id_sp' ";
+        $checkctsp = pdo_query($sql);
+        return $checkctsp;   
+    }
 ?>

@@ -1,8 +1,15 @@
 <?php
-    session_start();
-    include 'view/header.php';
     include "model/taikhoan.php";
     include 'model/pdo.php';
+    include 'model/sanpham.php';
+    include 'model/danhmuc.php';
+    include 'global.php';
+
+    $dsdm = load_all_home();
+    $spnew = load_all_sanpham_home();
+    $dsbc = load_all_sanphambanchay_home();
+    
+
 
     if (isset($_GET['act'])) {
         $act = $_GET['act'];
@@ -84,6 +91,7 @@
             break;
         }
         }else {
+        include "view/header.php";
         include "view/home.php";
         }
         include "view/footer.php";

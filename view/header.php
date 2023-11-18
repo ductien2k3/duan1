@@ -136,6 +136,24 @@
                                                         Right</a></li>
                                             </ul>
                                         </li>
+                                    <!-- Danh mục-->
+                                        <li class="has-dropdown">
+                                            <a href="">Danh mục <i
+                                                    class="fa fa-angle-down"></i></a>
+                                            <!-- Sub Menu -->
+                                            <ul class="sub-menu">
+                                                <?php
+                                                    foreach($dsdm as $dm){
+                                                        extract($dm);
+                                                        $linkdm = "index.php?act=sanpham&iddm=$id ";
+                                                        echo '<li><a href="'.$linkdm.'">'.$name.'</a>
+                                                        </li>';
+                                                    }
+                                                ?>
+                                                
+                                            </ul>
+                                        </li>
+                                    <!-- Hết Danh mục-->
                                         <li class="has-dropdown">
                                             <a href="#">Pages <i class="fa fa-angle-down"></i></a>
                                             <!-- Sub Menu -->
