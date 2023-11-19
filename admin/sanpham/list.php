@@ -54,9 +54,9 @@
             $categoryName = $danhmuc['name'];
             break;
           }
-          $giaban = $price - ($price * $giam_gia) / 100;
+          
           }
-
+          $giaban = $price - ($price * $giam_gia) / 100;
           echo '<tr>
           <td>'.$categoryName.'</td>
           <td>'.$id.'</td>

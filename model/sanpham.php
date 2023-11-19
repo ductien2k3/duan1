@@ -48,5 +48,40 @@
         $listsanpham = pdo_query($sql);
         return $listsanpham;
     }
+    function load_one_home($id){
+        $sql = "SELECT * FROM `san_pham` WHERE id = $id";
+        $sp = pdo_query_one($sql);
+        return $sp;
+    }
+    function load_sanpham_cungloai($iddanhmuc ,$id){
+        $sql = "SELECT * FROM `san_pham` WHERE id_danhmuc = $iddanhmuc AND id <> $id";
+        $sp = pdo_query($sql);
+        return $sp;
+    }
+
+    function load_all_sanpham_theo_danhmuc($kyw,$iddm){      
+        $sql = "SELECT * FROM san_pham WHERE 1";
+        if ($kyw != "") {
+            $sql .= " AND `name` LIKE '%$kyw%'";
+        }
+        if ($iddm > 0) {
+            $sql .= " AND id_danhmuc = $iddm";
+        }
+        $sql .= " ORDER BY name";
+        $listsanpham = pdo_query($sql);
+        return $listsanpham;
+    }
+
+    function load_tendanhmuc($iddm){
+        if($iddm >0 ){
+        $sql = "SELECT * FROM `danh_muc` WHERE id = $iddm";
+        $dm = pdo_query_one($sql);
+        extract($dm);
+        return $name;
+        } else {
+            return "";
+        }
+        
+    }
     
 ?>

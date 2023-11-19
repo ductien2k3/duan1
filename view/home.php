@@ -262,7 +262,7 @@
             extract($sp);
             $hinh = $img_path.$image;
             $giaban = $price - ($price * $giam_gia) / 100;
-        
+            $linksp = "index.php?act=sanphamct&idsp=".$id;
             echo '
            
     
@@ -272,12 +272,12 @@
                                     <!-- Start Product Default Single Item -->
                                     <div class="product-default-single-item product-color--golden swiper-slide">
                                         <div class="image-box">
-                                            <a href="product-details-default.html" class="image-link">
+                                            <a href="'.$linksp.'" class="image-link">
                                                 <img src="'.$hinh.'" alt="" >
                                                 <img src="'.$hinh.'" alt="">
                                             </a>
                                             <div class="tag">
-                                                <span>sale</span>
+                                                <span>sale '.$giam_gia.'%</span>
                                             </div>
                                             <div class="action-link">
                                                 <div class="action-link-left">
@@ -295,7 +295,7 @@
                                         </div>
                                         <div class="content">
                                             <div class="content-left">
-                                                <h6 class="title"><a href="product-details-default.html">'.$name.'
+                                                <h6 class="title"><a href="'.$linksp.'">'.$name.'
                                                        </a></h6>
                                                 <ul class="review-star">
                                                     <li class="fill"><i class="ion-android-star"></i></li>
@@ -306,7 +306,7 @@
                                                 </ul>
                                             </div>
                                             <div class="content-right">
-                                                <span class="price">$'.$giaban.'</span>
+                                                <span class="price"><del>$'.$price.'</del> $'.$giaban.'</span></span>
                                             </div>
 
                                         </div>
@@ -399,17 +399,17 @@
                                                         data-bs-target="#modalAddcart">Thêm vào giỏ hàng</a>
                                                 </div>
                                                 <div class="action-link-right">
-                                                    <a href="#" data-bs-toggle="modal"
+                                                    <a href="'.$linksp.'" data-bs-toggle="modal"
                                                         data-bs-target="#modalQuickview"><i
                                                             class="icon-magnifier"></i></a>
-                                                    <a href="wishlist.html"><i class="icon-heart"></i></a>
-                                                    <a href="compare.html"><i class="icon-shuffle"></i></a>
+                                                    <a href=""><i class="icon-heart"></i></a>
+                                                    <a href=""><i class="icon-shuffle"></i></a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="content">
                                             <div class="content-left">
-                                                <h6 class="title"><a href="product-details-default.html">'.$name.'
+                                                <h6 class="title"><a href="'.$linksp.'">'.$name.'
                                                        </a></h6>
                                                 <ul class="review-star">
                                                     <li class="fill"><i class="ion-android-star"></i></li>

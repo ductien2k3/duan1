@@ -27,43 +27,7 @@
     <div class="customer-login">
         <div class="container">
             <div class="row">
-                <!--login area start-->
-                <div class="col-lg-6 col-md-6">
-                    <div class="account_form" data-aos="fade-up" data-aos-delay="0">
-                        <h3>Đăng Ký</h3>
-                        <form action="index.php?act=dangky" method="POST">
-                            <div class="default-form-box">
-                                <label>Tên Đăng Nhập<span>*</span></label>
-                                <input type="text" name="tendangnhap" required>
-                            </div>
-                            <div class="default-form-box">
-                                <label>Mật Khẩu <span>*</span></label>
-                                <input type="password" name="matkhau" required>
-                            </div>
-                            <div class="default-form-box">
-                                <label>Email <span>*</span></label>
-                                <input type="email" name="email" required>
-                            </div>
-                            <div class="default-form-box">
-                                <label>Số điện thoại <span>*</span></label>
-                                <input type="text" name="sodienthoai" required>
-                            </div>
-                            <div class="login_submit">
-                                <button class="btn btn-md btn-black-default-hover mb-4" type="submit" name="dangky">Đăng Kí</button>
-                                <label class="checkbox-default mb-4" for="offer">
-                                    <input type="checkbox" id="offer">
-                                    <span> Nhớ mật khẩu </span>
-                                </label>
-                                <a href="#">Quên Mật Khẩu</a>
-                                <?php
-                                if(isset($thongbao) && ($thongbao!="")) {
-                                    echo $thongbao;
-                                }
-                            ?>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+               
                 <!--login area start-->
 
                 <!--register area start-->

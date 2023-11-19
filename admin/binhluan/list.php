@@ -7,7 +7,7 @@
           <th>Id bình luận</th>
           <th>Nội dung</th>
           <th>Id người dùng</th>
-          <th>Id sản phẩm</th>
+          <th>Tên sản phẩm</th>
           <th>Ngày bình luận</th>
         </tr>
         

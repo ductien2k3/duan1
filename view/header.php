@@ -173,6 +173,7 @@
                                             <ion-icon name="person-outline"></ion-icon>
                                             <a href="index.php?act=dangky">Đăng Ký/Đăng Nhập</a>
                                         </li>
+                                        
                                     </ul>
                                 </nav>
                             </div>
@@ -278,15 +279,7 @@
                 <!-- Start Mobile Menu Nav -->
                 <div class="offcanvas-menu">
                     <ul>
-                        <li>
-                            <a href="#"><span>Home</span></a>
-                            <ul class="mobile-sub-menu">
-                                <li><a href="index.html">Home 1</a></li>
-                                <li><a href="index-2.html">Home 2</a></li>
-                                <li><a href="index-3.html">Home 3</a></li>
-                                <li><a href="index-4.html">Home 4</a></li>
-                            </ul>
-                        </li>
+
                         <li>
                             <a href="#"><span>Shop</span></a>
                             <ul class="mobile-sub-menu">
@@ -595,10 +588,10 @@
 
     <!-- Start Offcanvas Search Bar Section -->
     <div id="search" class="search-modal">
-        <button type="button" class="close">×</button>
-        <form>
-            <input type="search" placeholder="type keyword(s) here" />
-            <button type="submit" class="btn btn-lg btn-golden">Search</button>
+        <button type="button" class="close">x</button>
+        <form action="index.php?act=timkiem" method="post" class="search-form">
+            <input type="search" placeholder="nhập từ khoá tại đây" name="kyw" />
+            <button type="submit" class="btn btn-lg btn-golden" name = "timkiem" >Tìm Kiếm</button>
         </form>
     </div>
     <!-- End Offcanvas Search Bar Section -->

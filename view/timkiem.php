@@ -9,13 +9,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h3 class="breadcrumb-title"><?=$tendanhmuc?></h3>
+                    <h3 class="breadcrumb-title">Kết Quả Tìm Kiếm</h3>
                     <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
                         <nav aria-label="breadcrumb">
                             <ul>
                                 <li><a href="index.php">Trang Chủ</a></li>
-                                <li><a href="shop-grid-sidebar-left.html">Shop</a></li>
-                                <li class="active" aria-current="page"><?=$tendanhmuc?></li>
+                                <li><a href="#">Tìm Kiếm</a></li>
+                                <li class="active" aria-current="page">Kết Quả</li>
                             </ul>
                         </nav>
                     </div>
