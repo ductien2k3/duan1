@@ -164,7 +164,7 @@
                                             </ul>
                                         </li>
                                         <li>
-                                            <a href="about-us.html">About Us</a>
+                                            <a href="index.php?act=thongtin">Thông Tin Về Chúng Tôi</a>
                                         </li>
                                         <li>
                                             <a href="index.php?act=lienhe">Liên Hệ</a>
