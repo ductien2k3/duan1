@@ -134,7 +134,7 @@
                                 <div class="variable-single-item ">
                                     <span>Số Lượng</span>
                                     <div class="product-variable-quantity">
-                                        <input min="1" max="'.$so_luong.'" value="1" type="number">
+                                        <input min="1" max="20" step="1"  value="1" oninput="if(this.value >20 ) this.value = 20 " onblur="checkMaxValue(this)" type="number">
                                     </div>
                                 </div>
 

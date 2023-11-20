@@ -164,15 +164,36 @@
                                             </ul>
                                         </li>
                                         <li>
-                                            <a href="index.php?act=thongtin">Thông Tin Về Chúng Tôi</a>
+                                            <a href="index.php?act=gioithieu">Giới Thiệu</a>
                                         </li>
                                         <li>
                                             <a href="index.php?act=lienhe">Liên Hệ</a>
                                         </li>
-                                        <li>
-                                            <ion-icon name="person-outline"></ion-icon>
-                                            <a href="index.php?act=dangky">Đăng Ký/Đăng Nhập</a>
+                                        <!-- Dang nhap -->
+                                        <?php 
+                                            if(isset($_SESSION['user'])){
+                                                extract($_SESSION['user']);
+                                               
+                                        ?>  
+                                            <li class="has-dropdown">
+                                            <a href="index.php?act=thongtin"><?=$user_name?><i class="fa fa-angle-down"></i></a>
+                                            
+                                            <ul class="sub-menu">
+                                                <li><a href="index.php?act=quenmk">Quên mật Khẩu</a></li>
+                                                <li><a href="index.php?act=edit_taikhoan">Cập Nhật Thông Tin</a></li>
+                                                <li><a href="index.php?act=thoat">Thoát</a></li>
+                                            </ul>
                                         </li>
+                                        <?php
+                                            } else {
+                                        ?>
+                                            <li>
+                                            <a href="index.php?act=dangky">Đăng Ký/Đăng Nhập</a>
+                                            </li>
+                                        <?php
+                                            }
+                                        ?>
+                                        
                                         
                                     </ul>
                                 </nav>

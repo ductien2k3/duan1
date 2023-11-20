@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     include "model/taikhoan.php";
     include 'model/pdo.php';
     include 'model/sanpham.php';
@@ -72,14 +74,36 @@
                 $matkhau = $_POST['matkhau'];
                 $checkuser = check_user($tendangnhap,$matkhau);
                 if(is_array($checkuser)){
-                    $_SESSION['user_name'] = $checkuser;
-                    // header('location:index.php');
+                    $_SESSION['user'] = $checkuser;
                     $thongbao = "bạn đã đăng nhập thành công";
+                    header('location:index.php');
                 }   else {
                     $thongbao = " tài khoản không tồn tại vui lòng kiểm tra hoặc đăng kí"; 
                 }
             }
             include "view/taikhoan/dangky.php";
+            break;
+        // cập nhật tài khoản
+        case 'edit_taikhoan':
+                if(isset($_POST['capnhat']) && ($_POST['capnhat'])){
+                    $user_name = $_POST['user_name'];
+                    $pass_word = $_POST['pass_word'];
+                    $email = $_POST['email'];
+                    $tel = $_POST['tel'];
+                    $address = $_POST['address'];
+                    $id = $_POST['id'];
+      
+                    capnhap_taikhoan_home($id,$user_name,$pass_word,$email,$tel,$address);              
+                    $_SESSION['user'] = check_user($user_name,$pass_word);
+                    header("Location:index.php?act=edit_taikhoan");
+                    $thongbao = 'Cập nhật thành công';
+                    }        
+            include "view/taikhoan/edit_taikhoan.php";
+            break;
+
+        // thông tin tài khoản
+        case 'thongtin':
+            include "view/taikhoan/thongtin.php";
             break;
 
         case 'lienhe':
@@ -134,9 +158,10 @@
                 break;
 
         
-        case 'thongtin':
-            include "view/thongtin.php";
+        case 'gioithieu':
+            include "view/gioithieu.php";
             break;
+
     
         default:
             include "view/home.php";

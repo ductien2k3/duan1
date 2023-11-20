@@ -50,4 +50,9 @@ function check_user($tendangnhap,$matkhau){
     $tk = pdo_query_one($sql);
     return $tk;
 }
+function capnhap_taikhoan_home($id,$user_name,$pass_word,$email,$tel,$address){
+   $sql = " UPDATE `tai_khoan` SET `user_name`='$user_name',`pass_word`='$pass_word',`email`='$email',`tel`='$tel',`address`='$address' WHERE id = $id ";
+   pdo_execute($sql);
+   echo $sql;
+}
 ?>
