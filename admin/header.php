@@ -14,7 +14,7 @@
   <div class="main">
     <div class="sidebar">
       <ul class="menu">
-        <li><a href="index.php">Trang Chủ</a></li>
+        <li><a href="../index.php">Trang Chủ</a></li>
         <li><a href="index.php?act=danhmuc">Danh Mục</a></li>
         <li><a href="index.php?act=listsp">Sản Phẩm</a></li>
         <li><a href="index.php?act=dstk">Tài Khoản</a></li>

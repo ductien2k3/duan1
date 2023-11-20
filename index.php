@@ -100,7 +100,26 @@
                     }        
             include "view/taikhoan/edit_taikhoan.php";
             break;
+        // quên mật khẩu
+        case 'quenmk':
+            if(isset($_POST['guiemail']) && ($_POST['guiemail'])){
+                $email = $_POST['email'];
+                $checkemail = check_email($email);
+            if(is_array($checkemail)){
+                $thongbao = " mật khẩu của bạn là " .$checkemail['pass_word'];
+            } else {
+                $thongbao = " email này không tồn tại";
+            }
+        }
+            include "view/taikhoan/quenmk.php";
+            break;
 
+        // thoát tài khoản
+        case 'thoat':
+            session_unset();
+            header('location:index.php');
+            break;
+            
         // thông tin tài khoản
         case 'thongtin':
             include "view/taikhoan/thongtin.php";

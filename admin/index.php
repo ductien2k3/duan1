@@ -15,6 +15,7 @@
         $act = $_GET['act'];
         switch ($act) {
 
+          
             // phần danh mục
             case 'danhmuc':
                 

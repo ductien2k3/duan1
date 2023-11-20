@@ -179,6 +179,9 @@
                                             <a href="index.php?act=thongtin"><?=$user_name?><i class="fa fa-angle-down"></i></a>
                                             
                                             <ul class="sub-menu">
+                                            <?php if($chuc_nang == 1){ ?>
+                                                <li><a href="admin/index.php">Đăng Nhập Admin</a></li>
+                                            <?php } ?>
                                                 <li><a href="index.php?act=quenmk">Quên mật Khẩu</a></li>
                                                 <li><a href="index.php?act=edit_taikhoan">Cập Nhật Thông Tin</a></li>
                                                 <li><a href="index.php?act=thoat">Thoát</a></li>

@@ -54,7 +54,7 @@
                                     <input type="checkbox" id="offer">
                                     <span> Nhớ mật khẩu </span>
                                 </label>
-                                <a href="#">Quên Mật Khẩu</a>
+                                <a href="index.php?act=quenmk">Quên Mật Khẩu</a>
                                 <?php
                                 if(isset($thongbao) && ($thongbao!="")) {
                                     echo $thongbao;

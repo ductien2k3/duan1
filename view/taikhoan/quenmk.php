@@ -4,27 +4,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="../../giaodien/formkynhapquen/cssdangkynhapquen.css">
+  <link rel="stylesheet" href="view/assets/css/cssdangkynhapquen.css">
   <title>Quên mật khẩu</title>
 </head>
 <body>
     <section>
         <div class="form-box1">
             <div class="form-value">
-                <form action="">
+                <form action="index.php?act=quenmk" method="post">
                     <h2>Quên mật khẩu</h2>
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
-                        <input type="email" required>
+                        <input type="email" required name="email">
                         <label for="">Email</label>
                     </div>
-                    <button>Lấy lại mật khẩu</button>
+                    <input class="btn-1" name="guiemail" type="submit" value="Lấy lại mật khẩu"></input>
                     <div class="register">
-                        <p> Bạn chưa có tài khoản<a href="dangky.php">Đăng ký</a></p>
+                        <p> Bạn chưa có tài khoản<a href="index.php?act=dangky">Đăng ký</a></p>
                     </div>
                     <div class="register">
-                        <p> Quay trở lại <a href="dangnhap.php">Đăng Nhập </a></p>
+                        <p> Quay trở lại <a href="index.php?act=dangnhap">Đăng Nhập </a></p>
                     </div>
+                    <?php
+                                if(isset($thongbao) && ($thongbao!="")) {
+                                    echo $thongbao;
+                                }
+                            ?>
                 </form>
             </div>
         </div>

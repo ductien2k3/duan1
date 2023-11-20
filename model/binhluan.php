@@ -18,6 +18,20 @@
         $sql = "UPDATE `binh_luan` SET `noi_dung`='$noidung' WHERE `id`='$idbinhluan'";
         pdo_execute($sql);
     }
+    function load_all_binhluan_home($id_sanpham){
+        $sql = "select * from binh_luan where 1 ";
+        if($id_sanpham >0){
+            $sql.= " and id_sanpham = $id_sanpham ";     
+        } else {
+            $sql.= " order by id desc ";
+        }
+        $listbl = pdo_query($sql);
+        return $listbl;
+    }
+    function insert_binhluan($id_user, $id_sanpham, $noi_dung,$ngay_bl){
+        $sql = "INSERT INTO `binh_luan` (`id_user`, `id_sanpham`, `noi_dung` , `ngay_bl`) VALUES ('$id_user', '$id_sanpham', '$noi_dung' ,'$ngay_bl')";
+        pdo_execute($sql);
+    }
     
 
 ?>
