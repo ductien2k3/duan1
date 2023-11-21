@@ -448,6 +448,8 @@
                 if(isset($_GET['id']) && ($_GET['id']>0)){
                     delete_binhluan($_GET['id']);
                 }
+                $listtaikhoan = load_all_taikhoan(0);
+                $listsanpham = load_all_sanpham("",0);
                 $listbinhluan = load_all_binhluan();
                 include 'binhluan/list.php';
                 break;
