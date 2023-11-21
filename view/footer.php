@@ -159,11 +159,10 @@
                                         </div>
                                     </div>
                                     <div class="col-md-8">
-                                        <div class="modal-add-cart-info"><i class="fa fa-check-square"></i>Added to cart
-                                            successfully!</div>
+                                        <div class="modal-add-cart-info"><i class="fa fa-check-square"></i>Thêm vào giỏ hàng thành công</div>
                                         <div class="modal-add-cart-product-cart-buttons">
-                                            <a href="cart.html">View Cart</a>
-                                            <a href="checkout.html">Checkout</a>
+                                            <a href="cart.html">Giỏ Hàng</a>
+                                            <a href="checkout.html">Thanh Toán</a>
                                         </div>
                                     </div>
                                 </div>

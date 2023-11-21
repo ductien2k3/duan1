@@ -271,7 +271,9 @@
         
                                     <!-- Start Product Default Single Item -->
                                     <div class="product-default-single-item product-color--golden swiper-slide">
-                                        <div class="image-box">
+
+                                    <form action="index.php?act=addtocart" method="post">
+                                        <div class="image-box">          
                                             <a href="'.$linksp.'" class="image-link">
                                                 <img src="'.$hinh.'" alt="" >
                                                 <img src="'.$hinh.'" alt="">
@@ -280,9 +282,8 @@
                                                 <span>sale '.$giam_gia.'%</span>
                                             </div>
                                             <div class="action-link">
-                                                <div class="action-link-left">
-                                                    <a href="#" data-bs-toggle="modal"
-                                                        data-bs-target="#modalAddcart">Thêm Vào Giỏ Hàng</a>
+                                                <div class="action-link-left">                              
+                                                <a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart" name="addtocart" >Thêm Vào Giỏ Hàng</a>
                                                 </div>
                                                 <div class="action-link-right">
                                                     <a href="#" data-bs-toggle="modal"
@@ -308,12 +309,20 @@
                                             <div class="content-right">
                                                 <span class="price"><del>$'.$price.'</del> $'.$giaban.'</span></span>
                                             </div>
-
+                                        <input type="hidden" name="id" value="'.$id.'">
+                                        <input type="hidden" name="tensp" value="'.$name.'"> 
+                                        <input type="hidden" name="hinh" value="'.$hinh.'">  
+                                        <input type="hidden" name="giaban" value="'.$giaban.'"> 
+                                        <input type="submit" name="addtocart" value="Thêm">
                                         </div>
+                                    </form>
                                     </div> 
                                     <!-- Hết phần show ra sản phẩm 1 --> '; 
                         } 
+
             ?>
+
+
                             </div>
                             </div>
                             <!-- If we need navigation buttons -->

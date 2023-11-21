@@ -1,4 +1,5 @@
 <?php
+    ob_start();
     session_start();
     include "../../model/pdo.php";
     include "../../model/binhluan.php";
@@ -69,7 +70,7 @@
         echo '<p>Bạn phải đăng nhập để bình luận.</p>';
     } else {
     ?>
-        <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
+        <form action="<?=$_SERVER['PHP_SELF']?>" method="post">
             <div class="row">
                 <div class="col-12">
                     <div class="default-form-box">
@@ -85,6 +86,7 @@
         </form>
 
         <?php
+
         if (isset($_POST['guibinhluan']) && $_POST['guibinhluan']) {
             $noi_dung = $_POST['noi_dung'];
             $id_user = $_SESSION['user']['id'];
@@ -92,9 +94,13 @@
             $ngay_bl = date('h:i:sa d/m/y');
             insert_binhluan($id_user, $id_sanpham, $noi_dung, $ngay_bl);
              // Thêm exit() để đảm bảo không có mã nào được thực thi sau hàm header()
-            header("location: {$_SERVER['HTTP_REFERER']}");
-            
+
+            //  echo $_SERVER['HTTP_REFERER'];die;
+            header("location:{$_SERVER['HTTP_REFERER']}"); 
+            // exit(); 
         }
+    
+
     }
     ?>
 </div>

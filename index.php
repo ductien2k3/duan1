@@ -11,6 +11,9 @@
     $spnew = load_all_sanpham_home();
     $dsbc = load_all_sanphambanchay_home();
     
+    if(!isset($_SESSION['giohang'])) {
+        $_SESSION['giohang'] = [];
+    }
 
 
     if (isset($_GET['act'])) {
@@ -175,7 +178,53 @@
                 $tendanhmuc = load_tendanhmuc($iddm); 
                 include "view/timkiem.php";
                 break;
+        
+        // giỏ hàng
+        case 'addtocart':
+            // lấy dữ liệu từ from vong view lên
 
+            if(isset($_POST['addtocart']) && $_POST['addtocart']){
+                $id = $_POST['id'];
+                $name = $_POST['tensp'];
+                $hinh = $_POST['hinh'];
+                $giaban = $_POST['giaban'];
+                if(isset($_POST['soluong']) && $_POST['soluong'] > 0){
+                    $soluong = $_POST['soluong'];
+                } else {
+                $soluong =1;
+                }
+                $fg =0;
+                //  kiểm tra sản phẩm có tồn tại trong giỏ hàng hay không 
+                // nếu có chỉ tăng sô lượng
+                $i=0;
+                foreach ($_SESSION['giohang'] as $item){
+                    if($item[1] == $name){
+                        $soluongmoi = $soluong + $item[4];
+                        $_SESSION['giohang'][$i][4] = $soluongmoi;
+                        $fg = 1;
+                        break;
+                    }
+                    $i++;
+                }
+                //còn lại thì add mới
+                //khởi tạo mảng con trước khi đưa vào giỏ hàng
+                if($fg ==0 ){
+                $item = array($id,$name,$hinh,$giaban,$soluong);
+                $_SESSION['giohang'][] =($item);
+                }
+                header('location: index.php?act=viewcart');
+            }
+            //include "view/giohang/viewcart.php";
+            break;
+
+        case 'delcart':
+            if(isset($_SESSION['giohang'])) unset($_SESSION['giohang']);
+            header('location: index.php?act=viewcart');
+            break;
+
+        case 'viewcart':
+            include "view/giohang/viewcart.php";
+            break;
         
         case 'gioithieu':
             include "view/gioithieu.php";
