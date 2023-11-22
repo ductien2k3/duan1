@@ -217,15 +217,33 @@
             //include "view/giohang/viewcart.php";
             break;
 
-        case 'delcart':
-            if(isset($_SESSION['giohang'])) unset($_SESSION['giohang']);
-            header('location: index.php?act=viewcart');
-            break;
+            case 'delcart':
+                if (isset($_GET['i']) && ($_GET['i'] >= 0)) {
+                    if (isset($_SESSION['giohang']) && (count($_SESSION['giohang']) > 0)) {
+                        $_SESSION['giohang'] = array_values(array_diff_key($_SESSION['giohang'], [$_GET['i'] => '']));
+                    }
+                } else {
+                    if (isset($_SESSION['giohang'])) unset($_SESSION['giohang']);
+                }
+            
+                if (isset($_SESSION['giohang']) && (count($_SESSION['giohang']) > 0)) {
+                    header('location: index.php?act=viewcart');
+                } else {
+                    header('location: index.php');
+                }
+                break;
+            
 
         case 'viewcart':
             include "view/giohang/viewcart.php";
             break;
-        
+
+        case 'thanhtoan':
+            
+        include "view/giohang/thanhtoan.php";
+            break;
+
+
         case 'gioithieu':
             include "view/gioithieu.php";
             break;

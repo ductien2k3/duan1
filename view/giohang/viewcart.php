@@ -46,6 +46,7 @@
                                     <thead>
                                         <tr>
                                             <th class="product_remove">Xoá</th>
+                                            <th class="product_remove">Số Thứ Tự</th>
                                             <th class="product_thumb">Hình ảnh</th>
                                             <th class="product_name">Tên sản phẩm</th>
                                             <th class="product-price">Giá bán</th>
@@ -53,14 +54,23 @@
                                             <th class="product_total">Thành Tiền</th>
                                         </tr>
                                     </thead>';
+                                    $i = 0;
+                                    $tongphu = 0;
+                                    $ship =30;
+                                    $tong =0;
                                     foreach($_SESSION['giohang'] as $item){
+                                    
                                         $thanhtien = $item[3] * $item[4];
+                                        $tongphu += $thanhtien;
+                                        $tong = $tongphu + $ship;
                                         echo '<!-- End Cart Table Head -->
                                     <tbody>
                                      
                                         <!-- Start Cart Single Item-->
                                         <tr>
-                                            <td class="product_remove"><a href="index.php?act=delcart"><i class="fa fa-trash-o"></i></a>
+                                            <td class="product_remove"><a href="index.php?act=delcart&i='.$i.'"><i class="fa fa-trash-o"></i></a>
+                                            </td>
+                                            <td class="product-price"><a href="">'.($i+1).'</a>
                                             </td>
                                             <td class="product_thumb"><a href="product-details-default.html"><img
                                                         src="'.$item[2].'"
@@ -74,62 +84,64 @@
                                         <!-- Start Cart Single Item-->
                                    
                                     </tbody>';
-                                    }
-                                
-                                
-                                     
+                                    $i++;
+                                    }                                 
                                 echo '</table>';
+
+                                echo '</div>
+                                <div class="cart_submit">
+                                <a href="index.php?act=delcart" class="btn btn-md btn-golden">Xoá Giỏ Hàng</a> <button class="btn btn-md btn-golden" type="submit">cập nhật</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End Cart Table -->
+    
+            <!-- Start Coupon Start -->
+            <div class="coupon_area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="coupon_code left" data-aos="fade-up" data-aos-delay="200">
+                                <h3>Mã Giảm Giá</h3>
+                                <div class="coupon_inner">
+                                    <p>nhập mã giảm giá ở đây nếu bạn có.</p>
+                                    <input class="mb-2" placeholder="mã giảm giá" type="text">
+                                    <button type="submit" class="btn btn-md btn-golden">Nhập mã</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="coupon_code right" data-aos="fade-up" data-aos-delay="400">
+                                <h3>Tổng đơn hàng</h3>
+                                <div class="coupon_inner">
+                                    <div class="cart_subtotal">
+                                        <p>Tổng Phụ</p>
+                                        <p class="cart_amount" colspan="5">$'.$tongphu.'</p>
+                                    </div>
+                                    <div class="cart_subtotal ">
+                                        <p>Phí Ships</p>
+                                        <p class="cart_amount"><span>Phí vận chuyển cố định</span>'.$ship.'</p>
+                                    </div>
+                                    <a href="#">Tính phí</a>
+    
+                                    <div class="cart_subtotal">
+                                        <p>Tổng</p>
+                                        <p class="cart_amount">$'.$tong.' </p>
+                                    </div>
+                                    <div class="checkout_btn">
+                                        <a href="index.php?act=thanhtoan" class="btn btn-md btn-golden">Thanh Toán</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End Coupon Start -->
+        </div> ';
+                                
                             }
                             ?>
                             </div>
-                            <div class="cart_submit">
-                                <button class="btn btn-md btn-golden" type="submit">update cart</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- End Cart Table -->
-
-        <!-- Start Coupon Start -->
-        <div class="coupon_area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="coupon_code left" data-aos="fade-up" data-aos-delay="200">
-                            <h3>Coupon</h3>
-                            <div class="coupon_inner">
-                                <p>Enter your coupon code if you have one.</p>
-                                <input class="mb-2" placeholder="Coupon code" type="text">
-                                <button type="submit" class="btn btn-md btn-golden">Apply coupon</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="coupon_code right" data-aos="fade-up" data-aos-delay="400">
-                            <h3>Cart Totals</h3>
-                            <div class="coupon_inner">
-                                <div class="cart_subtotal">
-                                    <p>Subtotal</p>
-                                    <p class="cart_amount">$215.00</p>
-                                </div>
-                                <div class="cart_subtotal ">
-                                    <p>Shipping</p>
-                                    <p class="cart_amount"><span>Flat Rate:</span> $255.00</p>
-                                </div>
-                                <a href="#">Calculate shipping</a>
-
-                                <div class="cart_subtotal">
-                                    <p>Total</p>
-                                    <p class="cart_amount">$215.00</p>
-                                </div>
-                                <div class="checkout_btn">
-                                    <a href="#" class="btn btn-md btn-golden">Proceed to Checkout</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- End Coupon Start -->
-    </div> 
+  

@@ -44,6 +44,7 @@
         }
                 echo '<!-- Start Large Image -->
                         <div class="product-large-image product-large-image-horaizontal swiper-container">
+                        <form action="index.php?act=addtocart" method="post">
                             <div class="swiper-wrapper">
                                 <div class="product-image-large-image swiper-slide zoom-image-hover img-responsive">
                                     <img src="'.$hinh.'"  alt="">
@@ -134,13 +135,19 @@
                                 <div class="variable-single-item ">
                                     <span>Số Lượng</span>
                                     <div class="product-variable-quantity">
-                                        <input min="1" max="20" step="1"  value="1" oninput="if(this.value >20 ) this.value = 20 " onblur="checkMaxValue(this)" type="number">
+                                        <input min="1" max="20" step="1"  value="1" oninput="if(this.value >20 ) this.value = 20 " onblur="checkMaxValue(this)" type="number" name="soluong">
+                                        <input type="hidden" name="id" value="'.$id.'">
+                                        <input type="hidden" name="tensp" value="'.$name.'"> 
+                                        <input type="hidden" name="hinh" value="'.$hinh.'">  
+                                        <input type="hidden" name="giaban" value="'.$giaban.'">
                                     </div>
                                 </div>
-
+                                
+                                
+                                
                                 <div class="product-add-to-cart-btn">
-                                    <a href="#" class="btn btn-block btn-lg btn-black-default-hover"
-                                        data-bs-toggle="modal" data-bs-target="#modalAddcart">+ Thêm vào giỏ hàng</a>
+                                    <input type="submit" name="addtocart" value="+ Thêm vào giỏ hàng"  class="btn btn-block btn-lg btn-black-default-hover" data-bs-toggle="modal" data-bs-target="#modalAddcart">
+                                    <a href="#" class="btn btn-block btn-lg btn-black-default-hover" data-bs-toggle="modal" data-bs-target="#modalAddcart">+ Thêm vào giỏ hàng</a>
                                 </div>
                             </div>
                             <!-- Start  Product Details Meta Area-->
@@ -169,6 +176,9 @@
                                 <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                                 <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                             </ul>
+                            
+                            </div>
+                        </form>
                         </div>';
                     ?>
    
