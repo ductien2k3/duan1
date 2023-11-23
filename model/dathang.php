@@ -1,0 +1,33 @@
+<?php
+// Function definition
+ function taodonhang($madh, $tong, $pttt, $user_name, $address, $email, $tel)
+{
+    $pdo = pdo_get_connection();
+    // Prepare and execute the INSERT statement using the provided PDO connection
+    $stmt = $pdo->prepare("INSERT INTO `dathang`(`madh`,`tongdonhang`, `pttt`, `name`, `address`, `email`, `tel`) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $stmt->execute([$madh, $tong, $pttt, $user_name, $address, $email, $tel]);
+
+    // Get the last inserted ID
+    $lastInsertId = $pdo->lastInsertId();
+
+    // Do something with the last inserted ID (e.g., return it or use it in further operations)
+    return $lastInsertId;
+}
+    // Example usage
+    function addtocart($id_dathang,$id_sanpham, $soluong, $gia, $tensampham){
+        $pdo = pdo_get_connection();
+        $stmt = $pdo->prepare("INSERT INTO `giohang`(`id_dathang`, `id_sanpham`, `soluong`, `gia`, `tensanpham`)
+        VALUES (?, ?, ?, ?, ?)");
+        $stmt->execute([$id_dathang, $id_sanpham, $soluong, $gia, $tensampham]);
+
+         // Get the last inserted ID
+    }
+    function getshowmuahang($id_dathang){
+        $pdo = pdo_get_connection();
+        $stmt = $pdo->prepare("SELECT * FROM `giohang` WHERE `id_dathang` = $id_dathang");
+        $stmt->execute([$id_dathang]);
+        $result = $stmt->fetchAll();
+        return $result;
+    }
+    
+?>

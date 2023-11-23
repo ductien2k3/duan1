@@ -152,17 +152,21 @@
                         <div class="row">
                             <div class="col-md-7">
                                 <div class="row">
+                                    <?php
+                                            
+                                        ?>
                                     <div class="col-md-4">
                                         <div class="modal-add-cart-product-img">
                                             <img class="img-fluid"
                                                 src="view/assets/images/product/default/home-1/default-1.jpg" alt="">
                                         </div>
                                     </div>
+                                        
                                     <div class="col-md-8">
                                         <div class="modal-add-cart-info"><i class="fa fa-check-square"></i>Thêm vào giỏ hàng thành công</div>
                                         <div class="modal-add-cart-product-cart-buttons">
-                                            <a href="cart.html">Giỏ Hàng</a>
-                                            <a href="checkout.html">Thanh Toán</a>
+                                            <a href="index.php?act=viewcart">Giỏ Hàng</a>
+                                            <a href="index.php?act=thanhtoan">Thanh Toán</a>
                                         </div>
                                     </div>
                                 </div>
@@ -172,8 +176,7 @@
                                     <li> <strong><i class="icon-shopping-cart"></i> There Are 5 Items In Your
                                             Cart.</strong></li>
                                     <li> <strong>TOTAL PRICE: </strong> <span>$187.00</span></li>
-                                    <li class="modal-continue-button"><a href="#" data-bs-dismiss="modal">CONTINUE
-                                            SHOPPING</a></li>
+                                    <li class="modal-continue-button"><a href="index.php" data-bs-dismiss="modal">Tiếp tục mua hàng</a></li>
                                 </ul>
                             </div>
                         </div>

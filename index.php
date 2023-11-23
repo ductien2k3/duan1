@@ -5,6 +5,7 @@
     include 'model/pdo.php';
     include 'model/sanpham.php';
     include 'model/danhmuc.php';
+    include 'model/dathang.php';
     include 'global.php';
 
     $dsdm = load_all_home();
@@ -233,15 +234,42 @@
                 }
                 break;
             
-
+        // giỏ hàng
         case 'viewcart':
             include "view/giohang/viewcart.php";
             break;
-
-        case 'thanhtoan':
-            
-        include "view/giohang/thanhtoan.php";
+        // mua
+        case 'muahang':         
+        include "view/giohang/muahang.php";
             break;
+
+        //đặt hàng
+        case 'dathang':
+            if ((isset($_POST['dathang']) && $_POST['dathang'])){
+                $tong = $_POST['tongdonhang'];
+                $user_name = $_POST['name'];
+                $address = $_POST['address'];
+                $tel = $_POST['tel'];
+                $email = $_POST['email'];
+                $pttt = $_POST['pttt'];
+                $madh = "solo". rand(0,99999);
+                //tạo đơn hàng
+                //và trả về 1 đơn hàng
+                $id_dathang = taodonhang($madh, $tong, $pttt, $user_name, $address, $email, $tel);
+                $_SESSION['id_dathang'] = $id_dathang;
+                if(isset($_SESSION['giohang']) && (count($_SESSION['giohang']) > 0)){
+                    foreach($_SESSION['giohang'] as $item){
+                    addtocart($id_dathang,$item[0], $item[4], $item[3],$item[1]);
+                }
+                    unset($_SESSION['giohang']);
+                }
+          
+                
+            }
+            
+            include "view/giohang/donhang.php";
+            break;
+        
 
 
         case 'gioithieu':

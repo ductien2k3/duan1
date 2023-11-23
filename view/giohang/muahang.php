@@ -9,7 +9,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h3 class="breadcrumb-title">Đặt Hàng</h3>
+                    <h3 class="breadcrumb-title">Mua Hàng</h3>
                     <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
                         <nav aria-label="breadcrumb">
                             <ul>
@@ -107,51 +107,38 @@
             <!-- User Quick Action Form -->
         </div>
         <!-- Start User Details Checkout Form -->
+<form action="index.php?act=dathang" method="post">
         <div class="checkout_form" data-aos="fade-up" data-aos-delay="400">
             <div class="row">
                 <div class="col-lg-6 col-md-6">
                 <?php 
                     if(isset($_SESSION['user'])){
                         extract($_SESSION['user']);
-                        echo '<form action="#">
+                        echo '
                         <h3>Chi tiết thanh toán</h3>
                         <div class="row">
                             <div class="col-12">
                                 <div class="default-form-box">
                                     <label>Tên của bạn*</label>
-                                    <input type="text" placeholder="tên của bạn" value="'.$user_name.'" >
+                                    <input type="text" placeholder="tên của bạn" value="'.$user_name.'" name="name" >
                                 </div>
                             </div>                          
                             <div class="col-12">
                                 <div class="default-form-box">
                                     <label>Địa Chỉ của bạn<span>*</span></label>
-                                    <input placeholder="địa chỉ chi tiết của bạn" type="text" value="'.$address.'" >
+                                    <input placeholder="địa chỉ chi tiết của bạn" type="text" value="'.$address.'" name="address" >
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="default-form-box">
                                     <label>Số điện thoại của bạn<span>*</span></label>
-                                    <input type="text" placeholder="số điện của bạn" value="'.$tel.'">
+                                    <input type="text" placeholder="số điện của bạn" value="'.$tel.'" name="tel">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="default-form-box">
                                     <label> Email <span>*</span></label>
-                                    <input type="text" placeholder="email của bạn" value="'.$email.'">
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <label class="checkbox-default" for="newAccount" data-bs-toggle="collapse"
-                                    data-bs-target="#newAccountPassword">
-                                    <input type="checkbox" id="newAccount">
-                                    <span>Tạo tài khoản</span>
-                                </label>
-                                <div id="newAccountPassword" class="collapse mt-3"
-                                    data-parent="#newAccountPassword">
-                                    <div class="card-body1 default-form-box">
-                                        <label> mật khẩu <span>*</span></label>
-                                        <input placeholder="mật khẩu" type="password">
-                                    </div>
+                                    <input type="text" placeholder="email của bạn" value="'.$email.'" name="email">
                                 </div>
                             </div>
                             <div class="col-12">
@@ -166,7 +153,7 @@
                                         <div class="col-12">
                                             <div class="default-form-box">
                                             <label>Tên của bạn*</label>
-                                            <input type="text" placeholder="tên của bạn" >
+                                            <input type="text" placeholder="tên của bạn">
                                         </div>
                                     </div>                          
                                         
@@ -180,46 +167,6 @@
                                 <div class="default-form-box">
                                     <label>Số điện thoại của bạn<span>*</span></label>
                                     <input type="text" placeholder="số điện của bạn">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="default-form-box">
-                                    <label> Email <span>*</span></label>
-                                    <input type="text" placeholder="email của bạn">
-                                </div>
-                            </div>                             
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 mt-3">
-                                <div class="order-notes">
-                                    <label for="order_note">Ghi chú </label>
-                                    <textarea id="order_note"
-                                        placeholder="Ghi chú về đơn đặt hàng của bạn, ví dụ: ghi chú đặc biệt để giao hàng."></textarea>
-                                </div>
-                            </div>
-                     
-                    </form>';
-                    }   else {
-                        echo '<form action="#">
-                        <h3>Chi tiết thanh toán</h3>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="default-form-box">
-                                    <label>Tên của bạn*</label>
-                                    <input type="text" placeholder="tên của bạn" >
-                                </div>
-                            </div>                          
-                            <div class="col-12">
-                                <div class="default-form-box">
-                                    <label>Địa Chỉ của bạn<span>*</span></label>
-                                    <input placeholder="địa chỉ chi tiết của bạn" type="text"  >
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="default-form-box">
-                                    <label>Số điện thoại của bạn<span>*</span></label>
-                                    <input type="text" placeholder="số điện của bạn" >
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -227,6 +174,46 @@
                                     <label> Email <span>*</span></label>
                                     <input type="text" placeholder="email của bạn" >
                                 </div>
+                            </div>                             
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mt-3">
+                                <div class="order-notes">
+                                    <label for="order_note">Ghi chú </label>
+                                    <textarea 
+                                        placeholder="Ghi chú về đơn đặt hàng của bạn, ví dụ: ghi chú đặc biệt để giao hàng."></textarea>
+                                </div>
+                            </div>
+                     
+                    ';
+                    }   else {
+                        echo '
+                        <h3>Chi tiết thanh toán</h3>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="default-form-box">
+                                    <label>Tên của bạn*</label>
+                                    <input type="text" placeholder="tên của bạn" name="name"  >
+                                </div>
+                            </div>                          
+                            <div class="col-12">
+                                <div class="default-form-box">
+                                    <label>Địa Chỉ của bạn<span>*</span></label>
+                                    <input placeholder="địa chỉ chi tiết của bạn" type="text" name="address"  >
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="default-form-box">
+                                    <label>Số điện thoại của bạn<span>*</span></label>
+                                    <input type="text" placeholder="số điện của bạn" name="tel">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="default-form-box">
+                                    <label> Email <span>*</span></label>
+                                    <input type="text" placeholder="email của bạn" name="email">
+                                </div>
                             </div>
                             <div class="col-12">
                                 <label class="checkbox-default" for="newAccount" data-bs-toggle="collapse"
@@ -241,44 +228,7 @@
                                         <input placeholder="mật khẩu" type="password">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-12">
-                                <label class="checkbox-default" for="newShipping" data-bs-toggle="collapse"
-                                    data-bs-target="#anotherShipping">
-                                    <input type="checkbox" id="newShipping">
-                                    <span>Ship tới địa chỉ khác?</span>
-                                </label>
-
-                                <div id="anotherShipping" class="collapse mt-3" data-parent="#anotherShipping">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="default-form-box">
-                                            <label>Tên của bạn*</label>
-                                            <input type="text" placeholder="tên của bạn" >
-                                        </div>
-                                    </div>                          
-                                        
-                                        <div class="col-12">
-                                <div class="default-form-box">
-                                    <label>Địa Chỉ của bạn<span>*</span></label>
-                                    <input placeholder="địa chỉ chi tiết của bạn" type="text">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="default-form-box">
-                                    <label>Số điện thoại của bạn<span>*</span></label>
-                                    <input type="text" placeholder="số điện của bạn">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="default-form-box">
-                                    <label> Email <span>*</span></label>
-                                    <input type="text" placeholder="email của bạn">
-                                </div>
-                            </div>                             
-                                    </div>
-                                </div>
-                            </div>
+                            </div>             
                             <div class="col-12 mt-3">
                                 <div class="order-notes">
                                     <label for="order_note">Ghi chú </label>
@@ -287,19 +237,20 @@
                                 </div>
                             </div>
                      
-                    </form>';
+                    ';
                     }
                     ?>
                 </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
-                    <form action="#">
+                    
                         <h3>Giỏ hàng của bạn</h3>
                         <div class="order_table table-responsive">
                         <table>
     <thead>
         <tr>
             <th>Sản Phẩm</th>
+            <th>Số Lượng</th>
             <th>Đơn giá</th>
         </tr>
     </thead>
@@ -313,9 +264,10 @@
         foreach ($_SESSION['giohang'] as $item) {
             $thanhtien = $item[3] * $item[4];
             $tongphu += $thanhtien;
-
+            $tong = $tongphu + $ship;
             echo '<tr>
-                    <td>' . $item[1] . '<strong> × ' . $item[4] . '</strong></td>
+                    <td>' . $item[1] . '/td>
+                    <td><strong>' . $item[4] . '</strong></td>
                     <td> $' . $thanhtien . '</td>
                 </tr>';
         }
@@ -324,15 +276,19 @@
         <tfoot>
             <tr>
                 <th>Tổng Phụ</th>
-                <td colspan="2">' . $tongphu . '</td>
+                <th></th>
+                <td colspan="3">' . $tongphu . '</td>
             </tr>
             <tr>
                 <th>Phí Ship</th>
+                <th></th>
                 <td><strong>$' . $ship . '</strong></td>
             </tr>
             <tr class="order_total">
+            
                 <th>Tổng số tiền</th>
-                <td><strong>$' . ($tongphu + $ship) . '</strong></td>
+                <th></th>
+                <td><strong>$' . $tong . '</strong></td>
             </tr>
         </tfoot>';
     }
@@ -344,11 +300,11 @@
                             <div class="panel-default">
                                 <label class="checkbox-default" for="currencyCod" data-bs-toggle="collapse"
                                     data-bs-target="#methodCod">
-                                    <input type="checkbox" id="currencyCod">
+                                    <input type="radio" id="currencyCod" name="pttt" value="cod" required>
                                     <span>Thanh toán khi nhận hàng</span>
                                 </label>
 
-                                <div id="methodCod" class="collapse" data-parent="#methodCod">
+                                <div id="methodCod" class="collapse" data-parent="#methodCod" >
                                     <div class="card-body1">
                                         <p>Vui lòng gửi séc đến Tên cửa hàng, Đường cửa hàng, Thị trấn cửa hàng, Bang cửa hàng
                                             / Quận, Mã bưu điện cửa hàng.</p>
@@ -358,7 +314,7 @@
                             <div class="panel-default">
                                 <label class="checkbox-default" for="currencyPaypal" data-bs-toggle="collapse"
                                     data-bs-target="#methodPaypal">
-                                    <input type="checkbox" id="currencyPaypal">
+                                    <input type="radio" id="currencyPaypal" name="pttt" value="paypal" required>
                                     <span>PayPal</span>
                                 </label>
                                 <div id="methodPaypal" class="collapse " data-parent="#methodPaypal">
@@ -368,14 +324,17 @@
                                     </div>
                                 </div>
                             </div>
+                            <input type="hidden" name="tongdonhang"value="<?=$tong?>">
                             <div class="order_button pt-3">
-                                <button class="btn btn-md btn-black-default-hover" type="submit">Đặt Hàng</button>
+                                <input class="btn btn-md btn-black-default-hover" type="submit" name="dathang" style="width: 20%;"  value="Đặt Hàng"></input>
                             </div>
                         </div>
-                    </form>
+                    
                 </div>
             </div>
-        </div> <!-- Start User Details Checkout Form -->
+        </div>
+     <!-- Start User Details Checkout Form -->
     </div>
 </div>
+</form>
 <br><!-- 

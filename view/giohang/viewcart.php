@@ -131,7 +131,7 @@
                                         <p class="cart_amount">$'.$tong.' </p>
                                     </div>
                                     <div class="checkout_btn">
-                                        <a href="index.php?act=thanhtoan" class="btn btn-md btn-golden">Thanh Toán</a>
+                                        <a href="index.php?act=muahang" class="btn btn-md btn-golden">mua hàng</a>
                                     </div>
                                 </div>
                             </div>

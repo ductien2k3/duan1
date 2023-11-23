@@ -268,7 +268,7 @@
     
         <!-- Bắt đầu show ra sản phẩm-->
         
-        
+                                
                                     <!-- Start Product Default Single Item -->
                                     <div class="product-default-single-item product-color--golden swiper-slide">
 
@@ -282,8 +282,10 @@
                                                 <span>sale '.$giam_gia.'%</span>
                                             </div>
                                             <div class="action-link">
-                                                <div class="action-link-left">                              
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart" name="addtocart" >Thêm Vào Giỏ Hàng</a>
+                                                <div class="action-link-left">
+                                                <a href="index.php?act=addtocart" data-bs-toggle="modal" data-bs-target="#modalAddcart" type="submit">Thêm Vào Giỏ Hàng</a>
+                                                
+
                                                 </div>
                                                 <div class="action-link-right">
                                                     <a href="#" data-bs-toggle="modal"
@@ -318,12 +320,11 @@
                                     </form>
                                     </div> 
                                     <!-- Hết phần show ra sản phẩm 1 --> '; 
+                                    
                         } 
 
             ?>
-
-
-                            </div>
+               </div>
                             </div>
                             <!-- If we need navigation buttons -->
                             <div class="swiper-button-prev"></div>
@@ -334,6 +335,9 @@
             </div>
         </div>
     </div>';
+  
+
+             
     <!-- Start Banner Section -->
     <div class="banner-section section-top-gap-100">
         <div class="container">
