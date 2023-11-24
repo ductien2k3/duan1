@@ -120,6 +120,7 @@
                             <div class="col-12">
                                 <div class="default-form-box">
                                     <label>Tên của bạn*</label>
+                                    <input type="hidden"  value="'.$id.'" name="id_user" >
                                     <input type="text" placeholder="tên của bạn" value="'.$user_name.'" name="name" >
                                 </div>
                             </div>                          

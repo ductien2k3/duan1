@@ -45,7 +45,7 @@
             <!-- User Quick Action Form -->
       <!-- Start User Details Checkout Form -->
 </div>
-<form action="index.php?act=dathang" method="post">
+
         <div class="checkout_form" data-aos="fade-up" data-aos-delay="400">
             <div class="row">
                 <div class="col-lg-6 col-md-6">
@@ -136,18 +136,21 @@
         </tr>
     </thead>
     <?php
-    $tongphu = 0;
-    $ship = 30;
-    $tong = 0;
+    if(isset($_SESSION['id_donhang']) && ($_SESSION['id_donhang'] > 0)) {
 
-    if ((isset($_SESSION['giohang'])) && (count($_SESSION['giohang']) > 0)) {
+        $getshowmuahang = getshowmuahang($_SESSION['id_donhang']);
+
+  
+    $ship = 30;
+
+    if ((isset($getshowmuahang)) && (count($getshowmuahang) > 0)) {
         echo '<tbody>'; // Mở tbody ở đây để chỉ có một tbody cho tất cả các sản phẩm
-        foreach ($_SESSION['giohang'] as $item) {
-            $thanhtien = $item[3] * $item[4];
+        foreach ($getshowmuahang as $item) {
+            $thanhtien = $item['soluong'] * $item['gia'];
             $tongphu += $thanhtien;
-            $tong = $tongphu + $ship;
+       
             echo '<tr>
-                    <td>' . $item[1] . '<strong> × ' . $item[4] . '</strong></td>
+                    <td>' . $item['tensanpham'] . '<strong> × ' . $item['soluong'] . '</strong></td>
                     
                     <td> $' . $thanhtien . '</td>
                 </tr>';
@@ -165,10 +168,13 @@
             </tr>
             <tr class="order_total">
                 <th>Tổng số tiền</th>
-                <td><strong>$' . $tong . '</strong></td>
+                <td><strong>$' . $item['tongdonhang'] . '</strong></td>
             </tr>
         </tfoot>';
     }
+} else {
+    echo 'Giỏ Hàng Trống . Quay lại <a href="index.php">Trang Chủ</a> để mua hàng';
+}
     ?>
 </table>
 
@@ -183,5 +189,5 @@
      <!-- Start User Details Checkout Form -->
     </div>
 </div>
-</form>
+
 <br><!-- 
