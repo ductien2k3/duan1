@@ -157,43 +157,52 @@
                 include "sanpham/update.php";
                 break;
             
-            case 'capnhatsp':
-                if(isset($_POST['capnhat']) && ($_POST['capnhat'])){
-                    $idsanpham = $_POST['idsanpham'];
-                    $iddanhmuc = $_POST['iddanhmuc'];
-                    $tensanpham = $_POST['tensanpham'];
-                    $giasanpham = $_POST['giasanpham'];
-                    $giamgia = $_POST['giamgia'];
-                    $anhsanpham = $_FILES['anhsanpham']['name'];
-                    $target_dir = "../upload/";
-                    $target_file = $target_dir . basename($_FILES['anhsanpham']['name']);
-                    if (move_uploaded_file($_FILES['anhsanpham']["tmp_name"], $target_file)) {
-                        // echo "The file ". htmlspecialchars( basename( $_FILES["anhsanpham"]["name"])). " has been uploaded.";
-                      } else {
-                        // echo "Sorry, there was an error uploading your file.";
-                      }
-                    $motasanpham = $_POST['motasanpham'];
-                    $baohanhsanpham = $_POST['baohanhsanpham'];
-                    $masanpham = $_POST['masanpham'];
-                    $ngaydangsanpham = $_POST['ngaydangsanpham'];
-                    $soluongsanpham = $_POST['soluongsanpham'];
-
-                    if (!preg_match('/^[a-zA-Z0-9_ÀÁÂÃĐÈÉÊÌÍÒÓÔÕÙÚỦÝàáâãđèéêìíòóôõùúủý\s]+$/u', $tensanpham)) {
-                        $thongbao = "Tên sản phẩm không được chứa ký tự đặc biệt";
-                    } else if (strlen($tensanpham) < 2 || strlen($tensanpham) > 100) {
-                        $thongbao = "Tên sản phẩm phải có độ dài từ 2 đến 100 ký tự";
-                    } else if (kiemtra_sanpham($tensanpham,$iddanhmuc)) {
-                        $thongbao = "Tên sản phẩm đã tồn tại";
+                case 'capnhatsp':
+                    if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+                        $idsanpham = $_POST['idsanpham'];
+                        $iddanhmuc = $_POST['iddanhmuc'];
+                        $tensanpham = $_POST['tensanpham'];
+                        $giasanpham = $_POST['giasanpham'];
+                        $giamgia = $_POST['giamgia'];
+                        $anhsanpham = $_FILES['anhsanpham']['name'];
+                        $target_dir = "../upload/";
+                        $target_file = $target_dir . basename($_FILES['anhsanpham']['name']);
+                        
+                        $motasanpham = $_POST['motasanpham'];
+                        $baohanhsanpham = $_POST['baohanhsanpham'];
+                        $masanpham = $_POST['masanpham'];
+                        $ngaydangsanpham = $_POST['ngaydangsanpham'];
+                        $soluongsanpham = $_POST['soluongsanpham'];
+                
+                        $thongbao = "";
+                
+                        // Validate tên sản phẩm
+                        if (empty($tensanpham)) {
+                            $thongbao = "Tên sản phẩm không được để trống";
+                        } elseif (strlen($tensanpham) < 2 || strlen($tensanpham) > 100) {
+                            $thongbao = "Tên sản phẩm phải có độ dài từ 2 đến 100 ký tự";
+                        } else {
+                            // Kiểm tra và xử lý ảnh (nếu có)
+                            if (!empty($_FILES['anhsanpham']['name'])) {
+                                if (move_uploaded_file($_FILES['anhsanpham']["tmp_name"], $target_file)) {
+                                    // Ảnh đã được tải lên thành công
+                                } else {
+                                    $thongbao = "Sorry, there was an error uploading your file.";
+                                }
+                            }
+                
+                            // Thực hiện cập nhật sản phẩm
+                            update_sanpham($idsanpham, $tensanpham, $giasanpham, $giamgia, $anhsanpham, $motasanpham, $baohanhsanpham, $masanpham, $ngaydangsanpham, $soluongsanpham, $iddanhmuc);
+                            $thongbao = "Cập Nhật Thành Công";
+                        }
                     }
-                    else {
-                    update_sanpham($idsanpham,$tensanpham,$giasanpham,$giamgia,$anhsanpham,$motasanpham,$baohanhsanpham,$masanpham,$ngaydangsanpham,$soluongsanpham,$iddanhmuc);  
-                    $thongbao = " Cập Nhật Thành Công ";
-                }
-            }
-                $listdanhmuc = load_all_danhmuc();
-                $listsanpham = load_all_sanpham("",0);
-                include "sanpham/list.php";
-                break;
+                
+                    // Load dữ liệu danh mục và sản phẩm
+                    $listdanhmuc = load_all_danhmuc();
+                    $listsanpham = load_all_sanpham("", 0);
+                    include "sanpham/list.php";
+                    break;
+                
 
             //chi tiết sản phẩm
 
