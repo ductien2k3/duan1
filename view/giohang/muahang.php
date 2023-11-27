@@ -121,6 +121,7 @@
                                 <div class="default-form-box">
                                     <label>Tên của bạn*</label>
                                     <input type="hidden"  value="'.$id.'" name="id_user" >
+                                    <input type="hidden"  value="Chờ xác nhận" name="status" >
                                     <input type="text" placeholder="tên của bạn" value="'.$user_name.'" name="name" >
                                 </div>
                             </div>                          
@@ -196,6 +197,7 @@
                                 <div class="default-form-box">
                                     <label>Tên của bạn*</label>
                                     <input type="text" placeholder="tên của bạn" name="name"  >
+                                    <input type="hidden"  value="Chờ xác nhận" name="status" >
                                 </div>
                             </div>                          
                             <div class="col-12">

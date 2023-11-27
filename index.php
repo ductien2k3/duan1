@@ -249,6 +249,7 @@
             if ((isset($_POST['dathang']) && $_POST['dathang'])){
                 $tong = $_POST['tongdonhang'];
                 $id_user = $_POST['id_user'];
+                $status = $_POST['status'];
                 $user_name = $_POST['name'];
                 $address = $_POST['address'];
                 $tel = $_POST['tel'];
@@ -257,9 +258,10 @@
                 $madh = "solo". rand(0,99999);
                 //tạo đơn hàng
                 //và trả về 1 đơn hàng
-                $id_dathang = taodonhang($madh, $tong, $pttt,$id_user, $user_name, $address, $email, $tel);
+                $id_dathang = taodonhang($madh, $tong, $pttt,$id_user, $user_name, $address, $email, $tel,$status);
+                
                 $_SESSION['id_dathang'] = $id_dathang;
-                var_dump($id_dathang);
+
                 if(isset($_SESSION['giohang']) && (count($_SESSION['giohang']) > 0)){
                     foreach($_SESSION['giohang'] as $item){
                     addtocart($id_dathang,$item[0], $item[4], $item[3],$item[1]);                  
@@ -267,7 +269,7 @@
                     unset($_SESSION['giohang']);
                 }      
             }        
-            include "view/giohang/dathang.php";
+            include "view/giohang/donhang.php";
             break;
         
 
