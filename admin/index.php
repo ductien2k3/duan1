@@ -7,6 +7,7 @@
     include "../model/taikhoan.php";
     include "../model/chitietsanpham.php";
     include "../model/binhluan.php";
+    include "../model/donhang.php";
 
 
     // controler
@@ -485,8 +486,63 @@
                 $listbinhluan = load_all_binhluan();
                 include 'binhluan/update.php';
                 break;
+            
 
+            // đơn hàng :
+            case 'donhang':
+                $listgiohang = load_all_giohang();
+                $listnguoimua = load_all_nguoimua();
+                include 'donhang/list.php';
+                break;
 
+            // thay đổi trạng thái đơn hàng
+            case 'updategh':
+                if(isset($_GET['id']) && ($_GET['id']>0)){
+                    $tt = load_trangthai($_GET['id']);
+                }
+                
+                include 'donhang/update.php';
+                break;
+            
+                case 'capnhattrangthai':
+                    if (isset($_POST['capnhat']) && $_POST['capnhat']) {
+                        $id = $_POST['id'];
+                        $trangthai = $_POST['trangthai'];
+                        
+                        // Update the status in the database
+                        capnhat_trangthai($id,$trangthai);
+                        
+                        // Redirect or display a success message as needed
+                        header("Location: index.php?act=donhang");
+                        
+                        exit();
+                    }
+                    $listnguoimua = load_all_nguoimua();
+                    include 'donhang/update.php';
+                    break;
+            
+                    case 'deletegh':
+                        if (isset($_GET['id']) && ($_GET['id']) > 0) {
+                                xoadonhang($id);
+                        
+                            // Redirect or display a success message as needed
+                            header("Location: index.php?act=donhang");
+                            exit();
+                        }
+                        $listgiohang = load_all_giohang();
+                $listnguoimua = load_all_nguoimua();
+                        include 'donhang/list.php';
+                        break;
+                    
+
+            case 'chitietdonhang':
+                if(isset($_GET['id_dathang']) && ($_GET['id_dathang']>0)){
+                    $id_dathang = $_GET['id_dathang'];
+                   
+                }
+                $listctgh = load_all_giohang_theo_id($id_dathang);
+                include 'donhang/chitietdonhang/list.php';
+                break;
             default:
                 include "home.php";
                 break;
