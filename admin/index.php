@@ -142,6 +142,7 @@
             
             case 'deletesp':  
                 if(isset($_GET['id']) && ($_GET['id']>0)){
+                    xoa_ctsp($_GET['id']);
                     delete_sanpham($_GET['id']);
                 }
                 
@@ -243,6 +244,7 @@
                 }
                 if(isset($_GET['id']) && ($_GET['id']>0)){
                     $id = $_GET['id'];
+                    
                     delete_chitietsanpham($id);
                     $listsanphamct = load_tatca_sanphamct($id_sp); 
                     header("location: {$_SERVER['HTTP_REFERER']}");
@@ -523,14 +525,15 @@
             
                     case 'deletegh':
                         if (isset($_GET['id']) && ($_GET['id']) > 0) {
-                                xoadonhang($id);
+                            xoa_giohang($_GET['id']);
+                            xoadonhang($_GET['id']);
                         
                             // Redirect or display a success message as needed
                             header("Location: index.php?act=donhang");
                             exit();
                         }
                         $listgiohang = load_all_giohang();
-                $listnguoimua = load_all_nguoimua();
+                        $listnguoimua = load_all_nguoimua();
                         include 'donhang/list.php';
                         break;
                     

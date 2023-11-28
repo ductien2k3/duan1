@@ -33,4 +33,8 @@
         $checkctsp = pdo_query($sql);
         return $checkctsp;   
     }
+    function xoa_ctsp($id_sp){
+        $sql = "DELETE FROM chi_tiet_sp WHERE id_sp = $id_sp";
+        pdo_execute($sql);
+    }
 ?>

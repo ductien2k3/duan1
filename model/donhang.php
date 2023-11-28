@@ -30,4 +30,8 @@
         pdo_execute($sql);
         // You may want to perform additional cleanup or logging here
     }
+    function xoa_giohang($id_dathang){
+        $sql = "DELETE FROM `giohang` WHERE `id_dathang` = $id_dathang";
+        pdo_execute($sql);
+    }
 ?>
