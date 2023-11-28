@@ -6,13 +6,13 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h3 class="breadcrumb-title">My Account</h3>
+                        <h3 class="breadcrumb-title">Tài Khoản Của Tôi</h3>
                         <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
                             <nav aria-label="breadcrumb">
                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="shop-grid-sidebar-left.html">Shop</a></li>
-                                    <li class="active" aria-current="page">My Account</li>
+                                    <li><a href="index.php">Trang Chủ</a></li>
+                                    <li><a href="index.php">Shop</a></li>
+                                    <li class="active" aria-current="page">Tài Khoản Của Tôi</li>
                                 </ul>
                             </nav>
                         </div>
@@ -29,61 +29,67 @@
                 <div class="col-sm-12 col-md-3 col-lg-3">
                     <!-- Nav tabs -->
                     <div class="dashboard_tab_button" data-aos="fade-up" data-aos-delay="0">
+
+                    <?php 
+                        if(isset($_SESSION['user'])){
+                            extract($_SESSION['user']);
+                                               
+                        ?>
                         <ul role="tablist" class="nav flex-column dashboard-list">
                             <li><a href="#dashboard" data-bs-toggle="tab"
-                                    class="nav-link btn btn-block btn-md btn-black-default-hover active">Dashboard</a>
+                                    class="nav-link btn btn-block btn-md btn-black-default-hover active">Bảng Điều Khiển</a>
                             </li>
                             <li> <a href="#orders" data-bs-toggle="tab"
-                                    class="nav-link btn btn-block btn-md btn-black-default-hover">Orders</a></li>
-                            <li><a href="#downloads" data-bs-toggle="tab"
-                                    class="nav-link btn btn-block btn-md btn-black-default-hover">Downloads</a></li>
-                            <li><a href="#address" data-bs-toggle="tab"
-                                    class="nav-link btn btn-block btn-md btn-black-default-hover">Addresses</a></li>
+                                    class="nav-link btn btn-block btn-md btn-black-default-hover">Đơn hàng của tôi</a></li>       
                             <li><a href="#account-details" data-bs-toggle="tab"
                                     class="nav-link btn btn-block btn-md btn-black-default-hover">CẬP NHẬT TÀI KHOẢN</a>
                             </li>
-                            <li><a href="login.html"
-                                    class="nav-link btn btn-block btn-md btn-black-default-hover">logout</a></li>
+                            <li><a href="index.php?act=thoat"
+                                    class="nav-link btn btn-block btn-md btn-black-default-hover">Đăng Xuất</a></li>
                         </ul>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-9 col-lg-9">
                     <!-- Tab panes -->
                     <div class="tab-content dashboard_content" data-aos="fade-up" data-aos-delay="200">
                         <div class="tab-pane fade show active" id="dashboard">
-                            <h4>Dashboard </h4>
-                            <p>From your account dashboard. you can easily check &amp; view your <a href="#">recent
-                                    orders</a>, manage your <a href="#">shipping and billing addresses</a> and <a
-                                    href="#">Edit your password and account details.</a></p>
+                            <h4>Bảng Điều Khiển </h4>
+                            <p>Từ trang tổng quan tài khoản của bạn. bạn có thể dễ dàng kiểm tra &amp; xem <a href="#">gần đây của bạn
+                                    đơn đặt hàng</a>, quản lý <a href="#">địa chỉ giao hàng và thanh toán</a> và <a
+                                    href="#">Chỉnh sửa mật khẩu và chi tiết tài khoản của bạn.</a></p>
                         </div>
                         <div class="tab-pane fade" id="orders">
-                            <h4>Orders</h4>
+                            <h4>Đơn hàng</h4>
                             <div class="table_page table-responsive">
                                 <table>
                                     <thead>
                                         <tr>
-                                            <th>Order</th>
-                                            <th>Date</th>
-                                            <th>Status</th>
-                                            <th>Total</th>
-                                            <th>Actions</th>
+                                            <th>Đơn hàng</th>
+                                            <th>Tên người đặt</th>
+                                            <th>Trạng thái</th>
+                                            <th>Tổng đơn hàng</th>
+                                            <th>Sản Phẩm</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>May 10, 2018</td>
-                                            <td><span class="success">Completed</span></td>
-                                            <td>$25.00 for 1 item </td>
-                                            <td><a href="cart.html" class="view">view</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>May 10, 2018</td>
-                                            <td>Processing</td>
-                                            <td>$17.00 for 1 item </td>
-                                            <td><a href="cart.html" class="view">view</a></td>
-                                        </tr>
+                                        <?php
+                                            foreach ($dathang as $dh){
+
+                                                extract($dh);
+                                                echo '<tr>
+                                            <td>'.$madh.'</td>
+                                            <td>'.$name.'</td>
+                                            <td><span class="success">'.$status.'</span></td>
+                                            <td>'.$tongdonhang.' </td>
+                                            <td><a href="index.php?act=donhangnguoidung&id_dathang='.$id.'" class="view">view</a></td>
+                                        </tr>';
+                                            }
+                                        ?>
+                                        
+                                  
                                     </tbody>
                                 </table>
                             </div>

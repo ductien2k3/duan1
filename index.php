@@ -7,6 +7,7 @@
     include 'model/danhmuc.php';
     include 'model/dathang.php';
     include 'global.php';
+    include 'model/donhang.php';
 
     $dsdm = load_all_home();
     $spnew = load_all_sanpham_home();
@@ -126,7 +127,19 @@
             
         // thông tin tài khoản
         case 'thongtin':
+            if(isset($_SESSION['user'])){
+                $id = $_SESSION['user']['id'];
+                $dathang = load_dathang_chonguoidung($id); // Thay đổi tên biến để lưu trữ kết quả truy vấn
+            }
             include "view/taikhoan/thongtin.php";
+            break;
+
+        case 'donhangnguoidung':
+            if(isset($_GET['id_dathang']) && ($_GET['id_dathang']>0)){
+                $id_dathang = $_GET['id_dathang'];
+            }
+            $ghnd = load_all_giohang_cho_nguoidung($id_dathang);
+            include "view/giohang/donhangcuatoi.php";
             break;
 
         case 'lienhe':
@@ -277,8 +290,7 @@
         case 'gioithieu':
             include "view/gioithieu.php";
             break;
-
-    
+ 
         default:
             include "view/home.php";
             break;

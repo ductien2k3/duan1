@@ -17,7 +17,7 @@
                                     <div class="hero-slider-content">
                                         <h4 class="subtitle">Bộ Sưa Tầm Mới</h4>
                                         <h2 class="title">Sản Phẩm Tốt Nhất <br> Giải Thưởng Vàng </h2>
-                                        <!--  phần link còn thiếu --><a href=""
+                                        <!--  phần link còn thiếu --><a href="index.php?act=sanpham&iddm=54"
                                             class="btn btn-lg btn-outline-golden"> Mua Ngay </a>
                                     </div>
                                 </div>
@@ -39,7 +39,7 @@
                                     <div class="hero-slider-content">
                                         <h4 class="subtitle">Bộ Sưa Tầm Mới</h4>
                                         <h2 class="title">Luxy Ghế <br> Giải Thưởng Thiết Kế </h2>
-                                        <!--  phần link còn thiếu --><a href=""
+                                        <!--  phần link còn thiếu --><a href="index.php?act=sanpham&iddm=54"
                                             class="btn btn-lg btn-outline-golden"> Mua Ngay </a>
                                     </div>
                                 </div>
@@ -139,7 +139,7 @@
                                 <h4 class="title">Có thể sạc lại nhỏ
                                     Đèn Bàn - E216</h4>
                                 <h5 class="sub-title">Chúng tôi thiết kế ngôi nhà của bạn</h5>
-                      <!--  phần link còn thiếu --><a href=""
+                      <!--  phần link còn thiếu --><a href="index.php?act=sanpham&iddm=60"
                                     class="btn btn-lg btn-outline-golden icon-space-left"><span
                                         class="d-flex align-items-center">Xem ngay <i
                                             class="ion-ios-arrow-thin-right"></i></span></a>
@@ -160,7 +160,7 @@
                                     <div class="content">
                                         <h4 class="title">Phòng bếp <br>
                                         đồ dùng</h4>
-                                        <!--  phần link còn thiếu --><a href="" class="link-text"><span>Xem Ngay
+                                        <!--  phần link còn thiếu --><a href="index.php?act=sanpham&iddm=57" class="link-text"><span>Xem Ngay
                                             </span></a>
                                     </div>
                                 </div>
@@ -176,7 +176,7 @@
                                     <div class="content">
                                         <h4 class="title">Sofas và <br>
                                             Ghế dài</h4>
-                                        <!--  phần link còn thiếu --><a href="" class="link-text"><span>Xem Ngayy
+                                        <!--  phần link còn thiếu --><a href="index.php?act=sanpham&iddm=56" class="link-text"><span>Xem Ngayy
                                             </span></a>
                                     </div>
                                 </div>
@@ -192,7 +192,7 @@
                                     <div class="content">
                                         <h4 class="title">Ghế & Bar<br>
                                         ghế đẩu</h4>
-                                        <!--  phần link còn thiếu --><a href="" class="link-text"><span>Xem Ngay
+                                        <!--  phần link còn thiếu --><a href="index.php?act=sanpham&iddm=54" class="link-text"><span>Xem Ngay
                                                 </span></a>
                                     </div>
                                 </div>
@@ -208,7 +208,7 @@
                                     <div class="content">
                                         <h4>Nội Thất <br>
                                             Chiếu sáng</h4>
-                                        <!--  phần link còn thiếu --><a href=""><span>Xem Ngay</span></a>
+                                        <!--  phần link còn thiếu --><a href="index.php?act=sanpham&iddm=60"><span>Xem Ngay</span></a>
                                     </div>
                                 </div>
                             </div>

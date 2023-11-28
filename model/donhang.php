@@ -34,4 +34,16 @@
         $sql = "DELETE FROM `giohang` WHERE `id_dathang` = $id_dathang";
         pdo_execute($sql);
     }
+    // load cho người dùng
+    function load_dathang_chonguoidung($id_user){   
+        $sql = "SELECT * FROM dathang WHERE id_user = $id_user ";
+        $kt = pdo_query($sql);
+        return $kt;
+    }
+    function load_all_giohang_cho_nguoidung($id_dathang){
+        $sql = "SELECT * FROM giohang WHERE id_dathang = $id_dathang ORDER BY id DESC";
+        $ghnd = pdo_query($sql);
+        return $ghnd;
+    }
+    
 ?>
