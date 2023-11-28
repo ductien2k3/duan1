@@ -147,7 +147,7 @@
                                 
                                 <div class="product-add-to-cart-btn">
                                     <input type="submit" name="addtocart" value="+ Thêm vào giỏ hàng"  class="btn btn-block btn-lg btn-black-default-hover" data-bs-toggle="modal" data-bs-target="#modalAddcart">
-                                    <a href="#" class="btn btn-block btn-lg btn-black-default-hover" data-bs-toggle="modal" data-bs-target="#modalAddcart">+ Thêm vào giỏ hàng</a>
+                                    
                                 </div>
                             </div>
                             <!-- Start  Product Details Meta Area-->

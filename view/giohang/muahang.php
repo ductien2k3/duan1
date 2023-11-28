@@ -196,6 +196,7 @@
                             <div class="col-12">
                                 <div class="default-form-box">
                                     <label>Tên của bạn*</label>
+                                    <input type="hidden"  value="0" name="id_user" >
                                     <input type="text" placeholder="tên của bạn" name="name"  >
                                     <input type="hidden"  value="Chờ xác nhận" name="status" >
                                 </div>

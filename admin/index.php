@@ -30,7 +30,7 @@
                         $tendanhmuc = $_POST['tendanhmuc'];
                         if (kiemtra_danhmuc($tendanhmuc)) {
                             $thongbao = " Danh Mục Đã Tồn Tại ";
-                        } else if (!preg_match('/^[a-zA-Z0-9_ÀÁÂÃĐÈÉÊÌÍÒÓÔÕÙÚỦÝàáâãđèéêìíòóôõùúủý\s]+$/u', $tendanhmuc)) {
+                        } else if (!preg_match('/^[a-zA-Z0-9_ÀÁÂÃĐÈÉÊẾÌÍÒÓÔÕỒÙÚỦỤÝàáâãđèéêếìíòóôõồùúủụuý\s]+$/u', $tendanhmuc)) {
                             $thongbao = "Tên danh mục không được chứa ký tự đặc biệt";
                         } else if (strlen($tendanhmuc) < 2 || strlen($tendanhmuc) > 100) {
                             $thongbao = "Tên danh mục phải có độ dài từ 2 đến 100 ký tự";
@@ -65,7 +65,7 @@
                     $iddanhmuc = $_POST['iddanhmuc'];
                     $tendanhmuc = $_POST['tendanhmuc'];
                   
-                    if (!preg_match('/^[a-zA-Z0-9_ÀÁÂÃĐÈÉÊÌÍÒÓÔÕÙÚỦÝàáâãđèéêìíòóôõùúủý\s]+$/u', $tendanhmuc)) {
+                    if (!preg_match('/^[a-zA-Z0-9_ÀÁÂÃĐÈÉÊẾÌÍÒÓÔÕỒÙÚỦỤÝàáâãđèéêếìíòóôõồùúủụý\s]+$/u', $tendanhmuc)) {
                         $thongbao = "Tên danh mục không được chứa ký tự đặc biệt";
                     }
                     else if (kiemtra_danhmuc($tendanhmuc)) {
@@ -126,7 +126,7 @@
                     if (kiemtra_sanpham($tensanpham,$iddanhmuc)) {
                         $thongbao = "Tên sản phẩm đã tồn tại";
                     }
-                     else if (!preg_match('/^[a-zA-Z0-9_ÀÁÂÃĐÈÉÊÌÍÒÓÔÕÙÚỦÝàáâãđèéêìíòóôõùúủý\s]+$/u', $tensanpham)) {
+                     else if (!preg_match('/^[a-zA-Z0-9_ÀÁÂÃĐÈÉÊẾÌÍÒÓÔÕỒỜÙÚỦỤÝàáâãđèéêếìíòóôõồờùúủụý\s]+$/u', $tensanpham)) {
                         $thongbao = "Tên sản phẩm không được chứa ký tự đặc biệt";
                     } else if (strlen($tensanpham) < 2 || strlen($tensanpham) > 100) {
                         $thongbao = "Tên sản phẩm phải có độ dài từ 2 đến 100 ký tự";
