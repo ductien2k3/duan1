@@ -135,7 +135,7 @@
                                 <div class="variable-single-item ">
                                     <span>Số Lượng</span>
                                     <div class="product-variable-quantity">
-                                        <input min="1" max="20" step="1"  value="1" oninput="if(this.value >20 ) this.value = 20 " onblur="checkMaxValue(this)" type="number" name="soluong">
+                                        <input min="1" max="'.$so_luong.'" step="1"  value="1" oninput="if(this.value > '.$so_luong.') this.value = '.$so_luong.' ; if(this.value < 1 )  this.value = 1" onblur="checkMaxValue(this)" type="number" name="soluong">
                                         <input type="hidden" name="id" value="'.$id.'">
                                         <input type="hidden" name="tensp" value="'.$name.'"> 
                                         <input type="hidden" name="hinh" value="'.$hinh.'">  
