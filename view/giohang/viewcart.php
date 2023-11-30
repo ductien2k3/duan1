@@ -36,6 +36,8 @@
                     <div class="col-12">
                         <div class="table_desc">
                             <div class="table_page table-responsive">
+                                
+        <form action="index.php?act=updatecart" method="post">
 
                                 
                                         <!-- Start Cart Single Item-->
@@ -58,8 +60,9 @@
                                     $tongphu = 0;
                                     $ship =30;
                                     $tong =0;
+
                                     foreach($_SESSION['giohang'] as $item){
-                                    
+                                        
                                         $thanhtien = $item[3] * $item[4];
                                         $tongphu += $thanhtien;
                                         $tong = $tongphu + $ship;
@@ -75,10 +78,10 @@
                                             <td class="product_thumb"><a href="product-details-default.html"><img
                                                         src="'.$item[2].'"
                                                         alt=""></a></td>
-                                            <td class="product_name"><a href="product-details-default.html">'.$item[1].'</a></td>
+                                            <td class="product_name"><a href="product-details-default.html" name ="tensanpham">'.$item[1].'</a></td>
                                             <td class="product-price">$'.$item[3].'</td>
                                             <td class="product_quantity"><label>Quantity :</label> <input min="1"
-                                                    max="100" value="'.$item[4].'" type="number"></td>
+                                                    max="100" value="'.$item[4].'" type="number" name ="soluong"></td>
                                             <td class="product_total">$'.$thanhtien.'</td>
                                         </tr> <!-- End Cart Single Item-->
                                         <!-- Start Cart Single Item-->
@@ -130,6 +133,7 @@
                                         <p>Tổng</p>
                                         <p class="cart_amount">$'.$tong.' </p>
                                     </div>
+        </form>
                                     <div class="checkout_btn">
                                         <a href="index.php?act=muahang" class="btn btn-md btn-golden">mua hàng</a>
                                     </div>
@@ -141,7 +145,7 @@
             </div> <!-- End Coupon Start -->
         </div> ';
                                 
-                            }
-                            ?>
-                            </div>
+        }
+        ?>
+    </div>
   
