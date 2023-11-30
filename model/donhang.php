@@ -44,7 +44,5 @@
         $sql = "SELECT * FROM giohang WHERE id_dathang = $id_dathang ORDER BY id DESC";
         $ghnd = pdo_query($sql);
         return $ghnd;
-    }
-    
-    
+    }  
 ?>

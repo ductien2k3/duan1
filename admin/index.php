@@ -8,6 +8,7 @@
     include "../model/chitietsanpham.php";
     include "../model/binhluan.php";
     include "../model/donhang.php";
+    include "../model/thongke.php";
 
 
     // controler
@@ -546,6 +547,22 @@
                 $listctgh = load_all_giohang_theo_id($id_dathang);
                 include 'donhang/chitietdonhang/list.php';
                 break;
+
+            // thống kê
+            // sản phẩm bán chạy 
+            case 'thongke':
+                $listsanphambanchay = load_all_sanphambanchay();
+                include 'thongke/sanphambanchay.php';
+                break;
+            case 'bieudobanchay':
+                $listsanphambanchay = load_all_sanphambanchay();
+                include 'thongke/bieudobanchay.php';
+                break;
+            case 'doanhso':
+                $loadoanhso = load_doanhthu();
+                include 'thongke/doanhso.php';
+                break;
+
             default:
                 include "home.php";
                 break;
