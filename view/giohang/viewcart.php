@@ -70,7 +70,8 @@
                                     <tbody>
                                      
                                         <!-- Start Cart Single Item-->
-                                        <tr>
+                                        <tr>   
+                                            <input type="hidden" name="id" value="'.$item[0].'">
                                             <td class="product_remove"><a href="index.php?act=delcart&i='.$i.'"><i class="fa fa-trash-o"></i></a>
                                             </td>
                                             <td class="product-price"><a href="">'.($i+1).'</a>

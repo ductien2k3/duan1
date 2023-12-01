@@ -257,17 +257,22 @@
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if (isset($_POST['soluong']) && $_POST['soluong'] > 0) {
                     $soluong = $_POST['soluong'];
-                    
-                    // Update the quantity for all items in the cart
-                    foreach ($_SESSION['giohang'] as &$item) {
-                        $item[4] = $soluong;
+                    $id = $_POST['id']; // Change 'product_id' to your actual product ID input field name
+        
+                    // Loop through all items in the cart
+                    foreach ($_SESSION['giohang'] as $i => $item) {
+                        if ($item[0] === $id) { // Check if item ID matches the provided ID
+                            $_SESSION['giohang'][$i][4] = $soluong; // Update the quantity
+                            break; // Exit the loop once the item is found and updated
+                        }
                     }
                 }
-                
                 header('location: index.php?act=viewcart');
-                exit(); // Đảm bảo kết thúc chương trình sau khi chuyển hướng
+                exit();
             }
             break;
+        
+        
         
         
         // mua

@@ -283,9 +283,8 @@
                                             </div>
                                             <div class="action-link">
                                                 <div class="action-link-left">
-                                                <a href="index.php?act=addtocart" data-bs-toggle="modal" data-bs-target="#modalAddcart" type="submit">Thêm Vào Giỏ Hàng</a>
+                                                <input type="submit" name="addtocart" value="Thêm"><a href="" data-bs-toggle="modal" data-bs-target="#modalAddcart">Thêm Vào Giỏ Hàng</a></input>
                                                 
-
                                                 </div>
                                                 <div class="action-link-right">
                                                     <a href="#" data-bs-toggle="modal"
