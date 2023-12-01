@@ -75,21 +75,41 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php
-                                            foreach ($dathang as $dh){
+                                    <?php
+foreach ($dathang as $dh) {
+    extract($dh);
+    echo '<tr>
+        <td>'.$madh.'</td>
+        <td>'.$name.'</td>';
 
-                                                extract($dh);
-                                                echo '<tr>
-                                            <td>'.$madh.'</td>
-                                            <td>'.$name.'</td>
-                                            <td><span class="success">'.$status.'</span></td>
-                                            <td>'.$tongdonhang.' </td>
-                                            <td><a href="index.php?act=donhangnguoidung&id_dathang='.$id.'" class="view">view</a></td>
-                                        </tr>';
-                                            }
-                                        ?>
-                                        
-                                  
+    // Kiểm tra nếu trạng thái là "Chờ xác nhận"
+    if ($status === 'Chờ xác nhận') {
+        echo '<td><span class="success">'.$status.'</span> 
+            
+            <form method="post" action="index.php?act=huydon&id='.$id.'">
+                <input type="hidden" name="huydon" value="Đã huỷ đơn hàng">
+                <button type="submit" class="view">Huỷ đơn</button>
+            </form>
+        </td>';
+    } elseif ($status === 'Đang Giao Hàng') {
+        echo '<td><span class="success">'.$status.'</span> 
+            <form method="post" action="index.php?act=nhanhang&id='.$id.'">
+                <input type="hidden" name="nhanhang" value="Đã Nhận Đơn Hàng">
+                <button type="submit" class="view">Đã nhận</button>
+            </form>
+        </td>';
+    } else {
+        echo '<td><span class="success">'.$status.'</span></td>';
+    }
+
+    echo '<td>'.$tongdonhang.'</td>
+        <td><a href="index.php?act=donhangnguoidung&id_dathang='.$id.'" class="view">view</a></td>
+    </tr>';
+}
+?>
+
+
+              
                                     </tbody>
                                 </table>
                             </div>

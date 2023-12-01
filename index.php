@@ -309,10 +309,32 @@
         case 'gioithieu':
             include "view/gioithieu.php";
             break;
+
+        // case 'huydon'
+        case 'huydon':
+            if (isset($_GET['act']) && $_GET['act'] === 'huydon' && isset($_GET['id'])) {
+                $id = $_GET['id'];
+                $huydon = $_POST['huydon'];  // Note: Make sure to sanitize this input in a real-world scenario
+                huydon($id, $huydon);
+                header("location: {$_SERVER['HTTP_REFERER']}");
+                exit();
+            }
+            break;
+            // nhận đơn
+            case 'nhanhang':
+                if (isset($_GET['act']) && $_GET['act'] === 'nhanhang' && isset($_GET['id'])) {
+                    $id = $_GET['id'];
+                    $nhanhang = $_POST['nhanhang'];  // Note: Make sure to sanitize this input in a real-world scenario
+                    hoanthanh($id,$nhanhang);
+                    header("location: {$_SERVER['HTTP_REFERER']}");
+                    exit();
+                }
+                break;
  
         default:
             include "view/home.php";
             break;
+
         }
         }else {
         include "view/header.php";

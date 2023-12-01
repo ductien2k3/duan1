@@ -39,5 +39,21 @@
         $result = $stmt->fetchAll();
         return $result;
     }
+    function huydon($id, $huydon) {
+        $pdo = pdo_get_connection();
+            $sql = "UPDATE dathang SET `status` = :huydon WHERE id = :id";
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->bindParam(':huydon', $huydon, PDO::PARAM_STR);
+            $stmt->execute();
+    }
+    function hoanthanh($id,$nhanhang){
+        $pdo = pdo_get_connection();
+            $sql = "UPDATE dathang SET `status` = :nhanhang WHERE id = :id";
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->bindParam(':nhanhang', $nhanhang, PDO::PARAM_STR);
+            $stmt->execute();
+    }
     
 ?>
