@@ -332,8 +332,8 @@
                                                         <li class="fill"><i class="ion-android-star"></i></li>
                                                         <li class="empty"><i class="ion-android-star"></i></li>
                                                     </ul>
-                                                    <span class="product-list-price"><del>$'.$price.'</del>
-                                                        $'.$giaban.'</span>
+                                                    <span class="product-list-price"><del>'.$price.' VNĐ</del>
+                                                        '.$giaban.' VNĐ</span>
                                                     <p>'.$mo_ta.'</p>
                                                     <div class="product-action-icon-link-list">
                                                         <a href="#" data-bs-toggle="modal"

@@ -144,39 +144,10 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <label class="checkbox-default" for="newShipping" data-bs-toggle="collapse"
-                                    data-bs-target="#anotherShipping">
-                                    <input type="checkbox" id="newShipping">
-                                    <span>Ship tới địa chỉ khác?</span>
-                                </label>
-
+                          
                                 <div id="anotherShipping" class="collapse mt-3" data-parent="#anotherShipping">
                                     <div class="row">
-                                        <div class="col-12">
-                                            <div class="default-form-box">
-                                            <label>Tên của bạn*</label>
-                                            <input type="text" placeholder="tên của bạn">
-                                        </div>
-                                    </div>                          
-                                        
-                                        <div class="col-12">
-                                <div class="default-form-box">
-                                    <label>Địa Chỉ của bạn<span>*</span></label>
-                                    <input placeholder="địa chỉ chi tiết của bạn" type="text">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="default-form-box">
-                                    <label>Số điện thoại của bạn<span>*</span></label>
-                                    <input type="text" placeholder="số điện của bạn">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="default-form-box">
-                                    <label> Email <span>*</span></label>
-                                    <input type="text" placeholder="email của bạn" >
-                                </div>
-                            </div>                             
+                                                                                                                       
                                     </div>
                                 </div>
                             </div>

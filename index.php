@@ -16,7 +16,7 @@
     if(!isset($_SESSION['giohang'])) {
         $_SESSION['giohang'] = [];
     }
-
+   
 
     if (isset($_GET['act'])) {
         $act = $_GET['act'];
@@ -335,6 +335,12 @@
                     exit();
                 }
                 break;
+
+
+
+      
+                
+            
  
         default:
             include "view/home.php";

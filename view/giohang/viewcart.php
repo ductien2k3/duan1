@@ -80,10 +80,10 @@
                                                         src="'.$item[2].'"
                                                         alt=""></a></td>
                                             <td class="product_name"><a href="product-details-default.html" name ="tensanpham">'.$item[1].'</a></td>
-                                            <td class="product-price">$'.$item[3].'</td>
+                                            <td class="product-price">'.$item[3].' VNĐ</td>
                                             <td class="product_quantity"><label>Quantity :</label> <input min="1"
                                                     max="100" value="'.$item[4].'" type="number" name ="soluong"></td>
-                                            <td class="product_total">$'.$thanhtien.'</td>
+                                            <td class="product_total">'.$thanhtien.' VNĐ</td>
                                         </tr> <!-- End Cart Single Item-->
                                         <!-- Start Cart Single Item-->
                                    
@@ -122,7 +122,7 @@
                                 <div class="coupon_inner">
                                     <div class="cart_subtotal">
                                         <p>Tổng Phụ</p>
-                                        <p class="cart_amount" colspan="5">$'.$tongphu.'</p>
+                                        <p class="cart_amount" colspan="5">'.$tongphu.'</p>
                                     </div>
                                     <div class="cart_subtotal ">
                                         <p>Phí Ships</p>
@@ -132,7 +132,7 @@
     
                                     <div class="cart_subtotal">
                                         <p>Tổng</p>
-                                        <p class="cart_amount">$'.$tong.' </p>
+                                        <p class="cart_amount">'.$tong.' VNĐ</p>
                                     </div>
         </form>
                                     <div class="checkout_btn">

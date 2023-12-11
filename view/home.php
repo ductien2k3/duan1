@@ -283,15 +283,16 @@
                                             </div>
                                             <div class="action-link">
                                                 <div class="action-link-left">
-                                                <input type="submit" name="addtocart" value="Thêm"><a href="" data-bs-toggle="modal" data-bs-target="#modalAddcart">Thêm Vào Giỏ Hàng</a></input>
+                                                <a href="#">Thêm Vào Giỏ Hàng</a>
+
                                                 
                                                 </div>
                                                 <div class="action-link-right">
                                                     <a href="#" data-bs-toggle="modal"
                                                         data-bs-target="#modalQuickview"><i
                                                             class="icon-magnifier"></i></a>
-                                                    <a href="wishlist.html"><i class="icon-heart"></i></a>
-                                                    <a href="compare.html"><i class="icon-shuffle"></i></a>
+                                                    <a href=""><i class="icon-heart"></i></a>
+                                                    <a href=""><i class="icon-shuffle"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -308,7 +309,7 @@
                                                 </ul>
                                             </div>
                                             <div class="content-right">
-                                                <span class="price"><del>$'.$price.'</del> $'.$giaban.'</span></span>
+                                                <span class="price"><del>'.$price.' VNĐ</del> '.$giaban.' VNĐ</span></span>
                                             </div>
                                         <input type="hidden" name="id" value="'.$id.'">
                                         <input type="hidden" name="tensp" value="'.$name.'"> 
@@ -334,7 +335,9 @@
             </div>
         </div>
     </div>';
-  
+    <!-- Bạn có thể đặt phần này ở đâu đó trong thẻ <head> hoặc ngay trước thẻ đóng </body> -->
+
+
 
              
     <!-- Start Banner Section -->
@@ -432,7 +435,7 @@
                                                 </ul>
                                             </div>
                                             <div class="content-right">
-                                                <span class="price">$'.$giaban.'</span>
+                                                <span class="price">'.$giaban.' VNĐ</span>
                                             </div>
 
                                         </div>

@@ -119,7 +119,7 @@
                                 </ul>
                                 <a href="#" class="customer-review ml-2">(khách hàng đánh giá )</a>
                             </div>
-                            <div class="price">$'.$giaban.'</div>
+                            <div class="price">'.$giaban.' VNĐ</div>
                             <p>'.$mo_ta.'</p>
                         </div> <!-- End  Product Details Text Area-->
                         <!-- Start Product Variable Area -->
@@ -335,7 +335,7 @@
                                                     </ul>
                                                 </div>
                                                 <div class="content-right">
-                                                <span class="price"><del>$'.$price.'</del> $'.$giaban.'</span></span>
+                                                <span class="price"><del>'.$price.' VNĐ</del> '.$giaban.' VNĐ</span></span>
                                             </div>
     
                                             </div>

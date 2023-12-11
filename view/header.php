@@ -106,18 +106,8 @@
 
                             <!-- Start Header Action Link -->
                             <ul class="header-action-link action-color--black action-hover-color--golden">
-                                <li>
-                                    <a href="#offcanvas-wishlish" class="offcanvas-toggle">
-                                        <i class="icon-heart"></i>
-                                        <span class="item-count">3</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="index.php?act=giohang" class="offcanvas-toggle">
-                                        <i class="icon-bag"></i>
-                                        <span class="item-count">5</span>
-                                    </a>
-                                </li>
+                                
+                               
                                 <li>
                                     <a href="#search">
                                         <i class="icon-magnifier"></i>

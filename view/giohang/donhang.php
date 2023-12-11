@@ -82,7 +82,7 @@
                         </div>
                         <div class="col-12">
                             <div class="default-form-box">
-                                <label>Hình thức vận chuyển<span>*</span></label>
+                                <label>Hình thức thanh toán<span>*</span></label>
                                 <input placeholder="Hình thức vận chuyển của bạn là" type="text" value="<?php echo $getshowinfor[0]['pttt']; ?>">
                             </div>
                         </div>
@@ -122,7 +122,7 @@
                                         echo '<tr>
                                                 <td>' . $item['tensanpham'] . '</td>
                                                 <td><strong> × ' . $item['soluong'] . '</strong></td>
-                                                <td> $' . $thanhtien . '</td>
+                                                <td> ' . $thanhtien . ' VNĐ</td>
                                             </tr>';
                                     }
 
@@ -136,12 +136,12 @@
                                         <tr>
                                             <th>Phí Ship</th>
                                             <td></td>
-                                            <td><strong>$' . $ship . '</strong></td>
+                                            <td><strong>' . $ship . ' VNĐ</strong></td>
                                         </tr>
                                         <tr class="order_total">
                                             <th>Tổng số tiền</th>
                                             <td></td>
-                                            <td><strong>$' . ($tongphu + $ship) . '</strong></td>
+                                            <td><strong>' . ($tongphu + $ship) . ' VNĐ</strong></td>
                                         </tr>
                                     </tfoot>';
                                 }
