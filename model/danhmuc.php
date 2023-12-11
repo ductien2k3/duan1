@@ -4,7 +4,11 @@
         pdo_execute($sql);
     }
     function delete_danhmuc($id){
-        $sql = "DELETE FROM `danh_muc` WHERE id =$_GET[id]";
+        $sql = "UPDATE danh_muc SET `status` = 1 WHERE id = $id";
+        pdo_execute($sql);
+    }
+    function khoiphuc_danhmuc($id){
+        $sql = "UPDATE danh_muc SET `status` = 0 WHERE id = $id";
         pdo_execute($sql);
     }
     function load_all_danhmuc() {

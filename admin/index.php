@@ -53,6 +53,20 @@
                 include "danhmuc/list.php";
                 break;
 
+            // danhmuc đã xoá
+            case "dmdx":
+                $listdanhmuc = load_all_danhmuc();
+                include "danhmuc/danhmucdaxoa.php";
+                break;
+            // khôi phục danh mục 
+            case "kpdm":
+                if(isset($_GET['id']) && ($_GET['id']>0)){
+                    khoiphuc_danhmuc($_GET['id']);
+                }
+                $listdanhmuc = load_all_danhmuc();
+                include "danhmuc/list.php";
+                break;
+
             case "updatedm":
                 if(isset($_GET['id']) && ($_GET['id']>0)){       
                 $dm = load_one_danhmuc($_GET['id']); 

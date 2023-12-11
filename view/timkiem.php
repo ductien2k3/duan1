@@ -41,10 +41,12 @@
                                 <?php
                                     foreach($dsdm as $dm){
                                         extract($dm);
+                                        if ($status == 0) {
                                             $linkdm = "index.php?act=sanpham&iddm=$id ";
                                             echo '<li><a href="'.$linkdm.'">'.$name.'</a>
                                                 </li>';
                                             }
+                                        }
                                 ?>
                                 <li>
                                     <ul class="sidebar-menu-collapse">
