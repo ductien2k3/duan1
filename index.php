@@ -198,6 +198,7 @@
             // lấy dữ liệu từ from vong view lên
 
             if(isset($_POST['addtocart']) && $_POST['addtocart']){
+                
                 $id = $_POST['id'];
                 $name = $_POST['tensp'];
                 $hinh = $_POST['hinh'];
@@ -208,6 +209,7 @@
                 $soluong =1;
                 }
                 $fg =0;
+                
                 //  kiểm tra sản phẩm có tồn tại trong giỏ hàng hay không 
                 // nếu có chỉ tăng sô lượng
                 $i=0;
@@ -292,10 +294,12 @@
                 $tel = $_POST['tel'];
                 $email = $_POST['email'];
                 $pttt = $_POST['pttt'];
+                $ngaydat = date('Y-m-d');
+
                 $madh = "solo". rand(0,99999);
                 //tạo đơn hàng
                 //và trả về 1 đơn hàng
-                $id_dathang = taodonhang($madh, $tong, $pttt,$id_user, $user_name, $address, $email, $tel,$status);
+                $id_dathang = taodonhang($madh, $tong, $pttt,$id_user, $user_name, $address, $email, $tel,$status,$ngaydat);
                 
                 $_SESSION['id_dathang'] = $id_dathang;
 

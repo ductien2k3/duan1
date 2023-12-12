@@ -121,6 +121,7 @@
                                 <div class="default-form-box">
                                     <label>Tên của bạn*</label>
                                     <input type="hidden"  value="'.$id.'" name="id_user" >
+                                    <input type="hidden"   name="ngay_dat" >
                                     <input type="hidden"  value="Chờ xác nhận" name="status" >
                                     <input type="text" placeholder="tên của bạn" value="'.$user_name.'" name="name" >
                                 </div>
@@ -168,6 +169,7 @@
                                 <div class="default-form-box">
                                     <label>Tên của bạn*</label>
                                     <input type="hidden"  value="0" name="id_user" >
+                                    <input type="hidden"   name="ngay_dat" >
                                     <input type="text" placeholder="tên của bạn" name="name"  >
                                     <input type="hidden"  value="Chờ xác nhận" name="status" >
                                 </div>
@@ -241,9 +243,9 @@
             $tongphu += $thanhtien;
             $tong = $tongphu + $ship;
             echo '<tr>
-                    <td>' . $item[1] . '/td>
+                    <td>' . $item[1] . '</td>
                     <td><strong>' . $item[4] . '</strong></td>
-                    <td> $' . $thanhtien . '</td>
+                    <td> ' . $thanhtien . ' VNĐ</td>
                 </tr>';
         }
 
@@ -257,13 +259,13 @@
             <tr>
                 <th>Phí Ship</th>
                 <th></th>
-                <td><strong>$' . $ship . '</strong></td>
+                <td><strong>' . $ship . ' VNĐ</strong></td>
             </tr>
             <tr class="order_total">
             
                 <th>Tổng số tiền</th>
                 <th></th>
-                <td><strong>$' . $tong . '</strong></td>
+                <td><strong>' . $tong . ' VNĐ</strong></td>
             </tr>
         </tfoot>';
     }

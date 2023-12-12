@@ -10,6 +10,7 @@
           <th>Tổng đơn hàng</th>
           <th>Địa chỉ</th>
           <th>Số Điện Thoại</th>
+          <th>Ngày Đặt</th>
           <th>Trạng Thái</th>
           <th>sản phẩm</th>
           <th>Cập Nhật</th>
@@ -32,8 +33,9 @@
                         <td>'.$tongdonhang.'</td>
                         <td>'.$address.'</td>
                         <td>'.$tel.'</td>
+                        <td>'.$ngay_dat.'</td>
                         <td>'.$status.'</td>
-                        <td> <button class="btn-updm"><a href="'.$chitietdonhang.'"class="updatedm">sản phẩm</button> <button class="btn-deletedm" ><a href="'.$xoadh.'"class="deletedm"> Xoá</button></td>
+                        <td> <button class="btn-updm"><a href="'.$chitietdonhang.'"class="updatedm">sản phẩm</button> <button class="btn-deletedm" ><a href="'.$xoadh.'"class="deletedm"> Xoá </button></td>
                         <td> <button class="btn-updm"><a href="'.$suagh.'"class="updatedm">Cập nhật trạng thái</button></td>
                         </tr>';
             }

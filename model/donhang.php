@@ -20,10 +20,23 @@
         return $tt;
     }
     function capnhat_trangthai($id,$trangthai) {
-    
         $sql = "UPDATE `dathang` SET `status`='$trangthai' WHERE `id`='$id'";
         pdo_execute($sql);
+        
     }
+
+    function load_trangthai_theo_id($id){
+        $sql = "SELECT * FROM `dathang` where id = $id";
+        $xemtt = pdo_query_one($sql);   
+        return $xemtt;
+    }
+    
+    
+
+
+
+
+
     function xoadonhang($id) {
         // Use the $id parameter to delete the order from the database
         $sql = "DELETE FROM `dathang` WHERE `id` = $id";

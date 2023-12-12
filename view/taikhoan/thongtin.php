@@ -71,6 +71,7 @@
                                             <th>Tên người đặt</th>
                                             <th>Trạng thái</th>
                                             <th>Tổng đơn hàng</th>
+                                            <th>Ngày Đặt</th>
                                             <th>Sản Phẩm</th>
                                         </tr>
                                     </thead>
@@ -103,6 +104,7 @@
                                                 }
 
                                                 echo '<td>'.$tongdonhang.'</td>
+                                                <td>'.$ngay_dat.'</td>
                                                     <td><a href="index.php?act=donhangnguoidung&id_dathang='.$id.'" class="view">view</a></td>
                                                 </tr>';
                                             }

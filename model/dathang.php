@@ -1,11 +1,11 @@
 <?php
 // Function definition
- function taodonhang($madh, $tong, $pttt,$id_user, $user_name, $address, $email, $tel,$status)
+ function taodonhang($madh, $tong, $pttt,$id_user, $user_name, $address, $email, $tel,$status,$ngaydat)
 {
     $pdo = pdo_get_connection();
     // Prepare and execute the INSERT statement using the provided PDO connection
-    $stmt = $pdo->prepare("INSERT INTO `dathang`(`madh`,`tongdonhang`, `pttt`,`id_user`, `name`, `address`, `email`, `tel`,`status`) VALUES (?, ?, ?,?, ?, ?, ?, ?,?)");
-    $stmt->execute([$madh, $tong, $pttt,$id_user, $user_name, $address, $email, $tel,$status]);
+    $stmt = $pdo->prepare("INSERT INTO `dathang`(`madh`,`tongdonhang`, `pttt`,`id_user`, `name`, `address`, `email`, `tel`,`status`,`ngay_dat`) VALUES (?, ?, ?,?, ?, ?, ?, ?,?,?)");
+    $stmt->execute([$madh, $tong, $pttt,$id_user, $user_name, $address, $email, $tel,$status,$ngaydat]);
 
     // Get the last inserted ID
     $lastInsertId = $pdo->lastInsertId();

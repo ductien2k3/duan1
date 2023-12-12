@@ -9,6 +9,7 @@ function load_doanhthu(){
         dh.id AS ma_don_hang,
         dh.tongdonhang,
         dh.pttt,
+        dh.ngay_dat,
         dh.id_user,
         dh.name AS ten_khach_hang,
         dh.address AS dia_chi_khach_hang,
@@ -38,11 +39,22 @@ function load_doanhthu(){
         giohang gh ON dh.id = gh.id_dathang
     JOIN
         san_pham sp ON gh.id_sanpham = sp.id 
+        WHERE
+        dh.status = 'Đã Hoàn Thành'
     ORDER BY  sp.view AND dh.tongdonhang DESC";
     
     $loadoanhso = pdo_query($sql);
     return $loadoanhso;
 }
 
+// bộ lọc 
+function bo_loc_theo_ngay($ngayFilter) {
+    $sql = "SELECT * FROM `dathang` WHERE 1";
 
+    if ($ngayFilter > 0) {
+        $sql .= " AND DATE(ngay_dat) = $ngayFilter";
+    }
+    $bolocngay = pdo_query($sql);
+    return $bolocngay;
+}
 ?>

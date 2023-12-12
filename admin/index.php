@@ -525,18 +525,41 @@
                     if (isset($_POST['capnhat']) && $_POST['capnhat']) {
                         $id = $_POST['id'];
                         $trangthai = $_POST['trangthai'];
-                        
-                        // Update the status in the database
-                        capnhat_trangthai($id,$trangthai);
-                        
-                        // Redirect or display a success message as needed
-                        header("Location: index.php?act=donhang");
-                        
-                        exit();
+                
+                        $statusOptions = ['Chờ xác nhận', 'Đã Nhận Đơn Hàng', 'Đang Giao Hàng', 'Đã Hoàn Thành'];
+                        $xemtt = load_trangthai_theo_id($id);  // Đảm bảo bạn đã lấy trạng thái hiện tại của đơn hàng
+                
+                        if (in_array($trangthai, $statusOptions)) {
+                            // Tìm vị trí của trạng thái trong mảng
+                            $trangthaiPosition = array_search($trangthai, $statusOptions);
+                            
+                            // Tìm vị trí của trạng thái hiện tại trong mảng
+                            $currentStatusPosition = array_search($xemtt['status'], $statusOptions);
+                
+                            if ($trangthaiPosition !== false && $currentStatusPosition !== false) {
+                                if ($trangthaiPosition >= $currentStatusPosition) {
+                                    capnhat_trangthai($id, $trangthai);
+                
+                                    // Redirect or display a success message as needed
+                                    header("Location: index.php?act=donhang");
+                                    exit();
+                                } else {
+                                    $thongbao = "Không thể cập nhật trạng thái ngược lại.";
+                                }
+                            } else {
+                                $thongbao = "Trạng thái không hợp lệ. Vui lòng chọn trạng thái hợp lệ.";
+                            }
+                        } else {
+                            $thongbao = "Trạng thái không hợp lệ. Vui lòng chọn trạng thái hợp lệ.";
+                            
+
+                        }
                     }
+                
                     $listnguoimua = load_all_nguoimua();
                     include 'donhang/update.php';
                     break;
+                
             
                     case 'deletegh':
                         if (isset($_GET['id']) && ($_GET['id']) > 0) {
@@ -572,11 +595,23 @@
                 $listsanphambanchay = load_all_sanphambanchay();
                 include 'thongke/bieudobanchay.php';
                 break;
-            case 'doanhso':
-                $loadoanhso = load_doanhthu();
-                include 'thongke/doanhso.php';
-                break;
-
+                
+                case 'doanhso':             
+                    if (isset($_POST['doanhsofilter']) && $_POST['doanhsofilter']) {
+                        $ngayFilter = $_POST['ngayFilter'];
+                    } else {
+                        $ngayFilter = 0;
+                    }
+                    $bolocngay = bo_loc_theo_ngay($ngayFilter);
+                    $loadoanhso = load_doanhthu();
+                    include 'thongke/doanhso.php';
+                    if (count($loadoanhso) > 0) {
+                        // include "sanpham/list.php";
+                    } else {
+                        echo "Không tìm thấy sản phẩm nào";
+                    }
+                    break;
+           
             default:
                 include "home.php";
                 break;

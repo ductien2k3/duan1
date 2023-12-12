@@ -282,10 +282,10 @@
                                                 <span>sale '.$giam_gia.'%</span>
                                             </div>
                                             <div class="action-link">
-                                                <div class="action-link-left">
+                                                <div class="action-link-left">                                          
                                                 <a href="#">Thêm Vào Giỏ Hàng</a>
 
-                                                
+                                             
                                                 </div>
                                                 <div class="action-link-right">
                                                     <a href="#" data-bs-toggle="modal"
@@ -324,6 +324,7 @@
                         } 
 
             ?>
+
                </div>
                             </div>
                             <!-- If we need navigation buttons -->
