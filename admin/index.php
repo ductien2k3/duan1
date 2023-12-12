@@ -597,20 +597,21 @@
                 break;
                 
                 case 'doanhso':             
-                    if (isset($_POST['doanhsofilter']) && $_POST['doanhsofilter']) {
-                        $ngayFilter = $_POST['ngayFilter'];
+                    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['locngay'])) {
+                        $ngay = $_POST['ngay'];
                     } else {
-                        $ngayFilter = 0;
-                    }
-                    $bolocngay = bo_loc_theo_ngay($ngayFilter);
-                    $loadoanhso = load_doanhthu();
-                    include 'thongke/doanhso.php';
-                    if (count($loadoanhso) > 0) {
-                        // include "sanpham/list.php";
+                        $ngay = "";
+                    }   
+                    $loadoanhso = load_doanhthu($ngay);
+
+                    if ($loadoanhso) {
+                        include 'thongke/doanhso.php';
                     } else {
                         echo "Không tìm thấy sản phẩm nào";
                     }
+
                     break;
+                
            
             default:
                 include "home.php";

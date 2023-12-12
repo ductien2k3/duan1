@@ -9,6 +9,7 @@
           <th>Tên sản phẩm</th>
           <th>Giá</th>
           <th>Số lượng</th>
+          <th>Màu Sắc</th>
         </tr>
         <?php
             foreach ($listctgh as $ctgh){
@@ -19,7 +20,8 @@
                 <td>'.$id_sanpham.'</td>
                 <td>'.$tensanpham.'</td>
                 <td>'.$gia.'</td>
-                <td>'.$soluong.'</td>             
+                <td>'.$soluong.'</td>
+                <td>'.$color.'</td>         
                 </tr>';
             }
         ?>    

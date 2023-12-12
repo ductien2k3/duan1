@@ -1,21 +1,14 @@
 <div class="content">
+    <h2>Doanh số</h2>
     <div class="khungtimkiemsp">
     <form action="index.php?act=doanhso" method="POST">
-      
-    <select name="ngayFilter" class="">
-        <option value="0" selected>Tất cả</option>
-        <?php
-        foreach ($bolocngay as $ng) {
-            extract($ng);
-            echo "<option value='$ngay_dat'>$ngay_dat</option>";
-        }
-        ?>
-    </select>
-    <input type="submit" value="Lọc" name="doanhsofilter">
-</form>
+    <input type="date" name="ngay" value="<?php echo $ngay; ?>" required>
+
+    <input type="submit" value="Lọc" name="locngay">
+    </form>
 
     </div>
-    <h2>Doanh số</h2>
+    
     <table>
         <tr>
             <th>Tên sản phẩm</th>

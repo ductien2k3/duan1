@@ -8,6 +8,7 @@
     include 'model/dathang.php';
     include 'global.php';
     include 'model/donhang.php';
+    include 'model/chitietsanpham.php';
 
     $dsdm = load_all_home();
     $spnew = load_all_sanpham_home();
@@ -152,6 +153,8 @@
                 $id = $_GET['idsp'];
                 $onesp = load_one_home($id);
                 extract($onesp);
+                
+                $listctsp = load_all_chitietsanpham($id);
                 $listdanhmuc = load_all_danhmuc();
                 $spcungloai = load_sanpham_cungloai($id_danhmuc ,$id);
                 
@@ -203,12 +206,19 @@
                 $name = $_POST['tensp'];
                 $hinh = $_POST['hinh'];
                 $giaban = $_POST['giaban'];
+                
                 if(isset($_POST['soluong']) && $_POST['soluong'] > 0){
                     $soluong = $_POST['soluong'];
                 } else {
                 $soluong =1;
                 }
+                if(isset($_POST['color']) && $_POST['color']){
+                    $color = $_POST['color'];
+                } else {
+                $color = "Không có";
+                }
                 $fg =0;
+                
                 
                 //  kiểm tra sản phẩm có tồn tại trong giỏ hàng hay không 
                 // nếu có chỉ tăng sô lượng
@@ -225,7 +235,7 @@
                 //còn lại thì add mới
                 //khởi tạo mảng con trước khi đưa vào giỏ hàng
                 if($fg ==0 ){
-                $item = array($id,$name,$hinh,$giaban,$soluong);
+                $item = array($id,$name,$hinh,$giaban,$soluong,$color);
                 $_SESSION['giohang'][] =($item);
                 }
                 header('location: index.php?act=viewcart');
@@ -294,7 +304,7 @@
                 $tel = $_POST['tel'];
                 $email = $_POST['email'];
                 $pttt = $_POST['pttt'];
-                $ngaydat = date('Y-m-d');
+                $ngaydat = date('d-m-Y');
 
                 $madh = "solo". rand(0,99999);
                 //tạo đơn hàng
@@ -305,7 +315,7 @@
 
                 if(isset($_SESSION['giohang']) && (count($_SESSION['giohang']) > 0)){
                     foreach($_SESSION['giohang'] as $item){
-                    addtocart($id_dathang,$item[0], $item[4], $item[3],$item[1]);                  
+                    addtocart($id_dathang,$item[0], $item[4], $item[3],$item[1],$item[5]);                  
                 }
                     unset($_SESSION['giohang']);
                 }      

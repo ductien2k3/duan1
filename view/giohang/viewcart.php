@@ -51,6 +51,7 @@
                                             <th class="product_remove">Số Thứ Tự</th>
                                             <th class="product_thumb">Hình ảnh</th>
                                             <th class="product_name">Tên sản phẩm</th>
+                                            <th class="product_name">Màu sắc</th>
                                             <th class="product-price">Giá bán</th>
                                             <th class="product_quantity">Số Lượng</th>
                                             <th class="product_total">Thành Tiền</th>
@@ -80,6 +81,7 @@
                                                         src="'.$item[2].'"
                                                         alt=""></a></td>
                                             <td class="product_name"><a href="product-details-default.html" name ="tensanpham">'.$item[1].'</a></td>
+                                            <td class="product-price">'.$item[5].'</td>
                                             <td class="product-price">'.$item[3].' VNĐ</td>
                                             <td class="product_quantity"><label>Quantity :</label> <input min="1"
                                                     max="100" value="'.$item[4].'" type="number" name ="soluong"></td>

@@ -36,12 +36,13 @@
                 $giaban = $price - ($price * $giam_gia) / 100;
 
                 $tendanhmuc = '';
-          foreach ($listdanhmuc as $danhmuc) {
-          if ($danhmuc['id'] == $id_danhmuc) {
-            $tendanhmuc = $danhmuc['name'];
-            break;
-          }
-        }
+                foreach ($listdanhmuc as $danhmuc) {
+                if ($danhmuc['id'] == $id_danhmuc) {
+                    $tendanhmuc = $danhmuc['name'];
+                    break;
+                }
+                }
+        
                 echo '<!-- Start Large Image -->
                         <div class="product-large-image product-large-image-horaizontal swiper-container">
                         <form action="index.php?act=addtocart" method="post">
@@ -124,8 +125,20 @@
                         </div> <!-- End  Product Details Text Area-->
                         <!-- Start Product Variable Area -->
                         <div class="product-details-variable">
-                            <h4 class="title">Tùy chọn có sẵn</h4>
-                            <!-- Product Variable Single Item -->
+
+
+                        <h4 class="title">Tùy chọn có sẵn</h4> ';
+                        foreach ($listctsp as $ctsp) {
+                            extract($ctsp);
+                            echo '<label class="square-radio">
+                                        <input type="radio" name="color" value="'.$color.'">
+                                        <span>'.$color.'</span>
+                                    </label>';
+                        }
+        
+
+                        
+                        echo '    <!-- Product Variable Single Item -->
                             <div class="variable-single-item">
                                 <div class="product-stock"> <span class="product-stock-in"><i
                                             class="ion-checkmark-circled"></i></span> '.$so_luong.' TRONG KHO</div>
@@ -359,3 +372,37 @@
         </div>
     </div>
     <!-- End Product Default Slider Section -->
+  
+    <style>
+ .square-radio {
+  display: inline-block;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: sans-serif;
+  margin-bottom: 10px ;
+  margin-right: 10px ;
+color: black;
+ 
+}
+
+.square-radio input[type="radio"] {
+  display: none; /* Ẩn radio button */
+}
+
+.square-radio span {
+  display: inline-block;
+  line-height: 20px;
+}
+
+.square-radio input:checked + span {
+  background-color: #939496; /* Xác định màu khi radio button được chọn */
+  color: white;
+
+}
+
+</style>
+
+
+   

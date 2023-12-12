@@ -4,7 +4,7 @@ function load_all_sanphambanchay() {
     $listsanphambanchay = pdo_query($sql);
     return $listsanphambanchay;
 }
-function load_doanhthu(){
+function load_doanhthu($ngay) {
     $sql = "SELECT
         dh.id AS ma_don_hang,
         dh.tongdonhang,
@@ -39,22 +39,19 @@ function load_doanhthu(){
         giohang gh ON dh.id = gh.id_dathang
     JOIN
         san_pham sp ON gh.id_sanpham = sp.id 
-        WHERE
-        dh.status = 'Đã Hoàn Thành'
-    ORDER BY  sp.view AND dh.tongdonhang DESC";
-    
+    WHERE
+        dh.status = 'Đã Hoàn Thành'";
+
+    if ($ngay > 0) {
+        // Thêm dấu nháy đơn cho giá trị ngày và sử dụng nó trực tiếp trong câu truy vấn
+        $sql .= " AND `ngay_dat` = '$ngay'";
+    }
+
+    $sql .= " ORDER BY sp.view DESC, dh.tongdonhang DESC";
+
     $loadoanhso = pdo_query($sql);
     return $loadoanhso;
 }
 
-// bộ lọc 
-function bo_loc_theo_ngay($ngayFilter) {
-    $sql = "SELECT * FROM `dathang` WHERE 1";
-
-    if ($ngayFilter > 0) {
-        $sql .= " AND DATE(ngay_dat) = $ngayFilter";
-    }
-    $bolocngay = pdo_query($sql);
-    return $bolocngay;
-}
 ?>
+

@@ -14,11 +14,11 @@
     return $lastInsertId;
 }
     // Example usage
-    function addtocart($id_dathang,$id_sanpham, $soluong, $gia, $tensampham){
+    function addtocart($id_dathang,$id_sanpham, $soluong, $gia, $tensampham,$color){
         $pdo = pdo_get_connection();
-        $stmt = $pdo->prepare("INSERT INTO `giohang`(`id_dathang`, `id_sanpham`, `soluong`, `gia`, `tensanpham`)
-        VALUES (?, ?, ?, ?, ?)");
-        $stmt->execute([$id_dathang, $id_sanpham, $soluong, $gia, $tensampham]);
+        $stmt = $pdo->prepare("INSERT INTO `giohang`(`id_dathang`, `id_sanpham`, `soluong`, `gia`, `tensanpham`,`color`)
+        VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->execute([$id_dathang, $id_sanpham, $soluong, $gia, $tensampham,$color]);
 
          // Get the last inserted ID
     }

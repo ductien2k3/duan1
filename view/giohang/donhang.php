@@ -105,6 +105,7 @@
                             <tr>
                                 <th>Sản Phẩm</th>
                                 <th>Số Lượng</th>
+                                <th>Màu sắc</th>
                                 <th>Số Tiền</th>
                             </tr>
                         </thead>
@@ -122,6 +123,7 @@
                                         echo '<tr>
                                                 <td>' . $item['tensanpham'] . '</td>
                                                 <td><strong> × ' . $item['soluong'] . '</strong></td>
+                                                <td>' . $item['color'] . '</td>
                                                 <td> ' . $thanhtien . ' VNĐ</td>
                                             </tr>';
                                     }
@@ -131,15 +133,18 @@
                                         <tr>
                                             <th>Tổng Phụ</th>
                                             <td></td>
-                                            <td colspan="3">' . $tongphu . '</td>
+                                            <td></td>
+                                            <td colspan="4">' . $tongphu . '</td>
                                         </tr>
                                         <tr>
                                             <th>Phí Ship</th>
+                                            <td></td>
                                             <td></td>
                                             <td><strong>' . $ship . ' VNĐ</strong></td>
                                         </tr>
                                         <tr class="order_total">
                                             <th>Tổng số tiền</th>
+                                            <td></td>
                                             <td></td>
                                             <td><strong>' . ($tongphu + $ship) . ' VNĐ</strong></td>
                                         </tr>
