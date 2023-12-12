@@ -20,6 +20,7 @@
         <li><a href="index.php?act=dstk">Tài Khoản</a></li>
         <li><a href="index.php?act=donhang">Đơn Hàng</a></li>
         <li><a href="index.php?act=dsbl">Bình Luận</a></li>
+        <li><a href="index.php?act=voucher">Voucher</a></li>
         <li><a href="index.php?act=thongke">Thống Kê</a></li>
       </ul>
     </div>

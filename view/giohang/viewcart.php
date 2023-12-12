@@ -1,6 +1,7 @@
 <?php
     include 'view/header.php';
     //echo var_dump($_SESSION['giohang'])
+    
 ?>
 <div class="offcanvas-overlay"></div>
 
@@ -25,7 +26,11 @@
             </div>
         </div>
     </div> <!-- ...:::: End Breadcrumb Section:::... -->
-
+    <?php
+        if(isset($thongbao) && ($thongbao!="")) {
+            echo $thongbao;
+        }
+    ?>
     <!-- ...:::: Start Cart Section:::... -->
     <div class="cart-section">
         <!-- Start Cart Table -->
@@ -113,8 +118,15 @@
                                 <h3>Mã Giảm Giá</h3>
                                 <div class="coupon_inner">
                                     <p>nhập mã giảm giá ở đây nếu bạn có.</p>
-                                    <input class="mb-2" placeholder="mã giảm giá" type="text">
+
+
+                            
+                                    <input class="mb-2" placeholder="mã giảm giá" type="text" name="voucher">
                                     <button type="submit" class="btn btn-md btn-golden">Nhập mã</button>
+                                   
+                                    
+
+
                                 </div>
                             </div>
                         </div>
@@ -149,6 +161,8 @@
         </div> ';
                                 
         }
+        
         ?>
+        
     </div>
-  
+    

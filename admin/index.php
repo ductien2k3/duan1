@@ -9,6 +9,7 @@
     include "../model/binhluan.php";
     include "../model/donhang.php";
     include "../model/thongke.php";
+    include "../model/voucher.php";
 
 
     // controler
@@ -611,8 +612,31 @@
                     }
 
                     break;
+
+            // voucher 
+            case 'voucher':
+                $listvoucher = load_all_voucher();
+                include 'voucher/list.php';
+                break;
+
+
+            case 'addvc':               
+                    //kiểm tra xem người dùng có click vào hay không
+                    if(isset($_POST['themmoi']) && $_POST['themmoi']){
+                        $voucher = $_POST['voucher'];
+                        $khuyenmai = $_POST['khuyenmai'];
+                        $ngaybd = date('d-m-Y');
+                        insert_voucher($voucher,$khuyenmai,$ngaybd);
+                        $thongbao = " Thêm Thành Công ";
+                    }
                 
-           
+                
+                    include 'voucher/add.php';
+                    break;
+
+
+
+
             default:
                 include "home.php";
                 break;

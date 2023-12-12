@@ -15,6 +15,7 @@
                     <th>Tên Sản Phẩm</th>
                     <th>Số Lượng</th>
                     <th>Giá</th>
+                    <th>Màu Sắc</th>
                 </tr>
             </thead>
             <tbody>
@@ -28,6 +29,7 @@
                             <td>'.$tensanpham.'</td>
                             <td>'.$soluong.'</td>
                             <td>'.$gia.'</td>
+                            <td>'.$color.'</td>   
                         </tr>';
                     }
                 ?>

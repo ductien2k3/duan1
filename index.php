@@ -9,6 +9,7 @@
     include 'global.php';
     include 'model/donhang.php';
     include 'model/chitietsanpham.php';
+    include 'model/voucher.php';
 
     $dsdm = load_all_home();
     $spnew = load_all_sanpham_home();
@@ -282,9 +283,21 @@
                 header('location: index.php?act=viewcart');
                 exit();
             }
+            
             break;
-        
-        
+        // mã giảm giá 
+        case 'voucher':
+            if (isset($_POST['voucher']) && $_POST['voucher'] > 0) {
+                $voucher = $_POST['voucher'];
+                if($voucher == check_voucher($ma_voucher)){
+                    $thongbao = 'đã dùng mã giảm giá ';
+                    header('location: index.php?act=viewcart');
+                    exit();
+                } else {
+                    $thongbao = ' mã giảm giá không tồn tại';
+                }
+            }
+            break;
         
         
         // mua
