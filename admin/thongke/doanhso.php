@@ -20,13 +20,13 @@
         </tr>
         <?php 
         foreach ($loadoanhso as $ds){
-            $doanhso = $ds['gia_san_pham'] * $ds['soluong'];
+            $doanhso = $ds['gia'] * $ds['soluong'];
             echo '<tr>
-                <td>'.$ds['ten_san_pham'].'</td>       
+                <td>'.$ds['tensanpham'].'</td>       
                 <td>'.$ds['soluong'].'</td>
                 <td>'.$doanhso.'</td>
                 <td>'.$ds['tongdonhang'].'</td>
-                <td>'.$ds['ma_don_hang'].'</td>
+                <td>'.$ds['madh'].'</td>
                 <td>'.$ds['ngay_dat'].'</td>
                 </tr>';
         }

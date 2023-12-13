@@ -70,6 +70,7 @@
                                     foreach($_SESSION['giohang'] as $item){
                                         
                                         $thanhtien = $item[3] * $item[4];
+                                        
                                         $tongphu += $thanhtien;
                                         $tong = $tongphu + $ship;
                                         echo '<!-- End Cart Table Head -->
