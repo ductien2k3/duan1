@@ -10,6 +10,7 @@
     include 'model/donhang.php';
     include 'model/chitietsanpham.php';
     include 'model/voucher.php';
+    include 'model/kiemtradonhang.php';
 
     $dsdm = load_all_home();
     $spnew = load_all_sanpham_home();
@@ -196,7 +197,28 @@
                 $tendanhmuc = load_tendanhmuc($iddm); 
                 include "view/timkiem.php";
                 break;
-        
+            
+            case 'kiemtra':
+                if (isset($_POST['kiemtra']) && $_POST['kiemtra']!= ""){
+                    $kiemtra = $_POST['kiemtra'];
+                } else {
+                    $kiemtra = "";
+                }
+                $kiemtra_don = kiemtra_don($kiemtra);
+                include "view/kiemtra.php";
+                break;
+            
+                case 'kiemtradonhang':
+                    if(isset($_GET['id_dathang']) && ($_GET['id_dathang']>0)){
+                        $id_dathang = $_GET['id_dathang'];
+                    }
+                    $ghnd = load_all_giohang_cho_nguoidung($id_dathang);
+                    include "view/sanphamkiemtra.php";
+                    break;
+
+
+
+
         // giỏ hàng
         case 'addtocart':
             // lấy dữ liệu từ from vong view lên
